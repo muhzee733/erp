@@ -449,9 +449,6 @@ const authProtectedRoutes = [
 
   //User Profile
   { path: "/profile", component: <UserProfile /> },
-
-  // this route should be at the end of all other routes
-  // eslint-disable-next-line react/display-name
   {
     path: "/",
     exact: true,

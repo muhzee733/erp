@@ -1,75 +1,69 @@
-//Include Both Helper File with needed methods
+// Import the necessary helper files and methods
 import { getFirebaseBackend } from "../../../helpers/firebase_helper";
 import {
   postFakeLogin,
   postJwtLogin,
-  postSocialLogin,
 } from "../../../helpers/fakebackend_helper";
-
 import { loginSuccess, logoutUserSuccess, apiError, reset_login_flag } from './reducer';
 
 export const loginUser = (user, history) => async (dispatch) => {
+
   try {
     let response;
-    if (process.env.REACT_APP_DEFAULTAUTH === "firebase") {
-      let fireBaseBackend = getFirebaseBackend();
-      response = fireBaseBackend.loginUser(
-        user.email,
-        user.password
-      );
-    } else if (process.env.REACT_APP_DEFAULTAUTH === "jwt") {
-      response = postJwtLogin({
-        email: user.email,
-        password: user.password
-      });
 
-    } else if (process.env.REACT_APP_DEFAULTAUTH) {
-      response = postFakeLogin({
-        email: user.email,
-        password: user.password,
-      });
+    // Check if the user credentials match the hardcoded ones
+    if (user.email === "admin@themesbrand.com" && user.password === "123456") {
+      const adminUserData = {
+        email: "admin@themesbrand.com",
+        name: "Admin",
+        role: "admin",
+      };
+      sessionStorage.setItem("authUser", JSON.stringify(adminUserData));
+      dispatch(loginSuccess(adminUserData));
+      history('/dashboard');
+      return;
     }
 
-    var data = await response;
+    // If not the admin user, proceed with the regular authentication process
+    if (process.env.REACT_APP_DEFAULTAUTH === "firebase") {
+      const fireBaseBackend = getFirebaseBackend();
+      response = fireBaseBackend.loginUser(user.email, user.password);
+    } else if (process.env.REACT_APP_DEFAULTAUTH === "jwt") {
+      response = postJwtLogin({ email: user.email, password: user.password });
+    } else if (process.env.REACT_APP_DEFAULTAUTH) {
+      response = postFakeLogin({ email: user.email, password: user.password });
+    }
+
+    const data = await response;
+    console.log(data, 'response');
 
     if (data) {
       sessionStorage.setItem("authUser", JSON.stringify(data));
-      if (process.env.REACT_APP_DEFAULTAUTH === "fake") {
-        var finallogin = JSON.stringify(data);
-        finallogin = JSON.parse(finallogin)
-        data = finallogin.data;
-        if (finallogin.status === "success") {
-          dispatch(loginSuccess(data));
-          history('/dashboard')
-        } else {
-          dispatch(apiError(finallogin));
-        }
-      } else {
-        dispatch(loginSuccess(data));
-        history('/dashboard')
-      }
+      dispatch(loginSuccess(data));
+      history('/dashboard');
     }
   } catch (error) {
     dispatch(apiError(error));
   }
 };
 
+// Logout user function
 export const logoutUser = () => async (dispatch) => {
   try {
     sessionStorage.removeItem("authUser");
-    let fireBaseBackend = getFirebaseBackend();
+    const fireBaseBackend = getFirebaseBackend();
     if (process.env.REACT_APP_DEFAULTAUTH === "firebase") {
       const response = fireBaseBackend.logout;
       dispatch(logoutUserSuccess(response));
     } else {
       dispatch(logoutUserSuccess(true));
     }
-
   } catch (error) {
     dispatch(apiError(error));
   }
 };
 
+// Social login function
 export const socialLogin = (type, history) => async (dispatch) => {
   try {
     let response;
@@ -78,22 +72,19 @@ export const socialLogin = (type, history) => async (dispatch) => {
       const fireBaseBackend = getFirebaseBackend();
       response = fireBaseBackend.socialLoginUser(type);
     }
-    //  else {
-      //   response = postSocialLogin(data);
-      // }
       
-      const socialdata = await response;
+    const socialdata = await response;
     if (socialdata) {
-      sessionStorage.setItem("authUser", JSON.stringify(response));
-      dispatch(loginSuccess(response));
-      history('/dashboard')
+      sessionStorage.setItem("authUser", JSON.stringify(socialdata));
+      dispatch(loginSuccess(socialdata));
+      history('/dashboard');
     }
-
   } catch (error) {
     dispatch(apiError(error));
   }
 };
 
+// Reset login flag function
 export const resetLoginFlag = () => async (dispatch) => {
   try {
     const response = dispatch(reset_login_flag());

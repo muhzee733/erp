@@ -56,14 +56,15 @@ const Login = (props) => {
         enableReinitialize: true,
 
         initialValues: {
-            email: userLogin.email || "admin@themesbrand.com" || '',
-            password: userLogin.password || "123456" || '',
+            email: userLogin.email || "admin@themesbrand.com" ,
+            password: userLogin.password || "123456",
         },
         validationSchema: Yup.object({
             email: Yup.string().required("Please Enter Your Email"),
             password: Yup.string().required("Please Enter Your Password"),
         }),
         onSubmit: (values) => {
+            console.log('clicked', values)
             dispatch(loginUser(values, props.router.navigate));
         }
     });
@@ -90,8 +91,7 @@ const Login = (props) => {
     }, [dispatch, errorMsg]);
     document.title = "Basic SignIn | Velzon - React Admin & Dashboard Template";
     return (
-        <React.Fragment>
-            <ParticlesAuth>
+        <ParticlesAuth>
                 <div className="auth-page-content mt-lg-5">
                     <Container>
                         <Row>
@@ -112,7 +112,7 @@ const Login = (props) => {
                                 <Card className="mt-4">
                                     <CardBody className="p-4">
                                         <div className="text-center mt-2">
-                                            <h5 className="text-primary">Welcome Back !</h5>
+                                            <h5 className="text-primary">Welcome Back !hlo</h5>
                                             <p className="text-muted">Sign in to continue to Velzon.</p>
                                         </div>
                                         {error && error ? (<Alert color="danger"> {error} </Alert>) : null}
@@ -224,7 +224,6 @@ const Login = (props) => {
                     </Container>
                 </div>
             </ParticlesAuth>
-        </React.Fragment>
     );
 };
 
