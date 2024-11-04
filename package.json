@@ -2,8 +2,12 @@
   "name": "@react-monorep/source",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "dev": "nx serve react-monorep",
+    "build": "nx build react-monorep"
+  },
   "private": true,
+  "packageManager": "npm@8.1.0",
   "dependencies": {
     "@ckeditor/ckeditor5-build-classic": "^43.3.0",
     "@ckeditor/ckeditor5-react": "^9.3.1",
@@ -95,6 +99,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.14.5",
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "@babel/preset-react": "^7.14.5",
     "@eslint/js": "^9.8.0",
     "@nx/eslint": "20.0.6",
@@ -137,6 +142,7 @@
     "ts-jest": "^29.1.0",
     "ts-node": "10.9.1",
     "tslib": "^2.3.0",
+    "turbo": "^2.2.3",
     "typescript": "~5.5.2",
     "typescript-eslint": "^8.0.0",
     "webpack-cli": "^5.1.4"

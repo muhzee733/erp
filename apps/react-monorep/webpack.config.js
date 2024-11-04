@@ -19,7 +19,7 @@ module.exports = {
       tsConfig: './tsconfig.app.json',
       compiler: 'babel',
       main: './src/index.js',
-      index: './src/index.html',
+      index: './public/index.html',
       baseHref: '/',
       assets: ['./src/favicon.ico', './src/assets'],
       styles: ['./src/styles.scss'],
@@ -30,8 +30,5 @@ module.exports = {
       global: 'window'
     })
     
-  ],
-  stats: {
-    warnings: false, 
-  },
+  ]
 };
