@@ -17,7 +17,7 @@ import { userForgetPassword } from "../../slices/thunks";
 
 // import images
 // import profile from "../../assets/images/bg.png";
-import logoLight from "../../assets/images/logo-light.png";
+import logoSm from "../../assets/images/logo-sm.png";
 import ParticlesAuth from "../AuthenticationInner/ParticlesAuth";
 import { createSelector } from "reselect";
 
@@ -58,94 +58,91 @@ const ForgetPasswordPage = props => {
     <ParticlesAuth>
       <div className="auth-page-content mt-lg-5">
 
-        <Container>
-          <Row>
-            <Col lg={12}>
-              <div className="text-center mt-sm-5 mb-4 text-white-50">
-                <div>
-                  <Link to="/" className="d-inline-block auth-logo">
-                    <img src={logoLight} alt="" height="20" />
-                  </Link>
+      <Container>
+
+        <Row className="justify-content-center">
+        <Col md={8} lg={6} xl={5}>
+        <Card className="mt-4">
+
+          <CardBody className="forget-password">
+          <div className='login-img text-center'>
+            <span className="logo-sm">
+            <img src={logoSm} alt="" />
+            </span>
+          </div>
+            <div className="text-center mt-2">
+              <h5 className="text">Forgot Password?</h5>
+              <p className="text-muted">Reset Password</p>
+
+              <lord-icon
+                src="https://cdn.lordicon.com/rhvddzym.json"
+                trigger="loop"
+                colors="primary:#F23514"
+                className="avatar-xl"
+                style={{ width: "120px", height: "120px" }}
+              >
+              </lord-icon>
+
+            </div>
+
+            <Alert className="border-0 alert-warning text-center mb-2 mx-2" role="alert">
+              Enter your email and instructions will be sent to you!
+            </Alert>
+            <div className="p-2">
+              {forgetError && forgetError ? (
+                <Alert color="danger" style={{ marginTop: "13px" }}>
+                  {forgetError}
+                </Alert>
+              ) : null}
+              {forgetSuccessMsg ? (
+                <Alert color="success" style={{ marginTop: "13px" }}>
+                  {forgetSuccessMsg}
+                </Alert>
+              ) : null}
+              <Form
+                onSubmit={(e) => {
+                  e.preventDefault();
+                  validation.handleSubmit();
+                  return false;
+                }}
+              >
+                <div className="mt-4 mb-4">
+                  {/* <Label className="form-label">Email</Label> */}
+                  <Input
+                    name="email"
+                    className="input-reset"
+                    placeholder="Enter email"
+                    type="email"
+                    onChange={validation.handleChange}
+                    onBlur={validation.handleBlur}
+                    value={validation.values.email || ""}
+                    invalid={
+                      validation.touched.email && validation.errors.email ? true : false
+                    }
+                  />
+                  < i class="icon-user ri-mail-line"></i>
+
+                  {validation.touched.email && validation.errors.email ? (
+                    <FormFeedback type="invalid"><div>{validation.errors.email}</div></FormFeedback>
+                  ) : null}
                 </div>
-                <p className="mt-3 fs-15 fw-medium">Premium Admin & Dashboard Template</p>
-              </div>
-            </Col>
-          </Row>
 
-          <Row className="justify-content-center">
-            <Col md={8} lg={6} xl={5}>
-              <Card className="mt-4">
+                <div className="mt-5 mb-5 text-center">
+                <p className="account">Remembered it? Try logging in again. <Link to="/login" className="linked-text"> Login </Link> </p>
+                </div>
 
-                <CardBody className="p-4">
-                  <div className="text-center mt-2">
-                    <h5 className="text-primary">Forgot Password?</h5>
-                    <p className="text-muted">Reset password with velzon</p>
 
-                    <lord-icon
-                      src="https://cdn.lordicon.com/rhvddzym.json"
-                      trigger="loop"
-                      colors="primary:#0ab39c"
-                      className="avatar-xl"
-                      style={{ width: "120px", height: "120px" }}
-                    >
-                    </lord-icon>
+                <div className="text-center mt-4">
+                  <button className="reset-btn" type="submit">Send Reset Link</button>
+                </div>
+              </Form>
+            </div>
+          </CardBody>
+        </Card>
 
-                  </div>
 
-                  <Alert className="border-0 alert-warning text-center mb-2 mx-2" role="alert">
-                    Enter your email and instructions will be sent to you!
-                  </Alert>
-                  <div className="p-2">
-                    {forgetError && forgetError ? (
-                      <Alert color="danger" style={{ marginTop: "13px" }}>
-                        {forgetError}
-                      </Alert>
-                    ) : null}
-                    {forgetSuccessMsg ? (
-                      <Alert color="success" style={{ marginTop: "13px" }}>
-                        {forgetSuccessMsg}
-                      </Alert>
-                    ) : null}
-                    <Form
-                      onSubmit={(e) => {
-                        e.preventDefault();
-                        validation.handleSubmit();
-                        return false;
-                      }}
-                    >
-                      <div className="mb-4">
-                        <Label className="form-label">Email</Label>
-                        <Input
-                          name="email"
-                          className="form-control"
-                          placeholder="Enter email"
-                          type="email"
-                          onChange={validation.handleChange}
-                          onBlur={validation.handleBlur}
-                          value={validation.values.email || ""}
-                          invalid={
-                            validation.touched.email && validation.errors.email ? true : false
-                          }
-                        />
-                        {validation.touched.email && validation.errors.email ? (
-                          <FormFeedback type="invalid"><div>{validation.errors.email}</div></FormFeedback>
-                        ) : null}
-                      </div>
-
-                      <div className="text-center mt-4">
-                        <button className="btn btn-success w-100" type="submit">Send Reset Link</button>
-                      </div>
-                    </Form>
-                  </div>
-                </CardBody>
-              </Card>
-
-              <div className="mt-4 text-center">
-                <p className="mb-0">Wait, I remember my password... <Link to="/login" className="fw-semibold text-primary text-decoration-underline"> Click here </Link> </p>
-              </div>
-
-            </Col>
-          </Row>
+        </Col>
+        </Row>
         </Container>
       </div>
     </ParticlesAuth>
