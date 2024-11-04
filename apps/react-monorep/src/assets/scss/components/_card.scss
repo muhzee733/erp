@@ -1,10 +1,23 @@
-// 
+//
 // _card.scss
-// 
+//
 
 .card {
     margin-bottom: $grid-gutter-width;
     box-shadow: $card-box-shadow;
+}
+
+.login{
+  padding: 44px 34px 44px 34px!important;
+  border-radius: 12px!important;
+}
+.register{
+ padding: 44px 34px 44px 34px!important;
+ border-radius: 12px!important;
+}
+.forget-password{
+ padding: 44px 34px 44px 34px!important;
+ border-radius: 12px!important;
 }
 
 .card-header {
@@ -78,7 +91,7 @@ $value in $theme-colors {
         color: var(--#{$prefix}body-color) !important;
         background-color: rgba(var(--#{$prefix}dark-rgb), 0.1);
     }
-    .card-title, .card-text { 
+    .card-title, .card-text {
         color: var(--#{$prefix}body-color) !important;
     }
 }
@@ -137,14 +150,14 @@ $value in $theme-colors {
     .minimize-card {
         .plus{
             display: none;
-        }  
+        }
         .minus {
             display: block;
         }
         &.collapsed{
             .plus{
                 display: block;
-            }  
+            }
             .minus {
                 display: none;
             }
