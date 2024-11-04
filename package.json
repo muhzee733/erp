@@ -1,10 +1,11 @@
 {
   "name": "@react-monorep/source",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "license": "MIT",
   "scripts": {
     "dev": "nx serve react-monorep",
-    "build": "nx build react-monorep"
+    "build": "nx build react-monorep",
+    "server": "json-server --watch db.json --port 3001"
   },
   "private": true,
   "packageManager": "npm@8.1.0",
@@ -33,6 +34,7 @@
     "bootstrap": "^5.3.3",
     "chart.js": "^4.4.6",
     "cleave.js": "^1.6.0",
+    "dotenv": "^16.4.5",
     "echarts": "^5.5.1",
     "echarts-for-react": "^3.0.2",
     "emoji-picker-react": "^4.12.0",
@@ -45,6 +47,7 @@
     "global": "^4.4.0",
     "i18next": "^23.16.4",
     "i18next-browser-languagedetector": "^8.0.0",
+    "json-server": "^1.0.0-beta.3",
     "list.js": "^2.3.1",
     "lottie-web": "^5.12.2",
     "moment": "^2.30.1",

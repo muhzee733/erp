@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Card, CardBody, Col, Container, Input, Label, Row, Button, Form, FormFeedback, Alert, Spinner } from 'reactstrap';
+import { Card, CardBody, Col, Container, Input, Row, Button, Form, FormFeedback, Alert, Spinner } from 'reactstrap';
 import ParticlesAuth from "../AuthenticationInner/ParticlesAuth";
 
 //redux
@@ -12,7 +12,7 @@ import * as Yup from "yup";
 import { useFormik } from "formik";
 
 // actions
-import { loginUser, socialLogin, resetLoginFlag } from "../../slices/thunks";
+import { loginUser, resetLoginFlag } from "../../slices/thunks";
 
 import { createSelector } from 'reselect';
 //import images
@@ -69,18 +69,6 @@ const Login = (props) => {
             dispatch(loginUser(values, props.router.navigate));
         }
     });
-
-    const signIn = type => {
-        dispatch(socialLogin(type, props.router.navigate));
-    };
-
-    //handleTwitterLoginResponse
-    // const twitterResponse = e => {}
-
-    //for facebook and google authentication
-    const socialResponse = type => {
-        signIn(type);
-    };
 
 
     useEffect(() => {
