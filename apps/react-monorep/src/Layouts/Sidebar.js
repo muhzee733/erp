@@ -15,7 +15,7 @@ import HorizontalLayout from "./HorizontalLayout";
 const Sidebar = ({ layoutType }) => {
 
   useEffect(() => {
-    var verticalOverlay = document.getElementsByClassName("vertical-overlay");
+    const verticalOverlay = document.getElementsByClassName("vertical-overlay");
     if (verticalOverlay) {
       verticalOverlay[0].addEventListener("click", function () {
         document.body.classList.remove("vertical-sidebar-enable");
@@ -36,7 +36,7 @@ const Sidebar = ({ layoutType }) => {
 
   return (
     <React.Fragment>
-      <div className="app-menu navbar-menu">
+      <div className="app-menu navbar-menu ">
         <div className="navbar-brand-box">
           <Link to="/" className="logo logo-dark">
             <span className="logo-sm">
@@ -52,7 +52,7 @@ const Sidebar = ({ layoutType }) => {
               <img src={logoSm} alt="" height="22" />
             </span>
             <span className="logo-lg">
-              <img src={logoLight} alt="" height="17" />
+              <img src={logoLight} alt=""  />
             </span>
           </Link>
           <button
@@ -83,7 +83,7 @@ const Sidebar = ({ layoutType }) => {
             <SimpleBar id="scrollbar" className="h-100">
               <Container fluid>
                 <div id="two-column-menu"></div>
-                <ul className="navbar-nav" id="navbar-nav">
+                <ul className="navbar-nav custom-nav-menu" id="navbar-nav">
                   <VerticalLayout layoutType={layoutType} />
                 </ul>
               </Container>

@@ -17,12 +17,12 @@ const SearchOption = () => {
     };
 
     useEffect(() => {
-        var searchOptions = document.getElementById("search-close-options");
-        var dropdown = document.getElementById("search-dropdown");
-        var searchInput = document.getElementById("search-options");
+        const searchOptions = document.getElementById("search-close-options");
+        const dropdown = document.getElementById("search-dropdown");
+        const searchInput = document.getElementById("search-options");
 
         searchInput.addEventListener("focus", function () {
-            var inputLength = searchInput.value.length;
+            const inputLength = searchInput.value.length;
             if (inputLength > 0) {
                 dropdown.classList.add("show");
                 searchOptions.classList.remove("d-none");
@@ -33,7 +33,7 @@ const SearchOption = () => {
         });
 
         searchInput.addEventListener("keyup", function () {
-            var inputLength = searchInput.value.length;
+            const inputLength = searchInput.value.length;
             if (inputLength > 0) {
                 dropdown.classList.add("show");
                 searchOptions.classList.remove("d-none");
@@ -58,16 +58,16 @@ const SearchOption = () => {
     }, []);
 
     return (
-        <React.Fragment>
-            <form className="app-search d-none d-md-block">
+        <>
+        <form className="app-search d-none d-md-block">
                 <div className="position-relative">
-                    <Input type="text" className="form-control" placeholder="Search..."
+                    <Input type="text" className="form-control" placeholder="Search by User id, User Name, Date etc"
                         id="search-options"
                         value={value}
                         onChange={e => {
                             onChangeData(e.target.value);
                         }} />
-                    <span className="mdi mdi-magnify search-widget-icon"></span>
+                    {/* <span className="mdi mdi-magnify search-widget-icon"></span> */}
                     <span className="mdi mdi-close-circle search-widget-icon search-widget-icon-close d-none"
                         id="search-close-options"></span>
                 </div>
@@ -155,7 +155,7 @@ const SearchOption = () => {
                     </div>
                 </div>
             </form>
-        </React.Fragment>
+        </>
     );
 };
 
