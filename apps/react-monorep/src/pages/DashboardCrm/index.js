@@ -10,16 +10,15 @@ import SalesForecast from './SalesForecast';
 import UpcomingActivities from './UpcomingActivities';
 import Widgets from './Widgets';
 
-
 const DashboardCrm = () => {
     document.title="CRM | Velzon - React Admin & Dashboard Template";
     return (
-        <React.Fragment>
-            <div className="page-content">
+        <div className="page-content">
                 <Container fluid>  
                     <BreadCrumb title="CRM" pageTitle="Dashboards" />
                     <Row>
                         <Widgets />
+                       
                     </Row>
                     <Row>
                         <SalesForecast />
@@ -36,7 +35,6 @@ const DashboardCrm = () => {
                     </Row>
                 </Container>
             </div>
-        </React.Fragment>
     );
 };
 
