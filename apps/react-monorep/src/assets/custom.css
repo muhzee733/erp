@@ -1,0 +1,15 @@
+/* ///SideBar/// */
+.custom-nav-menu .nav-item a:hover{
+  background-color: #F23514 !important;
+  color: white!important;
+  margin-bottom: 4px!important;
+  border-radius: 12px;
+  padding: 0.625rem 1.5rem;
+}
+.custom-nav-menu .nav-item a:active{
+  background-color: #F23514 !important;
+  color: white!important;
+  margin-bottom: 4px!important;
+  padding: 0.625rem 1.5rem;
+  border-radius: 12px;
+}

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Col, Container, Row } from "reactstrap";
 import Widget from "./Widgets";
 import BestSellingProducts from "./BestSellingProducts";
-import RecentActivity from "./RecentActivity";
+// import RecentActivity from "./RecentActivity";
 import RecentOrders from "./RecentOrders";
 import Revenue from "./Revenue";
 import SalesByLocations from "./SalesByLocations";
@@ -45,7 +45,7 @@ const DashboardEcommerce = () => {
                 </Row>
               </div>
             </Col>
-            <RecentActivity rightColumn={rightColumn} hideRightColumn={toggleRightColumn} />
+            {/* <RecentActivity rightColumn={rightColumn} hideRightColumn={toggleRightColumn} /> */}
           </Row>
         </Container>
       </div>

@@ -34,7 +34,7 @@ const VerticalLayout = (props) => {
 
     //vertical and semibox resize events
     const resizeSidebarMenu = useCallback(() => {
-        var windowSize = document.documentElement.clientWidth;
+        const windowSize = document.documentElement.clientWidth;
         if (windowSize >= 1025) {
             if (document.documentElement.getAttribute("data-layout") === "vertical") {
                 document.documentElement.setAttribute("data-sidebar-size", leftsidbarSizeType);
@@ -47,12 +47,12 @@ const VerticalLayout = (props) => {
                 // } else {
                 //     document.querySelector(".hamburger-icon").classList.add("open");
                 // }
-                var hamburgerIcon = document.querySelector(".hamburger-icon");
+                const hamburgerIcon = document.querySelector(".hamburger-icon");
                 if (hamburgerIcon !== null) {
                     hamburgerIcon.classList.remove("open");
                 }
             } else {
-                var hamburgerIcon = document.querySelector(".hamburger-icon");
+                const hamburgerIcon = document.querySelector(".hamburger-icon");
                 if (hamburgerIcon !== null) {
                     hamburgerIcon.classList.add("open");
                 }
@@ -90,9 +90,9 @@ const VerticalLayout = (props) => {
             const pathName = process.env.PUBLIC_URL + path;
             const ul = document.getElementById("navbar-nav");
             const items = ul.getElementsByTagName("a");
-            let itemsArray = [...items]; // converts NodeList to Array
+            const itemsArray = [...items]; // converts NodeList to Array
             removeActivation(itemsArray);
-            let matchingMenuItem = itemsArray.find((x) => {
+            const matchingMenuItem = itemsArray.find((x) => {
                 return x.pathname === pathName;
             });
             if (matchingMenuItem) {
@@ -106,7 +106,7 @@ const VerticalLayout = (props) => {
 
     function activateParentDropdown(item) {
         item.classList.add("active");
-        let parentCollapseDiv = item.closest(".collapse.menu-dropdown");
+        const parentCollapseDiv = item.closest(".collapse.menu-dropdown");
 
         if (parentCollapseDiv) {
             // to set aria expand true remaining
@@ -128,7 +128,7 @@ const VerticalLayout = (props) => {
     }
 
     const removeActivation = (items) => {
-        let actiItems = items.filter((x) => x.classList.contains("active"));
+        const actiItems = items.filter((x) => x.classList.contains("active"));
 
         actiItems.forEach((item) => {
             if (item.classList.contains("menu-link")) {
@@ -148,22 +148,22 @@ const VerticalLayout = (props) => {
             item.classList.remove("active");
         });
     };
-
     return (
         <React.Fragment>
             {/* menu Items */}
             {(navData || []).map((item, key) => {
+
                 return (
-                    <React.Fragment key={key}>
+                    <React.Fragment key={key} >
                         {/* Main Header */}
                         {item['isHeader'] ?
-                            <li className="menu-title"><span data-key="t-menu">{props.t(item.label)} </span></li>
+                            <li></li>
                             : (
                                 (item.subItems ? (
-                                    <li className="nav-item">
+                                    <li className="nav-item ">
                                         <Link
                                             onClick={item.click}
-                                            className="nav-link menu-link"
+                                            className="nav-link menu-link  "
                                             to={item.link ? item.link : "/#"}
                                             data-bs-toggle="collapse"
                                         >
@@ -175,7 +175,7 @@ const VerticalLayout = (props) => {
                                         </Link>
                                         <Collapse
                                             className="menu-dropdown"
-                                            isOpen={item.stateVariables}
+                                            isOpen={item.stateconstiables}
                                             id="sidebarApps">
                                             <ul className="nav nav-sm flex-column test">
                                                 {/* subItms  */}
@@ -206,7 +206,7 @@ const VerticalLayout = (props) => {
                                                                         <span className={"badge badge-pill bg-" + subItem.badgeColor} data-key="t-new">{subItem.badgeName}</span>
                                                                         : null}
                                                                 </Link>
-                                                                <Collapse className="menu-dropdown" isOpen={subItem.stateVariables} id="sidebarEcommerce">
+                                                                <Collapse className="menu-dropdown" isOpen={subItem.stateconstiables} id="sidebarEcommerce">
                                                                     <ul className="nav nav-sm flex-column">
                                                                         {/* child subItms  */}
                                                                         {subItem.childItems && (
@@ -221,10 +221,10 @@ const VerticalLayout = (props) => {
                                                                                             </Link>
                                                                                         </li>
                                                                                         : <li className="nav-item">
-                                                                                            <Link to="/#" className="nav-link" onClick={childItem.click} data-bs-toggle="collapse">
+                                                                                            {/* <Link to="/#" className="nav-link" onClick={childItem.click} data-bs-toggle="collapse">
                                                                                                 {props.t(childItem.label)}
                                                                                             </Link>
-                                                                                            <Collapse className="menu-dropdown" isOpen={childItem.stateVariables} id="sidebaremailTemplates">
+                                                                                            <Collapse className="menu-dropdown" isOpen={childItem.stateconstiables} id="sidebaremailTemplates">
                                                                                                 <ul className="nav nav-sm flex-column">
                                                                                                     {childItem.childItems.map((subChildItem, key) => (
                                                                                                         <li className="nav-item" key={key}>
@@ -232,7 +232,7 @@ const VerticalLayout = (props) => {
                                                                                                         </li>
                                                                                                     ))}
                                                                                                 </ul>
-                                                                                            </Collapse>
+                                                                                            </Collapse> */}
                                                                                         </li>
                                                                                     }
                                                                                 </React.Fragment>

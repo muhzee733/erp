@@ -1,6 +1,6 @@
 //
 // _vertical.scss
-// 
+//
 
 .app-content {
     margin-left: var(--#{$prefix}vertical-menu-width);
@@ -39,12 +39,12 @@
 
     .navbar-nav {
         .nav-link {
-            display: flex;
-            align-items: center;
-            padding: $vertical-menu-item-padding-y $vertical-menu-item-padding-x;
-            color: var(--#{$prefix}vertical-menu-item-color);
-            font-size: $vertical-menu-item-font-size;
-            font-family: $vertical-menu-item-font-family;
+          display: flex;
+          align-items: center;
+          padding: $vertical-menu-item-padding-y $vertical-menu-item-padding-x;
+          color: var(--#{$prefix}vertical-menu-item-color);
+          font-size: $vertical-menu-item-font-size;
+          font-family: $vertical-menu-item-font-family;
 
             &.active {
                 color: var(--#{$prefix}vertical-menu-item-active-color);
@@ -149,6 +149,8 @@
 
                 &:hover {
                     color: var(--#{$prefix}vertical-menu-sub-item-hover-color);
+                    background-color: $action-red;
+                    border-radius: 12px;
 
                     &:before {
                         background-color: var(--#{$prefix}vertical-menu-sub-item-hover-color) !important;
@@ -158,6 +160,8 @@
 
                 &.active {
                     color: var(--#{$prefix}vertical-menu-item-active-color);
+                    background-color: $action-red;
+                    border-radius: 12px;
 
                     &:before {
                         background-color: var(--#{$prefix}vertical-menu-item-active-color);
@@ -639,7 +643,7 @@
                         }
 
                         >.menu-dropdown {
-                            display: block;
+                            display: none;
                             left: var(--#{$prefix}vertical-menu-width-sm);
                             position: absolute;
                             width: 200px;
@@ -934,8 +938,8 @@
     }
 }
 
-@if $sidebar-gradient-mode { 
-    
+@if $sidebar-gradient-mode {
+
     .bg-vertical-gradient {
         background: $vertical-menu-bg-gradient;
         ;
