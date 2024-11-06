@@ -19,6 +19,9 @@ const Navdata = () => {
   const [isLanding, setIsLanding] = useState(false)
 
 
+  // Pages
+  const [isLanding, setIsLanding] = useState(false);
+
   const [iscurrentState, setIscurrentState] = useState("Dashboard");
 
   function updateIconSidebar(e) {

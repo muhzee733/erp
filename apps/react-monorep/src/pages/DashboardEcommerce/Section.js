@@ -4,7 +4,6 @@ import Flatpickr from "react-flatpickr";
 
 const Section = (props) => {
     return (
-        <React.Fragment>
             <Row className="mb-3 pb-1">
                 <Col xs={12}>
                     <div className="d-flex align-items-lg-center flex-lg-row flex-column">
@@ -40,7 +39,6 @@ const Section = (props) => {
                     </div>
                 </Col>
             </Row>
-        </React.Fragment>
     );
 };
 
