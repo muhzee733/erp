@@ -64,20 +64,20 @@ const ecomWidgets = [
         prefix: "",
         suffix: "M"
     },
-    {
-        id: 4,
-        cardColor: "info",
-        label: "My Balance",
-        badgeClass: "muted",
-        percentage: "+0.00",
-        counter: "165.89",
-        link: "Withdraw money",
-        bgcolor: "primary",
-        icon: "bx bx-wallet",
-        decimals: 2,
-        prefix: "$",
-        suffix: "k"
-    },
+    // {
+    //     id: 4,
+    //     cardColor: "info",
+    //     label: "My Balance",
+    //     badgeClass: "muted",
+    //     percentage: "+0.00",
+    //     counter: "165.89",
+    //     link: "Withdraw money",
+    //     bgcolor: "primary",
+    //     icon: "bx bx-wallet",
+    //     decimals: 2,
+    //     prefix: "$",
+    //     suffix: "k"
+    // },
 ];
 
 const bestSellingProducts = [

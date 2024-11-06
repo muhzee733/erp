@@ -19,13 +19,13 @@ const DashboardEcommerce = () => {
   };
 
   return (
-    <React.Fragment>
+
       <div className="page-content">
         <Container fluid>
           <Row>
             <Col>
               <div className="h-100">
-                <Section rightClickBtn={toggleRightColumn} />
+                {/* <Section rightClickBtn={toggleRightColumn} /> */}
                 <Row>
                   <Widget />
                 </Row>
@@ -49,7 +49,7 @@ const DashboardEcommerce = () => {
           </Row>
         </Container>
       </div>
-    </React.Fragment>
+
   );
 };
 

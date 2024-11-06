@@ -33,6 +33,7 @@
     margin-top: 0;
     position: fixed;
     top: 0;
+    padding: 0px 10px!important;
     box-shadow: var(--#{$prefix}vertical-menu-box-shadow);
     padding: 0 0 calc(#{$header-height} + 25px) 0;
     transition: all .1s ease-out;
@@ -41,17 +42,28 @@
         .nav-link {
           display: flex;
           align-items: center;
-          padding: $vertical-menu-item-padding-y $vertical-menu-item-padding-x;
+          border-radius: 12px;
+          padding: 0.625rem 1.5rem!important;
+          margin-bottom: 4px;
+          // padding: $vertical-menu-item-padding-y $vertical-menu-item-padding-x;
           color: var(--#{$prefix}vertical-menu-item-color);
           font-size: $vertical-menu-item-font-size;
           font-family: $vertical-menu-item-font-family;
 
             &.active {
-                color: var(--#{$prefix}vertical-menu-item-active-color);
+              color: var(--#{$prefix}vertical-menu-item-hover-color);
+              background-color: red;
+              border-radius: 12px;
+              margin-bottom: 4px;
+              padding: 0.625rem 1.5rem;
             }
 
             &:hover {
-                color: var(--#{$prefix}vertical-menu-item-hover-color);
+              color: var(--#{$prefix}vertical-menu-item-hover-color);
+              background-color: red;
+              border-radius: 12px;
+              margin-bottom: 4px;
+              padding: 0.625rem 1.5rem;
             }
 
             i {
@@ -75,6 +87,10 @@
 
             &:hover {
                 color: var(--#{$prefix}vertical-menu-item-hover-color);
+                background-color: red;
+                border-radius: 12px;
+                margin-bottom: 4px;
+                padding: 0.625rem 1.5rem!important;
 
                 .icon-dual {
                     color: var(--#{$prefix}vertical-menu-item-hover-color);
@@ -128,9 +144,10 @@
             padding-left: $vertical-menu-item-icon-width;
 
             .nav-link {
-                padding: $vertical-menu-sub-item-padding-y $vertical-menu-sub-item-padding-x !important;
+                // padding: $vertical-menu-sub-item-padding-y $vertical-menu-sub-item-padding-x ;
                 color: var(--#{$prefix}vertical-menu-sub-item-color);
                 white-space: none;
+                padding: 0.625rem 1.5rem;
                 position: relative;
                 font-size: $vertical-menu-sub-item-font-size;
                 font-family: $vertical-menu-sub-item-font-family;
@@ -195,8 +212,8 @@
 }
 
 .navbar-brand-box {
-    padding: 0 1.3rem;
-    text-align: center;
+    padding: 15px 0px 30px 0px;
+    text-align: left;
     transition: all .1s ease-out;
 
     @media (max-width: 767.98px) {
@@ -287,10 +304,23 @@
     .logo-sm {
         display: none;
     }
+    .logo-sm img {
+      width:32px ;
+      height: 32px;
+    }
 }
 
 .logo-light {
     display: none;
+}
+
+.logo-lg{
+  padding-left: 10px;
+}
+
+.logo-lg img {
+  width: 90%;
+
 }
 
 :is([data-layout="vertical"], [data-layout="semibox"]) {
@@ -501,6 +531,7 @@
     &[data-sidebar-size="sm-hover-active"] {
         .navbar-brand-box {
             text-align: left;
+
         }
 
         .topnav-hamburger {
@@ -526,9 +557,10 @@
         }
 
         .navbar-brand-box {
-            position: fixed;
-            padding: 0;
-            width: var(--#{$prefix}vertical-menu-width-sm);
+            position: static;
+            padding-left: 10px;
+            text-align: left;
+            // width: var(--#{$prefix}vertical-menu-width-sm);
             z-index: 1;
             top: 0;
             background-color: var(--#{$prefix}vertical-menu-bg);
@@ -616,7 +648,7 @@
 
                         >a.menu-link {
                             position: relative;
-                            width: calc(200px + var(--#{$prefix}vertical-menu-width-sm));
+                            // width: calc(200px + var(--#{$prefix}vertical-menu-width-sm));
                             transition: none;
                             background-color: var(--#{$prefix}vertical-menu-bg);
 
@@ -625,7 +657,7 @@
                             }
 
                             span {
-                                display: inline-block;
+                                display: none;
                                 padding-left: 25px;
                             }
 
@@ -638,7 +670,7 @@
 
                         .nav-link {
                             span {
-                                display: inline-block;
+                                display: none;
                             }
                         }
 
@@ -975,29 +1007,6 @@
         opacity: .07;
     }
 
-    // [data-sidebar-image="img-1"] {
-    //     .sidebar-background {
-    //         background-image: url('~@images/sidebar/img-1.jpg');
-    //     }
-    // }
-
-    // [data-sidebar-image="img-2"] {
-    //     .sidebar-background {
-    //         background-image: url('~@images/sidebar/img-2.jpg');
-    //     }
-    // }
-
-    // [data-sidebar-image="img-3"] {
-    //     .sidebar-background {
-    //         background-image: url('~@images/sidebar/img-3.jpg');
-    //     }
-    // }
-
-    // [data-sidebar-image="img-4"] {
-    //     .sidebar-background {
-    //         background-image: url('~@images/sidebar/img-4.jpg');
-    //     }
-    // }
 
 }
 
