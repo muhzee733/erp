@@ -59,6 +59,7 @@ const EcommerceCustomers = () => {
       error: ecom.error,
     })
   );
+
   // Inside your component
   const {
     customers, isCustomerSuccess, error
@@ -100,7 +101,6 @@ const EcommerceCustomers = () => {
 
   // validation
   const validation = useFormik({
-    // enableReinitialize : use this flag when initial values needs to be changed
     enableReinitialize: true,
 
     initialValues: {
@@ -171,13 +171,11 @@ const EcommerceCustomers = () => {
     toggle();
   }, [toggle]);
 
-
   useEffect(() => {
     if (customers && !customers.length) {
       dispatch(onGetCustomers());
     }
   }, [dispatch, customers]);
-
 
   useEffect(() => {
     setCustomer(customers);
@@ -196,17 +194,6 @@ const EcommerceCustomers = () => {
     setIsEdit(false);
     toggle();
   };
-
-  // Node API 
-  // useEffect(() => {
-  //   if (isCustomerCreated) {
-  //     setCustomer(null);
-  //     dispatch(onGetCustomers());
-  //   }
-  // }, [
-  //   dispatch,
-  //   isCustomerCreated,
-  // ]);
 
   const handleValidDate = date => {
     const date1 = moment(new Date(date)).format("DD MMM Y");
@@ -330,274 +317,165 @@ const EcommerceCustomers = () => {
             </ul>
           );
         },
+        id: "actions",
+        accessorKey: "actions",
+        enableColumnFilter: false,
       },
     ],
-    [handleCustomerClick, checkedAll]
+    [customers]
   );
 
-  const dateFormat = () => {
-    let d = new Date(),
-      months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-    return ((d.getDate() + ' ' + months[d.getMonth()] + ', ' + d.getFullYear()).toString());
-  };
-
-  const [date, setDate] = useState(dateFormat());
-
-  const dateformate = (e) => {
-    const date = e.toString().split(" ");
-    const joinDate = (date[2] + " " + date[1] + ", " + date[3]).toString();
-    setDate(joinDate);
-  };
-
-  // Export Modal
-  const [isExportCSV, setIsExportCSV] = useState(false);
-
-  document.title = "Customers | Velzon - React Admin & Dashboard Template";
   return (
-    <React.Fragment>
+    <>
       <div className="page-content">
-        <ExportCSVModal
-          show={isExportCSV}
-          onCloseClick={() => setIsExportCSV(false)}
-          data={customers}
-        />
-        <DeleteModal
-          show={deleteModal}
-          onDeleteClick={handleDeleteCustomer}
-          onCloseClick={() => setDeleteModal(false)}
-        />
-        <DeleteModal
-          show={deleteModalMulti}
-          onDeleteClick={() => {
-            deleteMultiple();
-            setDeleteModalMulti(false);
-          }}
-          onCloseClick={() => setDeleteModalMulti(false)}
-        />
+        <ToastContainer />
         <Container fluid>
           <BreadCrumb title="Customers" pageTitle="Ecommerce" />
           <Row>
             <Col lg={12}>
-              <Card id="customerList">
-                <CardHeader className="border-0">
-                  <Row className="g-4 align-items-center">
-                    <div className="col-sm">
-                      <div>
-                        <h5 className="card-title mb-0">Customer List</h5>
-                      </div>
-                    </div>
-                    <div className="col-sm-auto">
-                      <div>
-                        {isMultiDeleteButton && <button className="btn btn-soft-danger me-1"
-                          onClick={() => setDeleteModalMulti(true)}
-                        ><i className="ri-delete-bin-2-line"></i></button>}
-                        <button
-                          type="button"
-                          className="btn btn-success add-btn"
-                          id="create-btn"
-                          onClick={() => { setIsEdit(false); toggle(); }}
-                        >
-                          <i className="ri-add-line align-bottom me-1"></i> Add
-                          Customer
-                        </button>{" "}
-                        <button type="button" className="btn btn-info" onClick={() => setIsExportCSV(true)}>
-                          <i className="ri-file-download-line align-bottom me-1"></i>{" "}
-                          Export
-                        </button>
-                      </div>
-                    </div>
-                  </Row>
-                </CardHeader>
-                <div className="card-body pt-0">
-                  <div>
-                    {isCustomerSuccess && customers.length ? (
-                      <TableContainer
-                        columns={columns}
-                        data={(customers || [])}
-                        isGlobalFilter={true}
-                        isAddUserList={false}
-                        customPageSize={8}
-                        className="custom-header-css"
-                        handleCustomerClick={handleCustomerClicks}
-                        isCustomerFilter={true}
-                        SearchPlaceholder='Search for customer, email, phone, status or something...'
-                      />
-                    ) : (<Loader error={error} />)
-                    }
+              <Card>
+                <CardHeader>
+                  <h4 className="card-title">Customers</h4>
+                  <div className="card-header-action">
+                    <button
+                      className="btn btn-soft-success"
+                      onClick={handleCustomerClicks}
+                    >
+                      Add Customer
+                    </button>
                   </div>
-                  <Modal id="showModal" isOpen={modal} toggle={toggle} centered>
-                    <ModalHeader className="bg-light p-3" toggle={toggle}>
-                      {!!isEdit ? "Edit Customer" : "Add Customer"}
-                    </ModalHeader>
-                    <Form className="tablelist-form" onSubmit={(e) => {
-                      e.preventDefault();
-                      validation.handleSubmit();
-                      return false;
-                    }}>
-                      <ModalBody>
-                        <input type="hidden" id="id-field" />
-
-                        <div
-                          className="mb-3"
-                          id="modal-id"
-                          style={{ display: "none" }}
-                        >
-                          <Label htmlFor="id-field1" className="form-label">
-                            ID
-                          </Label>
-                          <Input
-                            type="text"
-                            id="id-field1"
-                            className="form-control"
-                            placeholder="ID"
-                            readOnly
-                          />
-                        </div>
-
-                        <div className="mb-3">
-                          <Label
-                            htmlFor="customername-field"
-                            className="form-label"
-                          >
-                            Customer Name
-                          </Label>
-                          <Input
-                            name="customer"
-                            id="customername-field"
-                            className="form-control"
-                            placeholder="Enter Name"
-                            type="text"
-                            validate={{
-                              required: { value: true },
-                            }}
-                            onChange={validation.handleChange}
-                            onBlur={validation.handleBlur}
-                            value={validation.values.customer || ""}
-                            invalid={
-                              validation.touched.customer && validation.errors.customer ? true : false
-                            }
-                          />
-                          {validation.touched.customer && validation.errors.customer ? (
-                            <FormFeedback type="invalid">{validation.errors.customer}</FormFeedback>
-                          ) : null}
-                        </div>
-
-                        <div className="mb-3">
-                          <Label htmlFor="email-field" className="form-label">
-                            Email
-                          </Label>
-                          <Input
-                            name="email"
-                            type="email"
-                            id="email-field"
-                            placeholder="Enter Email"
-                            onChange={validation.handleChange}
-                            onBlur={validation.handleBlur}
-                            value={validation.values.email || ""}
-                            invalid={
-                              validation.touched.email && validation.errors.email ? true : false
-                            }
-                          />
-                          {validation.touched.email && validation.errors.email ? (
-                            <FormFeedback type="invalid">{validation.errors.email}</FormFeedback>
-                          ) : null}
-
-                        </div>
-
-                        <div className="mb-3">
-                          <Label htmlFor="phone-field" className="form-label">
-                            Phone
-                          </Label>
-                          <Input
-                            name="phone"
-                            type="text"
-                            id="phone-field"
-                            placeholder="Enter Phone no."
-                            onChange={validation.handleChange}
-                            onBlur={validation.handleBlur}
-                            value={validation.values.phone || ""}
-                            invalid={
-                              validation.touched.phone && validation.errors.phone ? true : false
-                            }
-                          />
-                          {validation.touched.phone && validation.errors.phone ? (
-                            <FormFeedback type="invalid">{validation.errors.phone}</FormFeedback>
-                          ) : null}
-
-                        </div>
-
-                        <div className="mb-3">
-                          <Label htmlFor="date-field" className="form-label">
-                            Joining Date
-                          </Label>
-
-                          <Flatpickr
-                            name="date"
-                            id="date-field"
-                            className="form-control"
-                            placeholder="Select a date"
-                            options={{
-                              altInput: true,
-                              altFormat: "d M, Y",
-                              dateFormat: "d M, Y",
-                            }}
-                            onChange={(e) =>
-                              dateformate(e)
-                            }
-                            value={validation.values.date || ""}
-                          />
-                          {validation.touched.date && validation.errors.date ? (
-                            <FormFeedback type="invalid">{validation.errors.date}</FormFeedback>
-                          ) : null}
-                        </div>
-
-                        <div>
-                          <Label htmlFor="status-field" className="form-label">
-                            Status
-                          </Label>
-
-                          <Input
-                            name="status"
-                            type="select"
-                            className="form-select"
-                            id="status-field"
-                            onChange={validation.handleChange}
-                            onBlur={validation.handleBlur}
-                            value={
-                              validation.values.status || ""
-                            }
-                          >
-                            {customermocalstatus.map((item, key) => (
-                              <React.Fragment key={key}>
-                                {item.options.map((item, key) => (<option value={item.value} key={key}>{item.label}</option>))}
-                              </React.Fragment>
-                            ))}
-                          </Input>
-                          {validation.touched.status &&
-                            validation.errors.status ? (
-                            <FormFeedback type="invalid">
-                              {validation.errors.status}
-                            </FormFeedback>
-                          ) : null}
-                        </div>
-                      </ModalBody>
-                      <ModalFooter>
-                        <div className="hstack gap-2 justify-content-end">
-                          <button type="button" className="btn btn-light" onClick={() => { setModal(false); }}> Close </button>
-
-                          <button type="submit" className="btn btn-success"> {!!isEdit ? "Update" : "Add Customer"} </button>
-                        </div>
-                      </ModalFooter>
-                    </Form>
-                  </Modal>
-                  <ToastContainer closeButton={false} limit={1} />
-                </div>
+                </CardHeader>
+                <TableContainer
+                  columns={columns}
+                  data={customers}
+                  isFetching={isCustomerSuccess}
+                />
               </Card>
             </Col>
           </Row>
+
+          {/* Add/Edit Customer Modal */}
+          <Modal isOpen={modal} toggle={toggle}>
+            <ModalHeader toggle={toggle}>
+              {isEdit ? "Update Customer" : "Add Customer"}
+            </ModalHeader>
+            <ModalBody>
+              <Form
+                onSubmit={validation.handleSubmit}
+                className="needs-validation"
+              >
+                <div className="mb-3">
+                  <Label for="customerName">Customer</Label>
+                  <Input
+                    name="customer"
+                    id="customerName"
+                    placeholder="Enter Customer Name"
+                    type="text"
+                    value={validation.values.customer}
+                    onChange={validation.handleChange}
+                    onBlur={validation.handleBlur}
+                    invalid={validation.touched.customer && validation.errors.customer}
+                  />
+                  {validation.touched.customer && validation.errors.customer ? (
+                    <FormFeedback type="invalid">
+                      {validation.errors.customer}
+                    </FormFeedback>
+                  ) : null}
+                </div>
+
+                <div className="mb-3">
+                  <Label for="email">Email</Label>
+                  <Input
+                    name="email"
+                    id="email"
+                    placeholder="Enter Customer Email"
+                    type="email"
+                    value={validation.values.email}
+                    onChange={validation.handleChange}
+                    onBlur={validation.handleBlur}
+                    invalid={validation.touched.email && validation.errors.email}
+                  />
+                  {validation.touched.email && validation.errors.email ? (
+                    <FormFeedback type="invalid">
+                      {validation.errors.email}
+                    </FormFeedback>
+                  ) : null}
+                </div>
+
+                <div className="mb-3">
+                  <Label for="phone">Phone</Label>
+                  <Input
+                    name="phone"
+                    id="phone"
+                    placeholder="Enter Phone Number"
+                    type="text"
+                    value={validation.values.phone}
+                    onChange={validation.handleChange}
+                    onBlur={validation.handleBlur}
+                    invalid={validation.touched.phone && validation.errors.phone}
+                  />
+                  {validation.touched.phone && validation.errors.phone ? (
+                    <FormFeedback type="invalid">
+                      {validation.errors.phone}
+                    </FormFeedback>
+                  ) : null}
+                </div>
+
+                <div className="mb-3">
+                  <Label for="status">Status</Label>
+                  <Input
+                    type="select"
+                    name="status"
+                    id="status"
+                    value={validation.values.status}
+                    onChange={validation.handleChange}
+                    onBlur={validation.handleBlur}
+                    invalid={validation.touched.status && validation.errors.status}
+                  >
+                    {customermocalstatus.options.map((option, i) => (
+                      <option key={i} value={option.value}>
+                        {option.label}
+                      </option>
+                    ))}
+                  </Input>
+                  {validation.touched.status && validation.errors.status ? (
+                    <FormFeedback type="invalid">
+                      {validation.errors.status}
+                    </FormFeedback>
+                  ) : null}
+                </div>
+
+                <div className="d-flex gap-2">
+                  <button type="submit" className="btn btn-success w-100">
+                    {isEdit ? "Update Customer" : "Add Customer"}
+                  </button>
+                </div>
+              </Form>
+            </ModalBody>
+          </Modal>
+
+          {/* Delete Customer Modal */}
+          <DeleteModal
+            show={deleteModal}
+            onDeleteClick={handleDeleteCustomer}
+            onClose={() => setDeleteModal(false)}
+            title="Delete Customer"
+            description="Are you sure you want to delete this customer?"
+          />
+
+          {/* Multi Delete Modal */}
+          {isMultiDeleteButton && (
+            <DeleteModal
+              show={deleteModalMulti}
+              onDeleteClick={deleteMultiple}
+              onClose={() => setDeleteModalMulti(false)}
+              title="Delete Selected Customers"
+              description="Are you sure you want to delete these customers?"
+            />
+          )}
         </Container>
       </div>
-    </React.Fragment>
+    </>
   );
 };
 
