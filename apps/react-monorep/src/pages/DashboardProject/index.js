@@ -13,8 +13,7 @@ import Widgets from './Widgets';
 const DashboardProject = () => {
     document.title="Projects | Velzon - React Admin & Dashboard Template";
     return (
-        <React.Fragment>
-            <div className="page-content">
+        <div className="page-content">
                 <Container fluid>
                     <BreadCrumb title="Projects" pageTitle="Dashboards" />
                     <Row className="project-wrapper">
@@ -35,7 +34,6 @@ const DashboardProject = () => {
                     </Row>
                 </Container>
             </div>
-        </React.Fragment>
     );
 };
 

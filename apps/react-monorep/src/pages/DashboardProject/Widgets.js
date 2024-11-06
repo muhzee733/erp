@@ -8,8 +8,7 @@ import { Card, CardBody, Col, Row } from 'reactstrap';
 
 const Widgets = () => {
     return (
-        <React.Fragment>
-            <Row>
+        <Row>
                 {(projectsWidgets || []).map((item, key) => (
                     <Col xl={4} key={key}>
                         <Card className="card-animate">
@@ -44,7 +43,6 @@ const Widgets = () => {
                     </Col>
                 ))}
             </Row>
-        </React.Fragment>
     );
 };
 

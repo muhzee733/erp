@@ -248,7 +248,7 @@ import {Dashboard} from '@react-monorep/dashboard';
 
 const authProtectedRoutes = [
   { path: "/dashboard-analytics", component: <DashboardAnalytics /> },
-  { path: "/dashboard-crm", component: <DashboardCrm /> },
+  { path: "/orders", component: <DashboardCrm /> },
   { path: "/dashboard", component: <Dashboard /> },
   { path: "/index", component: <Dashboard /> },
   { path: "/dashboard-crypto", component: <DashboardCrypto /> },

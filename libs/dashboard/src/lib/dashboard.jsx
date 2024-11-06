@@ -1,11 +1,12 @@
 import { Container } from 'reactstrap';
+import Widgets from './widgets';
 
 export function Dashboard() {
   document.title = "Dashboard | ERP";
   return (
     <div className="page-content">
       <Container fluid>
-        <h3>Dashboard</h3>
+        <Widgets />
       </Container>
     </div>
   );
