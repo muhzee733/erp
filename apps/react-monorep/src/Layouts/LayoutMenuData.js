@@ -16,7 +16,6 @@ const Navdata = () => {
   const [isIcons, setIsIcons] = useState(false);
   const [isMaps, setIsMaps] = useState(false);
   const [isMultiLevel, setIsMultiLevel] = useState(false);
-  const [isLanding, setIsLanding] = useState(false)
 
 
   // Pages
