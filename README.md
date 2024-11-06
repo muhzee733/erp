@@ -11,12 +11,13 @@
 [Click here to finish setting up your workspace!](https://cloud.nx.app/connect/NrcVMRlf7v)
 
 
+
 ## Run tasks
 
 To run the dev server for your app, use:
 
 ```sh
-npx nx serve react-monorep
+npm run dev
 ```
 
 To create a production bundle:

@@ -11,12 +11,8 @@ import { useSelector } from "react-redux";
 import { createSelector } from 'reselect';
 
 const VerticalLayout = (props) => {
-    const navData = navdata().props.children;
+    const navData = navdata().menuItems;
     const path = props.router.location.pathname;
-
-    /*
- layout settings
- */
 
     const selectLayoutState = (state) => state.Layout;
     const selectLayoutProperties = createSelector(
