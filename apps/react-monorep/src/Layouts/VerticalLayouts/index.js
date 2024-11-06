@@ -1,7 +1,6 @@
 import React, { useEffect, useCallback } from 'react';
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
-import { Collapse } from 'reactstrap';
 // Import Data
 import navdata from "../LayoutMenuData";
 //i18n
@@ -123,9 +122,6 @@ const VerticalLayout = (props) => {
         }
         return false;
     }
-const Click = (item)=>{
-    console.log(item.id)
-}
     const removeActivation = (items) => {
         const actiItems = items.filter((x) => x.classList.contains("active"));
 

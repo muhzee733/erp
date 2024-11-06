@@ -119,7 +119,7 @@ const Navdata = () => {
       id: "apps",
       label: "Orders",
       icon: "ri-shopping-bag-line",
-      link: "/orders",
+      link: "/dashboard",
       click: function (e) {
         e.preventDefault();
         setIsApps(!isApps);

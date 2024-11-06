@@ -243,13 +243,14 @@ import ToDoList from "../pages/ToDo";
 import RangeArea from "../pages/Charts/ApexCharts/RangeAreaCharts/Index";
 import FunnelChart from "../pages/Charts/ApexCharts/FunnelCharts/Index";
 import UiLink from "../pages/BaseUi/UiLinks/UiLinks";
-import {Core} from '@react-monorep/core';
+import {Dashboard} from '@react-monorep/dashboard';
+
+
 const authProtectedRoutes = [
   { path: "/dashboard-analytics", component: <DashboardAnalytics /> },
   { path: "/dashboard-crm", component: <DashboardCrm /> },
-  { path: "/dashboard", component: <DashboardEcommerce /> },
-  { path: "/index", component: <DashboardEcommerce /> },
-  { path: "/core", component: <Core /> },
+  { path: "/dashboard", component: <Dashboard /> },
+  { path: "/index", component: <Dashboard /> },
   { path: "/dashboard-crypto", component: <DashboardCrypto /> },
   { path: "/dashboard-projects", component: <DashboardProject /> },
   { path: "/dashboard-nft", component: <DashboardNFT /> },
