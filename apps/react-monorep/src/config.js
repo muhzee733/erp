@@ -8,6 +8,6 @@ module.exports = {
     APP_ID: "",
   },
   api: {
-    API_URL: "https://fakestoreapi.com/auth/login",
+    API_URL: "https://api-node.themesbrand.website",
   }
 };

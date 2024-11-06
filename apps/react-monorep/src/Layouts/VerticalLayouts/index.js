@@ -14,6 +14,10 @@ const VerticalLayout = (props) => {
     const navData = navdata().menuItems;
     const path = props.router.location.pathname;
 
+    /*
+ layout settings
+ */
+
     const selectLayoutState = (state) => state.Layout;
     const selectLayoutProperties = createSelector(
         selectLayoutState,

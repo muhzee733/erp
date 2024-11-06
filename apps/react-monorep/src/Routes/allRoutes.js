@@ -261,12 +261,12 @@ const authProtectedRoutes = [
   { path: "/apps-ecommerce-product-details/:_id", component: <EcommerceProductDetail /> },
   { path: "/apps-ecommerce-product-details", component: <EcommerceProductDetail /> },
   { path: "/apps-ecommerce-add-product", component: <EcommerceAddProduct /> },
-  { path: "/apps-ecommerce-orders", component: <EcommerceOrders /> },
+  { path: "/orders", component: <EcommerceOrders /> },
   { path: "/apps-ecommerce-order-details", component: <EcommerceOrderDetail /> },
-  { path: "/apps-ecommerce-customers", component: <EcommerceCustomers /> },
+  { path: "/customers", component: <EcommerceCustomers /> },
   { path: "/apps-ecommerce-cart", component: <EcommerceCart /> },
-  { path: "/apps-ecommerce-checkout", component: <EcommerceCheckout /> },
-  { path: "/apps-ecommerce-sellers", component: <EcommerceSellers /> },
+  { path: "/inventory", component: <EcommerceCheckout /> },
+  { path: "/conversations", component: <EcommerceSellers /> },
   { path: "/apps-ecommerce-seller-details", component: <EcommerceSellerDetail /> },
 
   { path: "/apps-file-manager", component: <FileManager /> },
@@ -424,7 +424,7 @@ const authProtectedRoutes = [
   //Pages
   { path: "/pages-starter", component: <Starter /> },
   { path: "/pages-profile", component: <SimplePage /> },
-  { path: "/pages-profile-settings", component: <Settings /> },
+  { path: "/settings", component: <Settings /> },
   { path: "/pages-team", component: <Team /> },
   { path: "/pages-timeline", component: <Timeline /> },
   { path: "/pages-faqs", component: <Faqs /> },
@@ -465,7 +465,7 @@ const publicRoutes = [
   { path: "/login", component: <Login /> },
   { path: "/forgot-password", component: <ForgetPasswordPage /> },
   { path: "/register", component: <Register /> },
- 
+
 
   //AuthenticationInner pages
   { path: "/auth-signin-basic", component: <BasicSignIn /> },
