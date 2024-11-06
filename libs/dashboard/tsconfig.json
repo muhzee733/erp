@@ -4,10 +4,10 @@
     "allowJs": false,
     "esModuleInterop": false,
     "allowSyntheticDefaultImports": true,
-    "strict": true,
+    "strict": true
   },
-  "composite": true,
   "files": [],
+  "composite": true,
   "include": [],
   "references": [
     {

@@ -6,7 +6,7 @@ import BestSellingProducts from "./BestSellingProducts";
 import RecentOrders from "./RecentOrders";
 import Revenue from "./Revenue";
 import SalesByLocations from "./SalesByLocations";
-import Section from "./Section";
+// import Section from "./Section";
 import StoreVisits from "./StoreVisits";
 import TopSellers from "./TopSellers";
 

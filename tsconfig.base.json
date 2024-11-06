@@ -15,7 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@react-monorep/core": ["libs/core/src/index.ts"]
+      "@react-monorep/dashboard": ["libs/dashboard/src/index.js"]
     }
   },
   "exclude": ["node_modules", "tmp"]

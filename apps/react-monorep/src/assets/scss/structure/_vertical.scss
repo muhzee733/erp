@@ -58,13 +58,13 @@
               padding: 0.625rem 1.5rem;
             }
 
-            &:hover {
-              color: var(--#{$prefix}vertical-menu-item-hover-color);
-              background-color: red;
-              border-radius: 12px;
-              margin-bottom: 4px;
-              padding: 0.625rem 1.5rem;
-            }
+            // &:hover {
+            //   color: var(--#{$prefix}vertical-menu-item-hover-color);
+            //   background-color: red;
+            //   border-radius: 12px;
+            //   margin-bottom: 4px;
+            //   padding: 0.625rem 1.5rem;
+            // }
 
             i {
                 display: inline-block;
