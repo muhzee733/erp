@@ -115,7 +115,6 @@ const Header = ({ onChangeLayoutMode, layoutModeType, headerClass }) => {
               </div>
               <SearchOption />
               <div className="d-flex">
-
                   <Dropdown isOpen={search} toggle={toogleSearch} className="d-md-none topbar-head-dropdown header-item">
                       <DropdownToggle type="button" tag="button" className="btn btn-icon btn-topbar btn-ghost-secondary rounded-circle">
                           <i className="bx bx-search fs-22"></i>

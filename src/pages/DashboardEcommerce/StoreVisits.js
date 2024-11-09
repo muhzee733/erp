@@ -5,14 +5,14 @@ import { StoreVisitsCharts } from './DashboardEcommerceCharts';
 const StoreVisits = () => {
     return (
         <React.Fragment>
-            <Col xl={4}>
-                <Card className="card-height-100">
+            <Col >
+                <Card className="card card-height-100">
                     <CardHeader className="align-items-center d-flex">
-                        <h4 className="card-title mb-0 flex-grow-1">Store Visits by Source</h4>
+                        <h4 className="card-title mb-0 flex-grow-1">Marketing</h4>
                         <div className="flex-shrink-0">
                             <UncontrolledDropdown className="card-header-dropdown" >
                                 <DropdownToggle tag="a" className="text-reset dropdown-btn" role="button">
-                                    <span className="text-muted">Report<i className="mdi mdi-chevron-down ms-1"></i></span>
+                                    <span className="text-muted">This Week<i className="ri-arrow-down-s-line"></i></span>
                                 </DropdownToggle>
                                 <DropdownMenu className="dropdown-menu-end">
                                     <DropdownItem>Download Report</DropdownItem>
@@ -25,7 +25,7 @@ const StoreVisits = () => {
 
                     <div className="card-body">
                         {/* <div dir="ltr"> */}
-                            <StoreVisitsCharts dataColors='["--vz-primary", "--vz-success", "--vz-warning", "--vz-danger", "--vz-info"]'/>
+                            <StoreVisitsCharts dataColors='["--vz-primary", "--vz-success", "--vz-warning"]'/>
                         {/* </div> */}
                     </div>
                 </Card>

@@ -144,7 +144,7 @@ const Layout = (props) => {
                 />
                 <div className="main-content">
                     {props.children}
-                    <Footer />
+                    {/* <Footer /> */}
                 </div>
             </div>
             <RightSidebar />

@@ -6,14 +6,16 @@ import { topSellers } from "../../common/data";
 const TopSellers = () => {
     return (
         <React.Fragment>
-            <Col xl={6}>
+            <Col xl={12}>
                 <Card className="card-height-100">
                     <CardHeader className="align-items-center d-flex">
-                        <h4 className="card-title mb-0 flex-grow-1">Top Sellers</h4>
-                        <div className="flex-shrink-0">
+                        <h4 className="card-title mb-0 flex-grow-1">RecentOrders</h4>
+                        <span className="returns-heading text-muted ">Returns</span>
+    
+                        {/* <div className="flex-shrink-0">
                             <UncontrolledDropdown className="card-header-dropdown" >
                                 <DropdownToggle tag="a" className="text-reset dropdown-btn" role="button">
-                                    <span className="text-muted">Report<i className="mdi mdi-chevron-down ms-1"></i></span>
+                                    <span className="text-muted text-center">Returns</span>
                                 </DropdownToggle>
                                 <DropdownMenu className="dropdown-menu dropdown-menu-end">
                                     <DropdownItem>Download Report</DropdownItem>
@@ -21,8 +23,9 @@ const TopSellers = () => {
                                     <DropdownItem>Import</DropdownItem>
                                 </DropdownMenu>
                             </UncontrolledDropdown>
-                        </div>
+                        </div> */}
                     </CardHeader>
+                  
 
                     <CardBody>
                         <div className="table-responsive table-card">
