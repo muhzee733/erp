@@ -13,6 +13,10 @@ const BarChart = ({ Series, title, color }) => {
           options={{
             ...Series?.options,
             colors: areachartSplineColors,
+            stroke: {
+              curve: 'smooth',
+              width: 2,
+            },
           }}
           series={Series?.series}
           type="area"
@@ -27,7 +31,7 @@ const BarChart = ({ Series, title, color }) => {
       <CardHeader>
         <h4 className="card-title mb-0">{title}</h4>
       </CardHeader>
-      <CardBody>
+      <CardBody className="p-2">
         <BasicAreaCharts dataColors={color} />
       </CardBody>
     </Card>

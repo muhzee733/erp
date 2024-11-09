@@ -1,12 +1,12 @@
 import React from "react";
 import BreadCrumb from "../../Components/Common/BreadCrumb";
-import { Col, Row, Container, Card, CardBody, CardHeader } from "reactstrap";
+import { Col, Row, Container } from "reactstrap";
 import BarChart from "../../Components/Important/BarChat";
 import Series from "./data.json";
 
 const Index = () => {
   document.title = "Order | ERP";
-  const dataColors = '["--vz-primary", "--vz-success", "--vz-info"]';
+  const dataColors = '["--vz-primary", "--vz-success", "#FFE58F"]';
 
   return (
     <div className="page-content">
@@ -16,9 +16,19 @@ const Index = () => {
           <Col xl="8">
             <Row>
               <Col xl="6">
-                <BarChart Series={Series} title="Recent Orders" color={dataColors}/>
+                <BarChart
+                  Series={Series}
+                  title="Recent Orders"
+                  color={dataColors}
+                />
               </Col>
-              <Col xl="7">Col 2</Col>
+              <Col xl="6">
+                <BarChart
+                  Series={Series}
+                  title="Loading Trucks"
+                  color={dataColors}
+                />
+              </Col>
             </Row>
             <Row>
               <Col xl="12">
