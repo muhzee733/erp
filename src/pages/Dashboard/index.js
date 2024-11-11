@@ -203,7 +203,7 @@ export const Index = () => {
               <CardBody>
                 <Nav
                   tabs
-                  className="nav nav-tabs nav-tabs-custom nav-success nav-justified mb-3"
+                  className=" recent-tabs  nav-justified mb-3"
                 >
                   <NavItem>
                     <NavLink

@@ -6,7 +6,7 @@ const WidgetDashboard = () => {
     <Row className='marketing-widgets'>
       {/* Sales and Volume Card */}
       <Col xl={12}>
-        <Card className="folder-card" style={{minHeight: "180px"}}>
+        <Card className="folder-card" style={{minHeight: "159px"}}>
           <CardBody>
             <div>
               <div className='icon-header'>
@@ -31,7 +31,7 @@ const WidgetDashboard = () => {
 
       {/* Vendors Card */}
       <Col xl={12}>
-        <Card className="card-animate">
+        <Card className="card-animate" style={{minHeight: "159px"}}>
           <CardBody>
             <div>
               <div className='shopping-card'>
