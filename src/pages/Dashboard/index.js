@@ -78,7 +78,7 @@ export const Index = () => {
           <Col xl={7}>
             <Row>
               <Col xl={6}>
-                <MarketingBarchart />
+              <MarketingBarchart title="Marketing"/>
               </Col>
               <Col xl={6}>
                 <WidgetMarketing />
@@ -91,7 +91,7 @@ export const Index = () => {
             </Row>
           </Col>
           <Col md={6}>
-            <RecentOrderStatus title="Recent Orders" />
+          <RecentOrderStatus title="Recent Orders" title2="Returns"/>
           </Col>
         </Row>
       </div>

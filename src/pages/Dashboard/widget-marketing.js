@@ -14,14 +14,16 @@ const WidgetDashboard = () => {
                   <i className=' ri-folder-reduce-line'></i>
                 </span>
               </div>
-              <div className='product-headings'>
-                <p >All Products</p>
-                <p >Active</p>
+              <div className='marketing-cards'>
+              <div>
+                <p className='product-heading mb-2'>All Products</p>
+                <h4 className='product-value m-0'>45</h4>
               </div>
-              <div className='values-folder'>
-                <h4>45</h4>
-                <h4>32 <span >+24%</span></h4>
+              <div>    
+                <p className='product-heading mb-2' >Active</p>
+                <h4 className='product-value m-0'>32 <span className='text-value'>+24%</span></h4>
               </div>
+            </div>
             </div>
           </CardBody>  
         </Card>
@@ -39,24 +41,26 @@ const WidgetDashboard = () => {
                 <div className="flex-shrink-0">
                     <UncontrolledDropdown className="card-header-dropdown" >
                         <DropdownToggle tag="a" className="text-reset dropdown-btn" role="button">
-                            <span className="text-muted">This Week<i className="ri-arrow-down-s-line"></i></span>
+                            <span className="week text-muted">This Week<i className="align-items-center ri-arrow-down-s-line"></i></span>
                         </DropdownToggle>
                         <DropdownMenu className="dropdown-menu-end">
-                            <DropdownItem>Download Report</DropdownItem>
-                            <DropdownItem>Export</DropdownItem>
-                            <DropdownItem>Import</DropdownItem>
+                            <DropdownItem>Year</DropdownItem>
+                            <DropdownItem>Month</DropdownItem>
+                            <DropdownItem>Week</DropdownItem>
                         </DropdownMenu>
                     </UncontrolledDropdown>
                 </div>
               </div>
-              <div className='shopping-headings'>
-                <p className='text-muted'>Abandoned Cart</p>
-                <p className='text-muted'>Customers</p>
+              <div className="marketing-cards">
+              <div>
+                <p className='text-cart text-muted mb-2'>Abandoned Cart</p>
+                <h4 className='m-0'>20%<span className="text">+0.00%</span></h4>
               </div>
-              <div className='shopping-headings'>
-                <h4>20% <span className="text">+0.00%</span></h4>
-                <h4>30</h4>
+              <div>
+              <p className='text-muted mb-2'>Customers</p>
+              <h4 className='m-0'>30</h4>              
               </div>
+            </div>
             </div>
           </CardBody>  
         </Card>

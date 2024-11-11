@@ -2,22 +2,22 @@ import React from 'react';
 import { Card, CardHeader, Col, DropdownItem, DropdownMenu, DropdownToggle, UncontrolledDropdown } from 'reactstrap';
 import { StoreVisitsCharts } from './dashboardcharts';
 
-const MarketingBarchart = () => {
+const MarketingBarchart = ({title}) => {
   return (
     <React.Fragment>
     <Col >
         <Card className="card card-height-100">
             <CardHeader className="align-items-center d-flex">
-                <h4 className="card-title mb-0 flex-grow-1">Marketing</h4>
+                <h4 className="card-title mb-0 flex-grow-1">{title}</h4>
                 <div className="flex-shrink-0">
                     <UncontrolledDropdown className="card-header-dropdown" >
                         <DropdownToggle tag="a" className="text-reset dropdown-btn" role="button">
-                            <span className="text-muted">This Week<i className="ri-arrow-down-s-line"></i></span>
+                            <span className="week text-muted">This Week<i className="align-items-center ri-arrow-down-s-line"></i></span>
                         </DropdownToggle>
                         <DropdownMenu className="dropdown-menu-end">
-                            <DropdownItem>Download Report</DropdownItem>
-                            <DropdownItem>Export</DropdownItem>
-                            <DropdownItem>Import</DropdownItem>
+                            <DropdownItem>Year</DropdownItem>
+                            <DropdownItem>Month</DropdownItem>
+                            <DropdownItem>Week</DropdownItem>
                         </DropdownMenu>
                     </UncontrolledDropdown>
                 </div>
