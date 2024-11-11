@@ -196,10 +196,11 @@ export const Index = () => {
       status: "Completed",
     },
   ];
-  const [customActiveTab, setCustomActiveTab] = useState("1");
-  const toggleCustom = (tab) => {
-    if (customActiveTab !== tab) {
-      setCustomActiveTab(tab);
+  const [activeTab, setActiveTab] = useState("1");
+
+  const toggle = (tab) => {
+    if (activeTab !== tab) {
+      setActiveTab(tab);
     }
   };
 
@@ -230,21 +231,21 @@ export const Index = () => {
               </Col>
             </Row>
           </Col>
-          <Col md={6}>
+          <Col md={6} style={{marginLeft: "5px"}}>
             <Card>
               <CardBody>
                 <Nav
                   tabs
-                  className=" recent-tabs  nav-justified mb-3"
+                  className=" recent-tabs mb-3 nav-tabs"
                 >
                   <NavItem>
                     <NavLink
                       style={{ cursor: "pointer" }}
                       className={classnames({
-                        active: customActiveTab === "1",
+                        active: activeTab === "1",
                       })}
                       onClick={() => {
-                        toggleCustom("1");
+                        toggle("1");
                       }}
                     >
                       Recent Orders
@@ -254,10 +255,10 @@ export const Index = () => {
                     <NavLink
                       style={{ cursor: "pointer" }}
                       className={classnames({
-                        active: customActiveTab === "2",
+                        active: activeTab === "2",
                       })}
                       onClick={() => {
-                        toggleCustom("2");
+                        toggle("2");
                       }}
                     >
                       Returns
@@ -265,7 +266,7 @@ export const Index = () => {
                   </NavItem>
                 </Nav>
 
-                <TabContent activeTab={customActiveTab} className="text-muted">
+                <TabContent activeTab={activeTab} className="text-muted">
                   <TabPane tabId="1" id="home1">
                     <RecentOrderStatus LiveOrders={LiveOrders} />
                   </TabPane>

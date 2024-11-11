@@ -38,29 +38,6 @@
 .sales-card .volume{
   padding-left: 125px;
 }
-.recent-tabs .nav-link{
-  border: none,!important;
-  text-align: left!important;
-  font-size: 16px!important;
-  line-height: 19.36px!important;
-  color: #A6A8B1!important;
-  font-weight: 500!important;
-  background-color: var(--primary-color)!important;
-}
-.recent-tabs .nav-link:active{
-  color: var(--secondary-color)!important;
-}
-.nav-tabs{
-  border: none!important;
-}
-/* .recent-tabs .nav-link:hover{
-  border-bottom: 0px,!important;
-  font-size: 16px!important;
-  line-height: 19.36px!important;
-  font-weight: 500!important;
-  color: var(--secondary-color)!important;
-  background-color: var(--primary-color);
-} */
 .vendors{
   padding-left: 50px;
 }
