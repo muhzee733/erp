@@ -6,7 +6,7 @@ const WidgetDashboard = () => {
     <Row className='marketing-widgets'>
       {/* Sales and Volume Card */}
       <Col xl={12}>
-        <Card className="folder-card">
+        <Card className="folder-card" style={{minHeight: "180px"}}>
           <CardBody>
             <div>
               <div className='icon-header'>
