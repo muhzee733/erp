@@ -39,7 +39,7 @@ const RecentOrders = ({ title, column, recentOrders }) => {
                     })}
                   </tr>
                 </thead>
-                {recentOrders.length === 0 ? (
+                {recentOrders?.length === 0 ? (
                   <span>No Data Found</span>
                 ) : (
                   <tbody>
