@@ -3,6 +3,7 @@ import BreadCrumb from "../../Components/Common/BreadCrumb";
 import { Col, Row, Container } from "reactstrap";
 import BarChart from "../../Components/Important/BarChat";
 import Series from "./data.json";
+import RecentOrders from "../Dashboard/recentorders";
 
 const Index = () => {
   document.title = "Order | ERP";
@@ -32,7 +33,14 @@ const Index = () => {
             </Row>
             <Row>
               <Col xl="12">
-                <span>Right</span>
+                <RecentOrders title="Latest Shipping"
+                orderId="ORDER ID" 
+                customer="Customer"
+                status="STATUS"
+                departure="DEPARTURE"
+                weight="WEIGHT"
+                arrival="ARRIVAL"
+                arrivaldate="ARRIVALDATE" />
               </Col>
             </Row>
           </Col>

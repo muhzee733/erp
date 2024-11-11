@@ -86,9 +86,9 @@ const recentorders = [
         date: "12 Sept 2022",
         status: "Completed",
     },
-
-    
+   
 ];
+
 const getStatusClasses = (status) => {
     switch (status) {
         case 'Completed':
@@ -100,14 +100,14 @@ const getStatusClasses = (status) => {
     }
 };
 
-const RecentOrderStatus = ({title}) => {
+const RecentOrderStatus = ({title, title2}) => {
     return (
         <React.Fragment>
             <Col xl={12}>
                 <Card className="card-height-100">
                     <CardHeader className="align-items-center d-flex">
                         <h4 className="card-title mb-0 flex-grow-1">{title}</h4>
-                        <span className="returns-heading text-muted ">Returns</span>
+                        <h4 className="card-title mb-0 flex-grow-1">{title2}</h4>
                     </CardHeader>
                     <CardBody>
                         <div className="table-responsive table-card">
