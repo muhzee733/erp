@@ -7,8 +7,9 @@ import {
   UncontrolledDropdown,
 } from "reactstrap";
 import FeatherIcon from "feather-icons-react";
+import Search from "./Search";
 
-const ChartHeader = ({ title, layout }) => {
+const ChartHeader = ({ title, layout, search, searchList, placeholder }) => {
   const getPreviousMonths = () => {
     const months = [
       "January",
@@ -55,9 +56,13 @@ const ChartHeader = ({ title, layout }) => {
       <div className="flex-shrink-0">
         {layout ? (
           <>
-            <button type="button" className="btn view-all">
+            {search ? (
+              <Search searchList={searchList} placeholder={placeholder}/>
+            ) : (
+              <button type="button" className="btn view-all">
                 View All
               </button>
+            )}
           </>
         ) : (
           <UncontrolledDropdown className="card-header-dropdown">

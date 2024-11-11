@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import BreadCrumb from "../../Components/Common/BreadCrumb";
 import { Col, Row, Container, Card, CardBody } from "reactstrap";
 import BarChart from "../../Components/Important/BarChat";
@@ -10,6 +10,8 @@ import OrderTable from "../../Components/Important/OrderTable";
 
 const Index = () => {
   document.title = "Order | ERP";
+  const [search, searchList] = useState('');
+  console.log(search)
   const column = [
     "Order Id",
     "VENDOR",
@@ -172,7 +174,7 @@ const Index = () => {
           </Col>
           <Col xl="4">
             <Card>
-              <ChartHeader title="Order Request" layout={true} search={true}/>
+              <ChartHeader title="Order Request" layout={true} search={true} placeholder='Search by order id' searchList={searchList}/>
             </Card>
           </Col>
         </Row>
