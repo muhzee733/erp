@@ -3,9 +3,9 @@ import ReactApexChart from "react-apexcharts";
 import getChartColorsArray from "../../Components/Common/ChartsDynamicColor";
 
 const RevenueCharts = ({ dataColors, series }) => {
-  var linechartcustomerColors = getChartColorsArray(dataColors);
+  const linechartcustomerColors = getChartColorsArray(dataColors);
 
-  var options = {
+  const options = {
     chart: {
       height: 370,
       type: "line",
@@ -26,47 +26,6 @@ const RevenueCharts = ({ dataColors, series }) => {
       strokeWidth: 2,
       hover: {
         size: 4,
-      },
-    },
-    xaxis: {
-      categories: [
-        "Jan",
-        "Feb",
-        "Mar",
-        "Apr",
-        "May",
-        "Jun",
-        "Jul",
-        "Aug",
-        "Sep",
-        "Oct",
-        "Nov",
-        "Dec",
-      ],
-      axisTicks: {
-        show: false,
-      },
-      axisBorder: {
-        show: false,
-      },
-    },
-    grid: {
-      show: true,
-      xaxis: {
-        lines: {
-          show: true,
-        },
-      },
-      yaxis: {
-        lines: {
-          show: false,
-        },
-      },
-      padding: {
-        top: 0,
-        right: -2,
-        bottom: 15,
-        left: 10,
       },
     },
     legend: {

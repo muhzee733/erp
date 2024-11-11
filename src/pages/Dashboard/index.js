@@ -18,6 +18,8 @@ import MarketingBarchart from "./marketing-barchart";
 import classnames from "classnames";
 import product1 from "../../assets/images/products/img-1.png";
 import product2 from "../../assets/images/products/img-2.png";
+import OrderTable from "../../Components/Important/OrderTable";
+import ChartHeader from "../../Components/Important/ChartHeader";
 
 export const Index = () => {
   const column = [
@@ -72,6 +74,36 @@ export const Index = () => {
     },
     {
       id: 5,
+      orderId: "ORDERID01",
+      vendor: "Raj Industries",
+      status: "Delivered",
+      departure: "Delhi",
+      weight: "250KG",
+      arrival: "Mumbai",
+      arrivaldate: "17 July 2024",
+    },
+    {
+      id: 6,
+      orderId: "ORDERID01",
+      vendor: "Raj Industries",
+      status: "Delivered",
+      departure: "Delhi",
+      weight: "250KG",
+      arrival: "Mumbai",
+      arrivaldate: "17 July 2024",
+    },
+    {
+      id: 7,
+      orderId: "ORDERID01",
+      vendor: "Raj Industries",
+      status: "Delivered",
+      departure: "Delhi",
+      weight: "250KG",
+      arrival: "Mumbai",
+      arrivaldate: "17 July 2024",
+    },
+    {
+      id: 8,
       orderId: "ORDERID01",
       vendor: "Raj Industries",
       status: "Delivered",
@@ -164,7 +196,6 @@ export const Index = () => {
       status: "Completed",
     },
   ];
-
   const [customActiveTab, setCustomActiveTab] = useState("1");
   const toggleCustom = (tab) => {
     if (customActiveTab !== tab) {
@@ -190,11 +221,12 @@ export const Index = () => {
             </Row>
             <Row>
               <Col md={12}>
-                <Recentorders
-                  title="Recent Orders"
-                  column={column}
-                  recentOrders={recentOrders}
-                />
+                <Card>
+                  <ChartHeader title="Recents Orders" layout={true} />
+                  <CardBody>
+                    <OrderTable column={column} recentOrders={recentOrders} />
+                  </CardBody>
+                </Card>
               </Col>
             </Row>
           </Col>
@@ -238,7 +270,10 @@ export const Index = () => {
                     <RecentOrderStatus LiveOrders={LiveOrders} />
                   </TabPane>
                   <TabPane tabId="2">
-                    <RecentOrderStatus LiveOrders={LiveOrders} returnValue={true}/>
+                    <RecentOrderStatus
+                      LiveOrders={LiveOrders}
+                      returnValue={true}
+                    />
                   </TabPane>
                 </TabContent>
               </CardBody>

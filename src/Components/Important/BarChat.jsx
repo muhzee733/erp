@@ -1,16 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 import getChartColorsArray from "../../Components/Common/ChartsDynamicColor";
 import ReactApexChart from "react-apexcharts";
-import {
-  Card,
-  CardBody,
-  CardHeader,
-  DropdownItem,
-  DropdownMenu,
-  DropdownToggle,
-  UncontrolledDropdown,
-} from "reactstrap";
-import ChartHeader from "./ChartHeader";
 
 
 const BarChart = ({ Series, title, color }) => {
@@ -70,12 +60,7 @@ const BarChart = ({ Series, title, color }) => {
   };
 
   return (
-    <Card>
-      <ChartHeader title={title}/>
-      <CardBody className="p-2">
-        <BasicAreaCharts dataColors={color} />
-      </CardBody>
-    </Card>
+    <BasicAreaCharts dataColors={color} />
   );
 };
 
