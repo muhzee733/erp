@@ -1,8 +1,9 @@
 import React from "react";
 import FeatherIcon from "feather-icons-react";
 import "./widgets.css";
+import { Progress } from "reactstrap";
 
-const OrderTable = ({ column, recentOrders, inloading }) => {
+const OrderTable = ({ column, recentOrders, inloading, availCargo }) => {
   const getStatusClasses = (status) => {
     switch (status) {
       case "Delivered":
@@ -39,7 +40,7 @@ const OrderTable = ({ column, recentOrders, inloading }) => {
           <tbody>
             {recentOrders?.map((item, key) => (
               <tr key={key}>
-                {inloading ? (
+                {inloading || availCargo ? (
                   <td>{item.shipmentId}</td>
                 ) : (
                   <td>{item.orderId}</td>
@@ -50,7 +51,7 @@ const OrderTable = ({ column, recentOrders, inloading }) => {
                       <span className="pe-2">{item.departure}</span>
                       <span>-</span>
                       <span className="circle"></span>
-                      <span>---</span> 
+                      <span>---</span>
                       <span className="circleActive"></span>
                       <span>-</span>
                       <span style={{ marginLeft: "6px" }}>{item.arrival}</span>
@@ -59,30 +60,57 @@ const OrderTable = ({ column, recentOrders, inloading }) => {
                 ) : (
                   ""
                 )}
-                <td>
-                  <span className={getStatusClasses(item.status)}>
-                    {item.status}
-                  </span>
-                </td>
-                {inloading ? "" : <td>{item.vendor}</td>}
-                {inloading ? (
+                {availCargo ? (
+                  ""
+                ) : (
+                  <td>
+                    <span className={getStatusClasses(item.status)}>
+                      {item.status}
+                    </span>
+                  </td>
+                )}
+                {availCargo ? (
+                  <td>
+                    <Progress value={75} />
+                    <span>40%</span>
+                  </td>
+                ) : (
+                  ""
+                )}
+
+                {inloading || availCargo ? "" : <td>{item.vendor}</td>}
+                {inloading || availCargo ? (
                   ""
                 ) : (
                   <td>
                     <span>{item.departure}</span>
                   </td>
                 )}
-                {inloading ? "" : <td>{item.weight}</td>}
-                {inloading ? (
+                {availCargo ? (
+                  <td style={{ textAlign: "center" }}>
+                    <span className="me-3">{item.departure}</span>
+                    <span className="me-3">------</span>
+                    <span>{item.arrival}</span>
+                  </td>
+                ) : (
+                  ""
+                )}
+                {inloading || availCargo ? "" : <td>{item.weight}</td>}
+                {inloading || availCargo ? (
                   ""
                 ) : (
                   <td>
                     <span>{item.arrival}</span>
                   </td>
                 )}
-                <td>
-                  <span>{item.arrivaldate}</span>
-                </td>
+                {availCargo ? (
+                  ""
+                ) : (
+                  <td>
+                    <span>{item.arrivaldate}</span>
+                  </td>
+                )}
+
                 {inloading ? (
                   <td style={{ textAlign: "right" }}>
                     <FeatherIcon
@@ -100,6 +128,15 @@ const OrderTable = ({ column, recentOrders, inloading }) => {
                       style={{ border: "1px solid whitesmoke", padding: "3px" }}
                     />
                   </td>
+                ) : (
+                  ""
+                )}
+                {availCargo ? (
+                  <FeatherIcon
+                    icon="log-out"
+                    size={30}
+                    style={{ border: "1px solid whitesmoke", padding: "3px" }}
+                  />
                 ) : (
                   ""
                 )}
