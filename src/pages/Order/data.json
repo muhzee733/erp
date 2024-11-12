@@ -44,5 +44,17 @@
         "format": "dd/MM/yy HH:mm"
       }
     }
-  }
+  },
+  "unloadingCargo": [
+    {
+      "id": 1,
+      "orderId": "ORDERID01",
+      "vendor": "Raj Industries",
+      "status": "Delivered",
+      "departure": "Delhi",
+      "weight": "250KG",
+      "arrival": "Mumbai",
+      "arrivaldate": "17 July 2024"
+    }
+  ]
 }

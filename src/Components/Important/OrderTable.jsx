@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-const OrderTable = ({column, recentOrders}) => {
+const OrderTable = ({ column, recentOrders, removeColumn }) => {
   const getStatusClasses = (status) => {
     switch (status) {
       case "Delivered":
@@ -16,13 +16,17 @@ const OrderTable = ({column, recentOrders}) => {
   return (
     <div className="table-responsive table-card">
       <table className="table table-borderless table-centered align-middle table-nowrap mb-0">
-        <thead className="text-muted">
-          <tr>
-            {column?.map((item) => {
-              return <th scope="col">{item.toUpperCase()}</th>;
-            })}
-          </tr>
-        </thead>
+        {removeColumn ? (
+          ""
+        ) : (
+          <thead className="text-muted">
+            <tr>
+              {column?.map((item) => {
+                return <th scope="col">{item.toUpperCase()}</th>;
+              })}
+            </tr>
+          </thead>
+        )}
         {recentOrders?.length === 0 ? (
           <span>No Data Found</span>
         ) : (

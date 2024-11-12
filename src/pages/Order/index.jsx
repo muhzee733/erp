@@ -11,7 +11,6 @@ import OrderTable from "../../Components/Important/OrderTable";
 const Index = () => {
   document.title = "Order | ERP";
   const [search, searchList] = useState('');
-  console.log(search)
   const column = [
     "Order Id",
     "VENDOR",
@@ -160,7 +159,7 @@ const Index = () => {
                 <Card>
                   <ChartHeader title="Unloading Cargo" layout={true} />
                   <CardBody>
-                    <OrderTable column={column} recentOrders={recentOrders} />
+                    <OrderTable column={column} recentOrders={recentOrders} removeColumn={true}/>
                   </CardBody>
                 </Card>
                 <Card>
