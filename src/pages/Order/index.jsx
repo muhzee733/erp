@@ -11,7 +11,7 @@ import OrderTable from "../../Components/Important/OrderTable";
 
 const Index = () => {
   document.title = "Order | ERP";
-  const [search, searchList] = useState('');
+  const [search, searchList] = useState("");
   const column = [
     "Order Id",
     "VENDOR",
@@ -105,22 +105,32 @@ const Index = () => {
   ];
   const unloadingCargo = [
     {
-      "id": 1,
-      "shipmentId": "SHIPID03",
-      "status": "Delivered",
-      "departure": "Delhi",
-      "arrival": "Mumbai",
-      "arrivaldate": "17 July 2024"
+      id: 1,
+      shipmentId: "SHIPID03",
+      status: "Delivered",
+      departure: "Delhi",
+      arrival: "Mumbai",
+      arrivaldate: "17 July 2024",
     },
     {
-      "id": 2,
-      "shipmentId": "SHIPID03",
-      "status": "Delivered",
-      "departure": "Delhi",
-      "arrival": "Mumbai",
-      "arrivaldate": "17 July 2024"
+      id: 2,
+      shipmentId: "SHIPID03",
+      status: "Cancelled",
+      departure: "Delhi",
+      arrival: "Mumbai",
+      arrivaldate: "17 July 2024",
     },
-  ]
+  ];
+  const availableCargo = [
+    {
+      id: 1,
+      shipmentId: "SHIPID03",
+      status: "Delivered",
+      departure: "Delhi",
+      arrival: "Mumbai",
+      arrivaldate: "17 July 2024",
+    },
+  ];
 
   return (
     <div className="page-content">
@@ -178,7 +188,11 @@ const Index = () => {
                 <Card>
                   <ChartHeader title="Unloading Cargo" layout={true} />
                   <CardBody>
-                    <OrderTable column={false} recentOrders={unloadingCargo} inloading={true}/>
+                    <OrderTable
+                      column={false}
+                      recentOrders={unloadingCargo}
+                      inloading={true}
+                    />
                   </CardBody>
                 </Card>
                 <Card>
@@ -192,7 +206,13 @@ const Index = () => {
           </Col>
           <Col xl="4">
             <Card>
-              <ChartHeader title="Order Request" layout={true} search={true} placeholder='Search by order id' searchList={searchList}/>
+              <ChartHeader
+                title="Order Request"
+                layout={true}
+                search={true}
+                placeholder="Search by order id"
+                searchList={searchList}
+              />
             </Card>
           </Col>
         </Row>
