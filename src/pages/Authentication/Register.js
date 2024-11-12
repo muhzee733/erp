@@ -94,7 +94,7 @@ const Register = () => {
                               </span>
                                   </div>
                                   <div className="text-center mt-2">
-                                      <h5 className="text">Get Started with<span className="heading"> Red Services</span></h5>
+                                      <h5 className="text-login">Get Started with<span className="heading"> Red Services</span></h5>
                                       <p className="text-muted">Create your free account</p>
                                   </div>
                                   <div className="p-2 mt-5">

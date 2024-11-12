@@ -71,7 +71,7 @@ const ForgetPasswordPage = props => {
             </span>
           </div>
             <div className="text-center mt-2">
-              <h5 className="text">Forgot Password?</h5>
+              <h5 className="text-login">Forgot Password?</h5>
               <p className="text-muted">Reset Password</p>
 
               <lord-icon
