@@ -17,7 +17,7 @@ import TruckOptimization from "../pages/Order/TruckOptimization/TruckOptimizatio
 import RoutePlanning from "../pages/Order/RoutePlanning/RoutePlanning";
 
 const authProtectedRoutes = [
-  { path: "/orders", component: <Order /> },
+  { path: "/delivery-tracking", component: <Order /> },
   { path: "/dashboard", component: <Dashboard /> },
   { path: "/index", component: <Dashboard /> },
   

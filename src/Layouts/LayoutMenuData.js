@@ -119,7 +119,7 @@ const Navdata = () => {
       id: "apps",
       label: "Orders",
       icon: "ri-shopping-bag-line",
-      link: "/orders",
+      link: "/#",
       click: function (e) {
         e.preventDefault();
         setIsApps(!isApps);
@@ -128,6 +128,16 @@ const Navdata = () => {
       },
       stateconstiables: isApps,
       subItems: [
+        {
+          id: "orders-pending",
+          label: "Delivery Tracking",
+          icon: "ri-truck-line",
+          link: "/delivery-tracking",
+          click: function (e) {
+            e.preventDefault();
+            setIscurrentState("PendingOrders");
+          },
+        },
         {
           id: "orders-pending",
           label: "Truck Optimization",

@@ -195,6 +195,15 @@ export const Index = () => {
       date: "12 Sept 2022",
       status: "Completed",
     },
+    {
+      id: 10,
+      img: product1,
+      product: "iPhone 13",
+      price: "₦730,000.00",
+      quantity: 1,
+      date: "12 Sept 2022",
+      status: "Completed",
+    },
   ];
   const [activeTab, setActiveTab] = useState("1");
 
@@ -277,7 +286,7 @@ export const Index = () => {
                     <RecentOrderStatus LiveOrders={LiveOrders} />
                   </TabPane>
                   <TabPane tabId="2">
-                    <RecentOrderStatus
+                    <RecentOrderStatus 
                       LiveOrders={LiveOrders}
                       returnValue={true}
                     />

@@ -12,7 +12,7 @@ const getStatusClasses = (status) => {
 
 const RecentOrderStatus = ({ LiveOrders, returnValue }) => {
   return (
-    <div className="table-responsive table-card">
+    <div className="table-responsive table-card" style={{ minHeight: "875px" }}>
       <table className="table table-centered table-hover align-middle table-nowrap mb-0">
         <tbody>
           {LiveOrders?.length === 0 ? (
