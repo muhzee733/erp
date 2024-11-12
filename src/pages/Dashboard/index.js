@@ -220,7 +220,7 @@ export const Index = () => {
                     <DonutChart
                       dataColors={["#F23514", "#FFCC91", "#EB9797"]}
                       labels={["Acquisition", "Purchase", "Retention"]}
-                      series={[44, 55, 41]}
+                      series={[115, 55, 30]}
                     />
                   </CardBody>
                 </Card>
