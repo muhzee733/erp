@@ -59,7 +59,9 @@
   font-size: 15px;
 }
 .card-header{
-  border-radius: 12px!important;
+  border-start-start-radius: 12px!important;
+  border-start-end-radius: 12px!important;
+
 }
 
 .sales-card{

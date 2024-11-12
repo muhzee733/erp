@@ -37,7 +37,7 @@ const ChartHeader = ({ title, layout, search, searchList, placeholder }) => {
   const { lastThreeMonths, totalMonthsSinceJan } = getPreviousMonths();
 
   return (
-    <CardHeader className="align-items-center d-flex">
+    <CardHeader className="align-items-center border-bottom d-flex ">
       <div className="flex-grow-1 d-inline-flex align-items-center">
         <h4 className="card-title mb-0 pe-2">{title}</h4>
         {layout ? (
