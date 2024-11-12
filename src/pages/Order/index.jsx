@@ -3,11 +3,11 @@ import BreadCrumb from "../../Components/Common/BreadCrumb";
 import { Col, Row, Container, Card, CardBody } from "reactstrap";
 import BarChart from "../../Components/Important/BarChat";
 import Series from "./data.json";
-import unloadingCargo from "./data.json";
 import DonutChart from "../../Components/Important/DonutChart";
 import ChartHeader from "../../Components/Important/ChartHeader";
 import "./order.css";
 import OrderTable from "../../Components/Important/OrderTable";
+import OrderRequest from "../../Components/Important/OrderRequest";
 
 const Index = () => {
   document.title = "Order | ERP";
@@ -131,6 +131,7 @@ const Index = () => {
       arrivaldate: "17 July 2024",
     },
   ];
+  const orderRequest = []
 
   return (
     <div className="page-content">
@@ -198,7 +199,7 @@ const Index = () => {
                 <Card>
                   <ChartHeader title="Available Cargo" layout={true} />
                   <CardBody>
-                    <OrderTable column={column} recentOrders={recentOrders} />
+                    <OrderTable column={false} recentOrders={availableCargo} availCargo={true}/>
                   </CardBody>
                 </Card>
               </Col>
@@ -213,6 +214,7 @@ const Index = () => {
                 placeholder="Search by order id"
                 searchList={searchList}
               />
+              <OrderRequest />
             </Card>
           </Col>
         </Row>
