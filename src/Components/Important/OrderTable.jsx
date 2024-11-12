@@ -14,30 +14,30 @@ const OrderTable = ({ column, recentOrders, removeColumn }) => {
     }
   };
   return (
-    <div className="table-responsive table-card">
-      <table className="table table-borderless table-centered align-middle table-nowrap mb-0">
+    <div className="table-responsive mt-4 mt-xl-0">
+      <table className="table table-centered align-middle table-nowrap mb-0">
         {removeColumn ? (
           ""
         ) : (
           <thead className="text-muted">
             <tr>
-              {column?.map((item) => {
-                return <th scope="col">{item.toUpperCase()}</th>;
-              })}
+              {column?.map((item, index) => (
+                <th key={index} scope="col">
+                  {item.toUpperCase()}
+                </th>
+              ))}
             </tr>
           </thead>
         )}
+
         {recentOrders?.length === 0 ? (
           <span>No Data Found</span>
         ) : (
           <tbody>
-            {(recentOrders || []).map((item, key) => (
+            {recentOrders.map((item, key) => (
               <tr key={key}>
                 <td>
-                  <Link
-                    to="/apps-ecommerce-order-details"
-                    className="order-id "
-                  >
+                  <Link to="/apps-ecommerce-order-details" className="order-id">
                     {item.orderId}
                   </Link>
                 </td>

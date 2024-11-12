@@ -94,7 +94,7 @@ const Login = (props) => {
                                     </div>
 
                                     <div className="text-center mt-2">
-                                        <h5 className="text">Welcome Back!</h5>
+                                        <h5 className="text-login">Welcome Back!</h5>
                                         <p className="text-muted">Login to your account</p>
                                     </div>
                                     {error && error ? (<Alert color="danger"> {error} </Alert>) : null}
