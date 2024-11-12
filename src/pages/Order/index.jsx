@@ -3,6 +3,7 @@ import BreadCrumb from "../../Components/Common/BreadCrumb";
 import { Col, Row, Container, Card, CardBody } from "reactstrap";
 import BarChart from "../../Components/Important/BarChat";
 import Series from "./data.json";
+import unloadingCargo from "./data.json";
 import DonutChart from "../../Components/Important/DonutChart";
 import ChartHeader from "../../Components/Important/ChartHeader";
 import "./order.css";
@@ -102,6 +103,24 @@ const Index = () => {
       arrivaldate: "17 July 2024",
     },
   ];
+  const unloadingCargo = [
+    {
+      "id": 1,
+      "shipmentId": "SHIPID03",
+      "status": "Delivered",
+      "departure": "Delhi",
+      "arrival": "Mumbai",
+      "arrivaldate": "17 July 2024"
+    },
+    {
+      "id": 2,
+      "shipmentId": "SHIPID03",
+      "status": "Delivered",
+      "departure": "Delhi",
+      "arrival": "Mumbai",
+      "arrivaldate": "17 July 2024"
+    },
+  ]
 
   return (
     <div className="page-content">
@@ -159,7 +178,7 @@ const Index = () => {
                 <Card>
                   <ChartHeader title="Unloading Cargo" layout={true} />
                   <CardBody>
-                    <OrderTable column={column} recentOrders={recentOrders} removeColumn={true}/>
+                    <OrderTable column={false} recentOrders={unloadingCargo} inloading={true}/>
                   </CardBody>
                 </Card>
                 <Card>

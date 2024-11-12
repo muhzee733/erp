@@ -1,6 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
-const OrderTable = ({ column, recentOrders, removeColumn }) => {
+const OrderTable = ({ column, recentOrders, inloading }) => {
   const getStatusClasses = (status) => {
     switch (status) {
       case "Delivered":
@@ -16,9 +15,7 @@ const OrderTable = ({ column, recentOrders, removeColumn }) => {
   return (
     <div className="table-responsive mt-4 mt-xl-0">
       <table className="table table-centered align-middle table-nowrap mb-0">
-        {removeColumn ? (
-          ""
-        ) : (
+        {column ? (
           <thead className="text-muted">
             <tr>
               {column?.map((item, index) => (
@@ -28,19 +25,17 @@ const OrderTable = ({ column, recentOrders, removeColumn }) => {
               ))}
             </tr>
           </thead>
+        ) : (
+          ""
         )}
 
         {recentOrders?.length === 0 ? (
           <span>No Data Found</span>
         ) : (
           <tbody>
-            {recentOrders.map((item, key) => (
+            {recentOrders?.map((item, key) => (
               <tr key={key}>
-                <td>
-                  <Link to="/apps-ecommerce-order-details" className="order-id">
-                    {item.orderId}
-                  </Link>
-                </td>
+                <td>{item.orderId}</td>
                 <td>
                   <span className={getStatusClasses(item.status)}>
                     {item.status}

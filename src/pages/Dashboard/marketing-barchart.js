@@ -11,6 +11,7 @@ import {
 import DonutChart from "../../Components/Important/DonutChart";
 
 const MarketingBarchart = ({ title }) => {
+
   return (
     <React.Fragment>
       <Col>
@@ -39,11 +40,7 @@ const MarketingBarchart = ({ title }) => {
           </CardHeader>
 
           <div className="card-body">
-            <DonutChart
-              dataColors={["#F23514", "#FFCC91", "#EB9797"]}
-              labels={["Acquisition", "Purchase", "Retention"]}
-              series={[44, 55, 41]}
-            />
+            
           </div>
         </Card>
       </Col>

@@ -14,12 +14,12 @@ import WidgetDashboard from "./widgetdashboard";
 import Recentorders from "../Dashboard/recentorders";
 import WidgetMarketing from "../Dashboard/widget-marketing";
 import RecentOrderStatus from "../Dashboard/recentorderstatus";
-import MarketingBarchart from "./marketing-barchart";
 import classnames from "classnames";
 import product1 from "../../assets/images/products/img-1.png";
 import product2 from "../../assets/images/products/img-2.png";
 import OrderTable from "../../Components/Important/OrderTable";
 import ChartHeader from "../../Components/Important/ChartHeader";
+import DonutChart from "../../Components/Important/DonutChart";
 
 export const Index = () => {
   const column = [
@@ -214,7 +214,16 @@ export const Index = () => {
           <Col xl={7}>
             <Row>
               <Col xl={6}>
-                <MarketingBarchart title="Marketing" />
+                <Card>
+                  <ChartHeader title="Marketing" layout={true} thisWeek={true}/>
+                  <CardBody>
+                    <DonutChart
+                      dataColors={["#F23514", "#FFCC91", "#EB9797"]}
+                      labels={["Acquisition", "Purchase", "Retention"]}
+                      series={[44, 55, 41]}
+                    />
+                  </CardBody>
+                </Card>
               </Col>
               <Col xl={6}>
                 <WidgetMarketing />
@@ -231,13 +240,10 @@ export const Index = () => {
               </Col>
             </Row>
           </Col>
-          <Col md={6} style={{marginLeft: "5px"}}>
+          <Col md={6} style={{ marginLeft: "5px" }}>
             <Card>
               <CardBody>
-                <Nav
-                  tabs
-                  className=" recent-tabs mb-3 nav-tabs"
-                >
+                <Nav tabs className=" recent-tabs mb-3 nav-tabs">
                   <NavItem>
                     <NavLink
                       style={{ cursor: "pointer" }}
