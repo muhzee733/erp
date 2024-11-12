@@ -12,7 +12,7 @@ import FeatherIcon from "feather-icons-react";
 
 const WidgetDashboard = (props) => {
   return (
-    <Row className='dashboard-cards'>
+    <Row >
       {/* Sales and Volume Card */}
       <Col md={3} sm={12}>
          <Card className="card-animate ">

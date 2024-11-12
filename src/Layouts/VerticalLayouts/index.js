@@ -1,22 +1,19 @@
-import React, { useEffect, useCallback } from 'react';
+import React, { useEffect, useCallback, useState } from 'react';
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
-// Import Data
+import { Collapse } from 'reactstrap';
 import navdata from "../LayoutMenuData";
-//i18n
 import { withTranslation } from "react-i18next";
 import withRouter from "../../Components/Common/withRouter";
-import {  useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { createSelector } from 'reselect';
-
 
 const VerticalLayout = (props) => {
     const navData = navdata().menuItems;
     const path = props.router.location.pathname;
 
-    /*
- layout settings
- */
+    // Manage active submenu state
+    const [activeSubmenu, setActiveSubmenu] = useState(null);
 
     const selectLayoutState = (state) => state.Layout;
     const selectLayoutProperties = createSelector(
@@ -27,62 +24,31 @@ const VerticalLayout = (props) => {
             layoutType: layout.layoutType
         })
     );
+
     // Inside your component
     const {
         leftsidbarSizeType, sidebarVisibilitytype, layoutType
     } = useSelector(selectLayoutProperties);
 
-    //vertical and semibox resize events
     const resizeSidebarMenu = useCallback(() => {
         const windowSize = document.documentElement.clientWidth;
         if (windowSize >= 1025) {
-            if (document.documentElement.getAttribute("data-layout") === "vertical") {
-                document.documentElement.setAttribute("data-sidebar-size", leftsidbarSizeType);
-            }
-            if (document.documentElement.getAttribute("data-layout") === "semibox") {
-                document.documentElement.setAttribute("data-sidebar-size", leftsidbarSizeType);
-            }
-            if ((sidebarVisibilitytype === "show" || layoutType === "vertical" || layoutType === "twocolumn") && document.querySelector(".hamburger-icon")) {
-                //     document.querySelector(".hamburger-icon").classList.remove("open");
-                // } else {
-                //     document.querySelector(".hamburger-icon").classList.add("open");
-                // }
-                const hamburgerIcon = document.querySelector(".hamburger-icon");
-                if (hamburgerIcon !== null) {
-                    hamburgerIcon.classList.remove("open");
-                }
-            } else {
-                const hamburgerIcon = document.querySelector(".hamburger-icon");
-                if (hamburgerIcon !== null) {
-                    hamburgerIcon.classList.add("open");
-                }
-            }
-
+            document.documentElement.setAttribute("data-sidebar-size", leftsidbarSizeType);
         } else if (windowSize < 1025 && windowSize > 767) {
-            document.body.classList.remove("twocolumn-panel");
-            if (document.documentElement.getAttribute("data-layout") === "vertical") {
-                document.documentElement.setAttribute("data-sidebar-size", "sm");
-            }
-            if (document.documentElement.getAttribute("data-layout") === "semibox") {
-                document.documentElement.setAttribute("data-sidebar-size", "sm");
-            }
-            if (document.querySelector(".hamburger-icon")) {
-                document.querySelector(".hamburger-icon").classList.add("open");
-            }
+            document.documentElement.setAttribute("data-sidebar-size", "sm");
         } else if (windowSize <= 767) {
             document.body.classList.remove("vertical-sidebar-enable");
-            if (document.documentElement.getAttribute("data-layout") !== "horizontal") {
-                document.documentElement.setAttribute("data-sidebar-size", "lg");
-            }
-            if (document.querySelector(".hamburger-icon")) {
-                document.querySelector(".hamburger-icon").classList.add("open");
-            }
+            document.documentElement.setAttribute("data-sidebar-size", "lg");
         }
-    }, [leftsidbarSizeType, sidebarVisibilitytype, layoutType]);
+    }, [leftsidbarSizeType]);
 
     useEffect(() => {
         window.addEventListener("resize", resizeSidebarMenu, true);
     }, [resizeSidebarMenu]);
+
+    const handleSubmenuClick = (submenuId) => {
+        setActiveSubmenu((prevState) => prevState === submenuId ? null : submenuId);
+    };
 
     useEffect(() => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -109,44 +75,26 @@ const VerticalLayout = (props) => {
         const parentCollapseDiv = item.closest(".collapse.menu-dropdown");
 
         if (parentCollapseDiv) {
-            // to set aria expand true remaining
             parentCollapseDiv.classList.add("show");
             parentCollapseDiv.parentElement.children[0].classList.add("active");
             parentCollapseDiv.parentElement.children[0].setAttribute("aria-expanded", "true");
             if (parentCollapseDiv.parentElement.closest(".collapse.menu-dropdown")) {
                 parentCollapseDiv.parentElement.closest(".collapse").classList.add("show");
-                if (parentCollapseDiv.parentElement.closest(".collapse").previousElementSibling)
-                    parentCollapseDiv.parentElement.closest(".collapse").previousElementSibling.classList.add("active");
-                if (parentCollapseDiv.parentElement.closest(".collapse").previousElementSibling.closest(".collapse")) {
-                    parentCollapseDiv.parentElement.closest(".collapse").previousElementSibling.closest(".collapse").classList.add("show");
-                    parentCollapseDiv.parentElement.closest(".collapse").previousElementSibling.closest(".collapse").previousElementSibling.classList.add("active");
-                }
             }
-            return false;
         }
-        return false;
     }
+
     const removeActivation = (items) => {
         const actiItems = items.filter((x) => x.classList.contains("active"));
-
         actiItems.forEach((item) => {
-            if (item.classList.contains("menu-link")) {
-                if (!item.classList.contains("active")) {
-                    item.setAttribute("aria-expanded", false);
-                }
-                if (item.nextElementSibling) {
-                    item.nextElementSibling.classList.remove("show");
-                }
-            }
-            if (item.classList.contains("nav-link")) {
-                if (item.nextElementSibling) {
-                    item.nextElementSibling.classList.remove("show");
-                }
-                item.setAttribute("aria-expanded", false);
-            }
             item.classList.remove("active");
+            if (item.classList.contains("nav-link") && item.nextElementSibling) {
+                item.nextElementSibling.classList.remove("show");
+            }
+            item.setAttribute("aria-expanded", false);
         });
     };
+
     return (
         <React.Fragment>
             {/* menu Items */}
@@ -160,7 +108,7 @@ const VerticalLayout = (props) => {
                             item.subItems ? (
                                 <li className="nav-item">
                                     <Link
-                                        onClick={item.click}
+                                        onClick={() => handleSubmenuClick(item.id)} 
                                         className="nav-link menu-link"
                                         to={item.link ? item.link : "/#"}
                                         data-bs-toggle="collapse"
@@ -173,6 +121,19 @@ const VerticalLayout = (props) => {
                                             </span>
                                         ) : null}
                                     </Link>
+                                    {/* Submenu */}
+                                    <Collapse className="menu-dropdown" isOpen={activeSubmenu === item.id}>
+                                        <ul className="nav nav-sm flex-column">
+                                            {item.subItems.map((subItem, subKey) => (
+                                                <li key={subKey} className="nav-item">
+                                                   
+                                                    <Link className="nav-link" to={subItem.link || "/#"}>
+                                                        -  {props.t(subItem.label)}
+                                                    </Link>
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    </Collapse>
                                 </li>
                             ) : (
                                 <li className="nav-item">
@@ -196,25 +157,19 @@ const VerticalLayout = (props) => {
             })}
 
             {/* Logout Section */}
-            {/* <div  className="logout">
-                <Link to="/logout">
-                <span ><i className="ri-logout-box-r-line"></i>Logout</span>
-                </Link>
-            </div> */}
             <div className="logout">
-             <li className="nav-item">
-                <Link
-                    className="nav-link menu-link"
-                    to="/logout"
-                >
-                    <i className="ri-logout-box-r-line"></i>
-                    <span>Logout</span>
-                </Link>
-             </li>
+                <li className="nav-item">
+                    <Link
+                        className="nav-link menu-link"
+                        to="/logout"
+                    >
+                        <i className="ri-logout-box-r-line"></i>
+                        <span>Logout</span>
+                    </Link>
+                </li>
             </div>
         </React.Fragment>
     );
-
 };
 
 VerticalLayout.propTypes = {

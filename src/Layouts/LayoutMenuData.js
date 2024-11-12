@@ -127,9 +127,30 @@ const Navdata = () => {
         updateIconSidebar(e);
       },
       stateconstiables: isApps,
-
+      subItems: [
+        {
+          id: "orders-pending",
+          label: "Truck Optimization",
+          icon: "ri-truck-line",
+          link: "/truck-optimization",
+          click: function (e) {
+            e.preventDefault();
+            setIscurrentState("PendingOrders");
+          },
+        },
+        {
+          id: "orders-completed",
+          label: "Route Planning",
+          icon: "ri-route-line",
+          link: "/route-planning",
+          click: function (e) {
+            e.preventDefault();
+            setIscurrentState("CompletedOrders");
+          },
+        },
+      ],
     },
-
+  
     {
       id: "pages",
       label: "Customers",

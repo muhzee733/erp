@@ -99,20 +99,20 @@
             }
 
             &[data-bs-toggle=collapse] {
-                &:after {
-                    display: block;
-                    content: "\F0142";
-                    font-family: 'Material Design Icons';
-                    margin-left: auto;
-                    transition: transform .2s;
-                    font-size: 1.05rem;
-                    position: absolute;
-                    right: 18px;
-                    color: inherit;
-                }
+                // &:after {
+                //     display: block;
+                //     content: "\F0142";
+                //     font-family: 'Material Design Icons';
+                //     margin-left: auto;
+                //     transition: transform .2s;
+                //     font-size: 1.05rem;
+                //     position: absolute;
+                //     right: 18px;
+                //     color: inherit;
+                // }
 
                 &[aria-expanded=true] {
-                    color: var(--#{$prefix}vertical-menu-item-active-color);
+                    color: white;
 
                     .icon-dual {
                         color: var(--#{$prefix}vertical-menu-item-hover-color);
@@ -145,28 +145,28 @@
 
             .nav-link {
                 // padding: $vertical-menu-sub-item-padding-y $vertical-menu-sub-item-padding-x ;
-                color: var(--#{$prefix}vertical-menu-sub-item-color);
+                color: black;
                 white-space: none;
                 padding: 0.625rem 1.5rem;
                 position: relative;
-                font-size: $vertical-menu-sub-item-font-size;
+                font-size: 12px;
                 font-family: $vertical-menu-sub-item-font-family;
 
-                &:before {
-                    content: '';
-                    width: 6px;
-                    height: 1.5px;
-                    background-color: var(--#{$prefix}vertical-menu-sub-item-color);
-                    position: absolute;
-                    left: 2px;
-                    top: 16.5px;
-                    transition: all .4s ease-in-out;
-                    opacity: 0.5;
-                }
+                // &:before {
+                //     content: '';
+                //     width: 6px;
+                //     height: 1.5px;
+                //     background-color: var(--#{$prefix}vertical-menu-sub-item-color);
+                //     position: absolute;
+                //     left: 2px;
+                //     top: 16.5px;
+                //     transition: all .4s ease-in-out;
+                //     opacity: 0.5;
+                // }
 
                 &:hover {
-                    color: var(--#{$prefix}vertical-menu-sub-item-hover-color);
-                    background-color: $action-red;
+                    color: $action-red;
+                    background-color: transparent;
                     border-radius: 12px;
 
                     &:before {
@@ -176,8 +176,8 @@
                 }
 
                 &.active {
-                    color: var(--#{$prefix}vertical-menu-item-active-color);
-                    background-color: $action-red;
+                    color: $action-red;
+                    background-color: transparent;
                     border-radius: 12px;
 
                     &:before {

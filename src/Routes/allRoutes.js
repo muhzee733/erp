@@ -13,12 +13,18 @@ import Offlinepage from "../pages/AuthenticationInner/Errors/Offlinepage";
 
 // User Profile
 import UserProfile from "../pages/Authentication/user-profile";
+import TruckOptimization from "../pages/Order/TruckOptimization/TruckOptimization";
+import RoutePlanning from "../pages/Order/RoutePlanning/RoutePlanning";
 
 const authProtectedRoutes = [
   { path: "/orders", component: <Order /> },
   { path: "/dashboard", component: <Dashboard /> },
   { path: "/index", component: <Dashboard /> },
   
+  //Submenu Pages
+  { path: "/truck-optimization", component: <TruckOptimization /> },
+  { path: "/route-planning", component: <RoutePlanning /> },
+
 
   //User Profile
   { path: "/profile", component: <UserProfile /> },
@@ -35,6 +41,7 @@ const publicRoutes = [
   { path: "/login", component: <Login /> },
   { path: "/forgot-password", component: <ForgetPasswordPage /> },
   { path: "/register", component: <Register /> },
+
 
   //AuthenticationInner pages
   { path: "/auth-500", component: <Error500 /> },
