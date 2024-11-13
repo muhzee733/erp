@@ -5,6 +5,14 @@
   --secondary-color: #000000;
   --theme-color: #F23514;
 }
+/* Breadcrumb */
+.breadcrumb-icon{
+  width: 16px!important;
+  height: 18px!important;
+  color: var(--theme-color)!important;
+}
+
+
 
 .logout {
   margin-top: 80px;

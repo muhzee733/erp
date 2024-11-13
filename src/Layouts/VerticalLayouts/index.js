@@ -45,7 +45,7 @@ const VerticalLayout = (props) => {
     }, [resizeSidebarMenu]);
 
     const handleSubmenuClick = (submenuId) => {
-        setActiveSubmenu((prevState) => prevState === submenuId ? null : submenuId);
+        setActiveSubmenu((prevState) => (prevState === submenuId ? null : submenuId));
     };
 
     useEffect(() => {
@@ -63,10 +63,10 @@ const VerticalLayout = (props) => {
             }
         };
 
-        if (props.layoutType === "vertical") {
+        if (layoutType === "vertical") {
             initMenu();
         }
-    }, [path, props.layoutType]);
+    }, [path, layoutType]);
 
     function activateParentDropdown(item) {
         item.classList.add("active");

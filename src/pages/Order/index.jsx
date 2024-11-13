@@ -8,6 +8,10 @@ import ChartHeader from "../../Components/Important/ChartHeader";
 import "./order.css";
 import OrderTable from "../../Components/Important/OrderTable";
 import OrderRequest from "../../Components/Important/OrderRequest";
+import CompanyLogo from "../../assets/images/svg/CodeSandboxOutlined.svg";
+import CompanyName from "../../assets/images/svg/companyname.svg";
+
+
 
 const Index = () => {
   document.title = "Order | ERP";
@@ -120,6 +124,38 @@ const Index = () => {
       arrival: "Mumbai",
       arrivaldate: "17 July 2024",
     },
+    {
+      id: 3,
+      shipmentId: "SHIPID03",
+      status: "Delivered",
+      departure: "Delhi",
+      arrival: "Mumbai",
+      arrivaldate: "17 July 2024",
+    },
+    {
+      id: 4,
+      shipmentId: "SHIPID03",
+      status: "Cancelled",
+      departure: "Delhi",
+      arrival: "Mumbai",
+      arrivaldate: "17 July 2024",
+    },
+    {
+      id: 5,
+      shipmentId: "SHIPID03",
+      status: "Delivered",
+      departure: "Delhi",
+      arrival: "Mumbai",
+      arrivaldate: "17 July 2024",
+    },
+    {
+      id: 6,
+      shipmentId: "SHIPID03",
+      status: "Cancelled",
+      departure: "Delhi",
+      arrival: "Mumbai",
+      arrivaldate: "17 July 2024",
+    },
   ];
   const availableCargo = [
     {
@@ -130,8 +166,130 @@ const Index = () => {
       arrival: "Mumbai",
       arrivaldate: "17 July 2024",
     },
+    {
+      id: 2,
+      shipmentId: "SHIPID03",
+      status: "Delivered",
+      departure: "Delhi",
+      arrival: "Mumbai",
+      arrivaldate: "17 July 2024",
+    },
+    {
+      id: 3,
+      shipmentId: "SHIPID03",
+      status: "Delivered",
+      departure: "Delhi",
+      arrival: "Mumbai",
+      arrivaldate: "17 July 2024",
+    },
+    {
+      id: 4,
+      shipmentId: "SHIPID03",
+      status: "Delivered",
+      departure: "Delhi",
+      arrival: "Mumbai",
+      arrivaldate: "17 July 2024",
+    },
+    {
+      id: 5,
+      shipmentId: "SHIPID03",
+      status: "Delivered",
+      departure: "Delhi",
+      arrival: "Mumbai",
+      arrivaldate: "17 July 2024",
+    },
+    {
+      id: 6,
+      shipmentId: "SHIPID03",
+      status: "Delivered",
+      departure: "Delhi",
+      arrival: "Mumbai",
+      arrivaldate: "17 July 2024",
+    },
   ];
-  const orderRequest = []
+  const orderRequest = [
+    {
+      orderID: "ORDERID01",
+      date: "16 July 2024",
+      time: "18:00",
+      pickupLocation: {
+        address: "123 Main St, Anytown, CA 12345"
+      },
+      destination: {
+        address: "456 Elm St, Smalltown, NY 54321"
+      },
+      company: {
+        name: "Raj Industries",
+        logo: CompanyLogo,
+        img: CompanyName,
+      }
+    },
+    {
+      orderID: "ORDERID02",
+      date: "17 July 2024",
+      time: "18:00",
+      pickupLocation: {
+        address: "789 Oak St, Metropolis, IL 62960"
+      },
+      destination: {
+        address: "321 Pine St, Springfield, MO 65807"
+      },
+      company: {
+        name: "Global Logistics",
+        logo: CompanyLogo,
+        img: CompanyName,
+      }
+    },
+    {
+      orderID: "ORDERID03",
+      date: "18 July 2024",
+      time: "18:00",
+      pickupLocation: {
+        address: "456 Maple Ave, Gotham, NY 10001"
+      },
+      destination: {
+        address: "789 Cedar Rd, Star City, SC 29201"
+      },
+      company: {
+        name: "NextGen Transport",
+        logo: CompanyLogo,
+        img: CompanyName,
+      }
+    },
+    {
+      orderID: "ORDERID04",
+      date: "19 July 2024",
+      time: "16:45",
+      pickupLocation: {
+        address: "101 Birch St, Central City, KY 42330"
+      },
+      destination: {
+        address: "202 Elm St, Coast City, CA 94546"
+      },
+      company: {
+        name: "Prime Movers",
+        logo: CompanyLogo,
+        img: CompanyName,
+      }
+    },
+    {
+      orderID: "ORDERID05",
+      date: "20 July 2024",
+      time: "11:00",
+      pickupLocation: {
+        address: "303 Willow Ln, Bludhaven, NJ 08505"
+      },
+      destination: {
+        address: "404 Oak Dr, Keystone, PA 17055"
+      },
+      company: {
+        name: "Express Haulers",
+        logo: CompanyLogo,
+        img: CompanyName, 
+      }
+    }
+  ]
+  
 
   return (
     <div className="page-content">
@@ -205,16 +363,17 @@ const Index = () => {
               </Col>
             </Row>
           </Col>
-          <Col xl="4">
-            <Card>
+          <Col xl="4" >
+            <Card >
               <ChartHeader
                 title="Order Request"
                 layout={true}
                 search={true}
                 placeholder="Search by order id"
                 searchList={searchList}
-              />
-              <OrderRequest />
+               />
+              <OrderRequest recentOrderRequest={orderRequest} 
+              title="Recent Order Requests" />
             </Card>
           </Col>
         </Row>

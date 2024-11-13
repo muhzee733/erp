@@ -11,7 +11,7 @@ const BreadCrumb = ({ title, icon }) => {
             <div className="page-title-right">
               <ol className="breadcrumb m-0">
                 <li className="breadcrumb-item pe-2">
-                  <FeatherIcon icon={icon} />
+                  <FeatherIcon icon={icon} className="breadcrumb-icon"/>
                 </li>
                 <li className="pe-2">/</li>
                 <li className="breadcrumb-item active">{title}</li>
