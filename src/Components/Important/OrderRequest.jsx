@@ -82,7 +82,6 @@ const OrderRequest = ({ title, recentOrderRequest }) => {
         </Card>
       ))}
 
-      {/* Conditionally render OffCanvas component */}
       {selectedOrderId && (
         <OffCanvas title="Order Request Details"
           isOpen={!!selectedOrderId} 
