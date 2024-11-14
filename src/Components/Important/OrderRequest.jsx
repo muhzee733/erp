@@ -19,8 +19,8 @@ const OrderRequest = ({ title, recentOrderRequest }) => {
       <div className="icon-header">
         <span className="title">{title}</span>
         <div className="icons">
-          <svg className="file-icon" src={Icon} alt="Icon" />
-          <svg src={Icon2} alt="Icon" />
+          <img className="file-icon" src={Icon} alt="Icon" />
+          <img src={Icon2} alt="Icon" />
         </div>
       </div>
       {recentOrderRequest?.map((item, key) => (
