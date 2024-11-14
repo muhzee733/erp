@@ -142,7 +142,7 @@ const Layout = (props) => {
                 <Sidebar
                     layoutType={layoutType}
                 />
-                <div className="main-content">
+                <div className="main-content" style={{overflowX: "hidden"}}>
                     {props.children}
                     {/* <Footer /> */}
                 </div>

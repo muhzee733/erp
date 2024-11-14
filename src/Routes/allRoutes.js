@@ -10,6 +10,7 @@ import Error500 from '../pages/AuthenticationInner/Errors/Error500';
 import Maintenance from '../pages/Pages/Maintenance/Maintenance';
 import ComingSoon from '../pages/Pages/ComingSoon/ComingSoon';
 import Offlinepage from "../pages/AuthenticationInner/Errors/Offlinepage";
+import Alt404 from '../pages/AuthenticationInner/Errors/Alt404';
 
 // User Profile
 import UserProfile from "../pages/Authentication/user-profile";
@@ -33,7 +34,7 @@ const authProtectedRoutes = [
     exact: true,
     component: <Navigate to="/dashboard" />,
   },
-  { path: "*", component: <Navigate to="/dashboard" /> },
+  { path: "*", component: <Alt404 /> },
 ];
 
 const publicRoutes = [

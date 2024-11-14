@@ -1,36 +1,24 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 const Navdata = () => {
   const history = useNavigate();
-  //state data
   const [isDashboard, setIsDashboard] = useState(false);
-  const [isApps, setIsApps] = useState(false);
-  const [isAuth, setIsAuth] = useState(false);
-  const [isPages, setIsPages] = useState(false);
-  const [isBaseUi, setIsBaseUi] = useState(false);
-  const [isAdvanceUi, setIsAdvanceUi] = useState(false);
-  const [isForms, setIsForms] = useState(false);
-  const [isTables, setIsTables] = useState(false);
-  const [isCharts, setIsCharts] = useState(false);
-  const [isIcons, setIsIcons] = useState(false);
-  const [isMaps, setIsMaps] = useState(false);
-  const [isMultiLevel, setIsMultiLevel] = useState(false);
-
-
-  // Pages
-  const [isLanding, setIsLanding] = useState(false);
-
+  const [isOrders, setIsOrders] = useState(false);
+  const [isCustomer, setIsCustomer] = useState(false);
+  const [isInventory, setIsInventory] = useState(false);
+  const [isConversations, setIsConversations] = useState(false);
+  const [isSettings, setIsSettings] = useState(false);
   const [iscurrentState, setIscurrentState] = useState("Dashboard");
 
   function updateIconSidebar(e) {
     if (e && e.target && e.target.getAttribute("subitems")) {
       const ul = document.getElementById("two-column-menu");
       const iconItems = ul.querySelectorAll(".nav-icon.active");
-      const activeIconItems = [...iconItems];
+      let activeIconItems = [...iconItems];
       activeIconItems.forEach((item) => {
         item.classList.remove("active");
-        const id = item.getAttribute("subitems");
+        var id = item.getAttribute("subitems");
         if (document.getElementById(id))
           document.getElementById(id).classList.remove("show");
       });
@@ -39,187 +27,113 @@ const Navdata = () => {
 
   useEffect(() => {
     document.body.classList.remove("twocolumn-panel");
-    if (iscurrentState !== "Dashboard") {
-      setIsDashboard(false);
-    }
-    if (iscurrentState !== "Apps") {
-      setIsApps(false);
-    }
-    if (iscurrentState !== "Auth") {
-      setIsAuth(false);
-    }
-    if (iscurrentState !== "Pages") {
-      setIsPages(false);
-    }
-    if (iscurrentState !== "BaseUi") {
-      setIsBaseUi(false);
-    }
-    if (iscurrentState !== "AdvanceUi") {
-      setIsAdvanceUi(false);
-    }
-    if (iscurrentState !== "Forms") {
-      setIsForms(false);
-    }
-    if (iscurrentState !== "Tables") {
-      setIsTables(false);
-    }
-    if (iscurrentState !== "Charts") {
-      setIsCharts(false);
-    }
-    if (iscurrentState !== "Icons") {
-      setIsIcons(false);
-    }
-    if (iscurrentState !== "Maps") {
-      setIsMaps(false);
-    }
-    if (iscurrentState !== "MuliLevel") {
-      setIsMultiLevel(false);
-    }
-    if (iscurrentState === "Widgets") {
-      history("/widgets");
+    if (iscurrentState === "Orders")
       document.body.classList.add("twocolumn-panel");
-    }
-    if (iscurrentState !== "Landing") {
-      setIsLanding(false);
-    }
-  }, [
-    history,
-    iscurrentState,
-    isDashboard,
-    isApps,
-    isAuth,
-    isPages,
-    isBaseUi,
-    isAdvanceUi,
-    isForms,
-    isTables,
-    isCharts,
-    isIcons,
-    isMaps,
-    isMultiLevel,
-  ]);
+    if (iscurrentState !== "Dashboard") setIsDashboard(false);
+    if (iscurrentState !== "Orders") setIsOrders(false);
+    if (iscurrentState !== "Customer") setIsCustomer(false);
+    if (iscurrentState !== "Inventory") setIsInventory(false);
+    if (iscurrentState !== "Conversations") setIsConversations(false);
+    if (iscurrentState !== "Settings") setIsSettings(false);
+  }, [iscurrentState]);
+
   const menuItems = [
-    {
-      isHeader: true,
-    },
     {
       id: "dashboard",
       label: "Dashboard",
       icon: "ri-apps-2-line",
       link: "/dashboard",
-      stateconstiables: isDashboard,
-      click: function (e) {
+      stateVariables: isDashboard,
+      click: (e) => {
         e.preventDefault();
         setIsDashboard(!isDashboard);
         setIscurrentState("Dashboard");
+        updateIconSidebar(e);
       },
-
     },
     {
-      id: "apps",
+      id: "orders",
       label: "Orders",
       icon: "ri-shopping-bag-line",
       link: "/#",
-      click: function (e) {
+      stateVariables: isOrders,
+      click: (e) => {
         e.preventDefault();
-        setIsApps(!isApps);
-        setIscurrentState("Apps");
+        setIsOrders(!isOrders);
+        setIscurrentState("Orders");
         updateIconSidebar(e);
       },
-      stateconstiables: isApps,
       subItems: [
         {
-          id: "orders-pending",
+          id: "delivery-tracking",
           label: "Delivery Tracking",
-          icon: "ri-truck-line",
           link: "/delivery-tracking",
-          click: function (e) {
-            e.preventDefault();
-            setIscurrentState("PendingOrders");
-          },
         },
         {
-          id: "orders-pending",
+          id: "truck-optimization",
           label: "Truck Optimization",
-          icon: "ri-truck-line",
           link: "/truck-optimization",
-          click: function (e) {
-            e.preventDefault();
-            setIscurrentState("PendingOrders");
-          },
         },
         {
-          id: "orders-completed",
+          id: "route-planning",
           label: "Route Planning",
-          icon: "ri-route-line",
           link: "/route-planning",
-          click: function (e) {
-            e.preventDefault();
-            setIscurrentState("CompletedOrders");
-          },
         },
       ],
     },
-  
     {
-      id: "pages",
-      label: "Customers",
+      id: "customer",
+      label: "Customer",
       icon: "ri-group-line",
-      link: "/customers",
-      click: function (e) {
+      link: "/customer",
+      stateVariables: isCustomer,
+      click: (e) => {
         e.preventDefault();
-        setIsPages(!isPages);
-        setIscurrentState("Pages");
+        setIsCustomer(!isCustomer);
+        setIscurrentState("Customer");
         updateIconSidebar(e);
-
       },
-      stateconstiables: isPages,
     },
     {
-      id: "landing",
+      id: "inventory",
       label: "Inventory",
       icon: "ri-folder-reduce-line",
       link: "/inventory",
-      stateconstiables: isLanding,
-      click: function (e) {
+      stateVariables: isInventory,
+      click: (e) => {
         e.preventDefault();
-        setIsLanding(!isLanding);
-        setIscurrentState("Landing");
+        setIsInventory(!isInventory);
+        setIscurrentState("Inventory");
         updateIconSidebar(e);
       },
-
     },
     {
-      id: "baseUi",
+      id: "conversations",
       label: "Conversations",
       icon: "ri-message-2-line",
       link: "/conversations",
-      click: function (e) {
+      stateVariables: isConversations,
+      click: (e) => {
         e.preventDefault();
-        setIsBaseUi(!isBaseUi);
-        setIscurrentState("BaseUi");
+        setIsConversations(!isConversations);
+        setIscurrentState("Conversations");
         updateIconSidebar(e);
       },
-      stateconstiables: isBaseUi,
-
     },
     {
-      id: "advanceUi",
-      label: "Setting",
+      id: "settings",
+      label: "Settings",
       icon: "ri-settings-4-line",
       link: "/settings",
-      click: function (e) {
+      stateVariables: isSettings,
+      click: (e) => {
         e.preventDefault();
-        setIsAdvanceUi(!isAdvanceUi);
-        setIscurrentState("AdvanceUi");
+        setIsSettings(!isSettings);
+        setIscurrentState("Settings");
         updateIconSidebar(e);
       },
-      stateconstiables: isAdvanceUi,
-
     },
-
-
   ];
-  return {menuItems};
+  return <React.Fragment>{menuItems}</React.Fragment>;
 };
 export default Navdata;
