@@ -13,10 +13,10 @@
 }
 
 .icons {
-  padding: 10px 0px 15px 0px;
+  padding: 15px 0px 15px 0px;
 }
 .file-icon{
-  padding-right: 10px;
+  padding-right: 12px;
 }
 .timeline-2 .timeline-date::after{
   top: 16px !important;
@@ -28,7 +28,7 @@
     height: 37% !important;
 }
 .title{
-  padding: 15px 0px;
+  padding: 20px 0px;
   font-size: 14px;
   line-height: 24px;
   font-weight: 400;
@@ -69,7 +69,6 @@
 }
 
 .company-info {
-  display: flex;
   color: #000000E0;
   font-weight: 600;
   font-size: 14px;
@@ -78,8 +77,8 @@
 }
 
 .company-info img {
-  width: 28px;
-  height: 28px;
+  width: 50px;
+  height: 44px;
   border-radius: 50%;
   margin-right: 8px;
 }
@@ -94,4 +93,137 @@
 
 .view-details:hover {
   text-decoration: underline;
+}
+
+
+/* OffCanvas CSS */
+.offcanvas{
+  width: 700px !important;
+  height: 100vh!important;
+}
+
+.offcanvas-header{
+  padding: 15px 15px!important;
+}
+
+#offcanvasRightLabel{
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 600;
+  color: #000000E0;
+}
+.offCanvas-top{
+  justify-content: space-between;
+  padding: 0px 17px;
+  align-items: center;
+
+}
+.title-text{
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 24px;
+  color: #000000E0;
+}
+.meta-tags{
+  display: flex;
+  justify-content: space-between;
+}
+.about-section{
+  border: 1px solid #D9D9D9;
+  border-radius: 8px;
+  padding: 16px 26px 16px 16px;
+}
+.about-section h4{
+  font-size: 22px;
+  line-height: 24px;
+  font-weight: 400;
+  color: #000000E0;
+}
+.value{
+  color: #1677FF;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 400;
+}
+
+.company-meta{
+  justify-content: space-between;
+}
+.customer-text{
+  font-size: 14px;
+  line-height: 24px;
+  font-weight: 400;
+  color: #000000A6;
+}
+
+.company-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.company-name{
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+  font-size: 24px;
+  line-height:24px;
+  font-weight: 500;
+}
+.detail-text{
+  color: #000000A6;
+  font-size: 14px;
+  line-height: 24px;
+  font-weight: 400;
+}
+.manufacturing-text{
+  font-size: 14px;
+  line-height: 24px;
+  font-weight: 400;
+  color:#000000A6;
+}
+
+/* Action Section */
+.action-section {
+  display: flex;
+  align-items: right!important;
+ 
+}
+
+/* Action Buttons */
+.button {
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  padding:5px 25px!important;
+}
+
+.accept {
+  background-color: #007bff;
+  color: white;
+  margin-right: 8px;
+}
+
+.reject {
+  background-color: #f5f5f5;
+  color: #333;
+  border: 1px solid #ddd;
+}
+
+.date{
+  text-align: right!important;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 24px;
+  color: #00000073;
+  margin-right: 10px;
+}
+
+.time{
+  text-align: right!important;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 24px;
+  color: #00000073;
 }
