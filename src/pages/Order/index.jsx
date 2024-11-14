@@ -269,7 +269,7 @@ const Index = () => {
         address: "789 Cedar Rd, Star City, SC 29201",
       },
       company: {
-        name: "NextGen Transport",
+        name: "NextGen",
         logo: CompanyLogo,
         img: CompanyName,
       },
