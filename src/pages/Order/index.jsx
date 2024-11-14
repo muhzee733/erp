@@ -297,9 +297,9 @@ const Index = () => {
       <Container fluid>
         <Row>
           <Col xl="8">
-            <Row>
-              <Col xl="6">
-                <Card>
+            <Row className="d-flex align-items-stretch">
+              <Col xl="6" xxl="6" lg="6" className="d-flex">
+                <Card className="w-100">
                   <ChartHeader title="Recents Orders" />
                   <CardBody>
                     <BarChart
@@ -309,8 +309,8 @@ const Index = () => {
                   </CardBody>
                 </Card>
               </Col>
-              <Col xl="6">
-                <Card className="custom-cards">
+              <Col xl="6" xxl="6" lg="6" className="d-flex">
+                <Card className="custom-cards w-100" >
                   <ChartHeader title="Loading Trucks" />
                   <CardBody className="p-2">
                     <DonutChart

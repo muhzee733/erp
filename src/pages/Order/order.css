@@ -1,31 +1,31 @@
-.custom-cards {
+/* .custom-cards {
   max-height: 69vh !important;
   min-height:69vh !important;
-}
+} */
 .request-order{
   padding: 0px 15px;
 }
-.order-card {
-  background-color: #fbe9e7; /* Light pink background */
-  border-radius: 12px;
-  padding: 15px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  font-family: Arial, sans-serif;
+.timeline-2 .timeline-date{
+  margin: 10px 0 0 57px !important;
+}
+.timeline-2 .data{
+  margin: 10px 0 0 57px !important;
 }
 
-.order-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-bottom: 1px dashed #ddd;
-  padding-bottom: 8px;
-  margin-bottom: 10px;
-}
 .icons {
   padding: 10px 0px 15px 0px;
 }
 .file-icon{
   padding-right: 10px;
+}
+.timeline-2 .timeline-date::after{
+  top: 16px !important;
+  left: 36px !important;
+}
+.timeline-2::after{
+  top: 38px !important;
+    left: 31px !important;
+    height: 37% !important;
 }
 .title{
   padding: 15px 0px;
@@ -34,22 +34,8 @@
   font-weight: 400;
   color: #000000A6;
 }
-.order-icon {
-  width: 20px;
-  height: 20px;
-  margin-right: 8px;
-}
 
-.order-date {
-  font-size: 12px;
-  color: #888;
-}
 
-.order-body {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
 
 .location-info {
   flex-grow: 1;
@@ -80,15 +66,6 @@
   margin-left: 10px;
   overflow: hidden;
   border-radius: 8px;
-}
-
-.order-footer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 10px;
-  border-top: 1px dashed #ddd;
-  padding-top: 8px;
 }
 
 .company-info {

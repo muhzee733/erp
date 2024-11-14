@@ -14,3 +14,64 @@
   border-radius: 5px;
   
 }
+.order-icon {
+  width: 30px;
+  height: 30px;
+  margin-right: 8px;
+}
+.order-date {
+  font-size: 12px;
+  color: #000000;
+}
+
+.order-body {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+}
+.order-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+}
+.order-card {
+  background-color: #fbe9e7;
+  border-radius: 12px;
+  /* padding: 15px; */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  font-family: Arial, sans-serif;
+}
+.order-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+}
+.hr-border{
+  border: 1px dashed rgba(0, 0, 0, 0.12);
+  position: relative;
+}
+.hr-border::after{
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: -10px;
+  transform: translateY(-50%);
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: #ffffff;
+}
+.hr-border::before{
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -10px;
+  transform: translateY(-50%);
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: #ffffff;
+}
