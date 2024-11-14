@@ -2,48 +2,82 @@
   max-height: 69vh !important;
   min-height:69vh !important;
 } */
-.request-order{
+.request-order {
   padding: 0px 15px;
 }
-.timeline-2 .timeline-date{
+.timeline-2 .timeline-date {
   margin: 10px 0 0 57px !important;
 }
-.timeline-2 .data{
+.timeline-2 .data {
   margin: 10px 0 0 57px !important;
+}
+.timeline-2 {
+  padding: 20px 0px !important;
 }
 
 .icons {
   padding: 15px 0px 15px 0px;
 }
-.file-icon{
+.file-icon {
   padding-right: 12px;
 }
-.timeline-2 .timeline-date::after{
+.timeline-2 .timeline-date::after {
   top: 16px !important;
   left: 36px !important;
 }
-.timeline-2::after{
-  top: 38px !important;
-    left: 31px !important;
-    height: 37% !important;
+.without-circle {
+  margin: 10px 0 0 57px !important;
+  font-size: 14px;
+  font-weight: 500;
 }
-.title{
+.without-circle::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  top: 14px;
+  left: 37px;
+  align-items: left;
+  background: white;
+  border: 3px solid rgba(0, 62, 179, 1);
+  border-radius: 50px;
+  z-index: 1;
+}
+.timeline-2 .timeline-date::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  top: 26px;
+  left: 45px;
+  align-items: left;
+  background: rgba(0, 62, 179, 1);
+  border: 2px solid var(--vz-secondary-bg);
+  border-radius: 50px;
+  z-index: 1;
+}
+.timeline-2::after {
+  top: 26px !important;
+  left: 31px !important;
+  height: 60% !important;
+}
+.title {
   padding: 20px 0px;
   font-size: 14px;
   line-height: 24px;
   font-weight: 400;
-  color: #000000A6;
+  color: #000000a6;
 }
-
-
 
 .location-info {
   flex-grow: 1;
 }
 
-.pickup, .destination {
+.pickup,
+.destination {
   margin-top: 10px;
-  
 }
 
 .label {
@@ -54,7 +88,7 @@
 }
 
 .address {
-  color: #000000E0;
+  color: #000000e0;
   font-weight: 500;
   font-size: 14px;
   line-height: 24px;
@@ -69,7 +103,7 @@
 }
 
 .company-info {
-  color: #000000E0;
+  color: #000000e0;
   font-weight: 600;
   font-size: 14px;
   line-height: 24px;
@@ -85,7 +119,7 @@
 
 .view-details {
   font-size: 12px;
-  color: #1677FF;
+  color: #1677ff;
   text-decoration: none;
   font-weight: 400;
   line-height: 22px;
@@ -95,65 +129,63 @@
   text-decoration: underline;
 }
 
-
 /* OffCanvas CSS */
-.offcanvas{
+.offcanvas {
   width: 700px !important;
-  height: 100vh!important;
+  height: 100vh !important;
 }
 
-.offcanvas-header{
-  padding: 15px 15px!important;
+.offcanvas-header {
+  padding: 15px 15px !important;
 }
 
-#offcanvasRightLabel{
+#offcanvasRightLabel {
   font-size: 16px;
   line-height: 24px;
   font-weight: 600;
-  color: #000000E0;
+  color: #000000e0;
 }
-.offCanvas-top{
+.offCanvas-top {
   justify-content: space-between;
   padding: 0px 17px;
   align-items: center;
-
 }
-.title-text{
+.title-text {
   font-size: 14px;
   font-weight: 500;
   line-height: 24px;
-  color: #000000E0;
+  color: #000000e0;
 }
-.meta-tags{
+.meta-tags {
   display: flex;
   justify-content: space-between;
 }
-.about-section{
-  border: 1px solid #D9D9D9;
+.about-section {
+  border: 1px solid #d9d9d9;
   border-radius: 8px;
   padding: 16px 26px 16px 16px;
 }
-.about-section h4{
+.about-section h4 {
   font-size: 22px;
   line-height: 24px;
   font-weight: 400;
-  color: #000000E0;
+  color: #000000e0;
 }
-.value{
-  color: #1677FF;
+.value {
+  color: #1677ff;
   font-size: 14px;
   line-height: 20px;
   font-weight: 400;
 }
 
-.company-meta{
+.company-meta {
   justify-content: space-between;
 }
-.customer-text{
+.customer-text {
   font-size: 14px;
   line-height: 24px;
   font-weight: 400;
-  color: #000000A6;
+  color: #000000a6;
 }
 
 .company-details {
@@ -161,32 +193,31 @@
   flex-direction: column;
 }
 
-.company-name{
+.company-name {
   justify-content: space-between;
   width: 100%;
   align-items: center;
   font-size: 24px;
-  line-height:24px;
+  line-height: 24px;
   font-weight: 500;
 }
-.detail-text{
-  color: #000000A6;
+.detail-text {
+  color: #000000a6;
   font-size: 14px;
   line-height: 24px;
   font-weight: 400;
 }
-.manufacturing-text{
+.manufacturing-text {
   font-size: 14px;
   line-height: 24px;
   font-weight: 400;
-  color:#000000A6;
+  color: #000000a6;
 }
 
 /* Action Section */
 .action-section {
   display: flex;
-  align-items: right!important;
- 
+  align-items: right !important;
 }
 
 /* Action Buttons */
@@ -196,7 +227,7 @@
   border-radius: 6px;
   border: none;
   cursor: pointer;
-  padding:5px 25px!important;
+  padding: 5px 25px !important;
 }
 
 .accept {
@@ -211,8 +242,8 @@
   border: 1px solid #ddd;
 }
 
-.date{
-  text-align: right!important;
+.date {
+  text-align: right !important;
   font-size: 14px;
   font-weight: 400;
   line-height: 24px;
@@ -220,8 +251,8 @@
   margin-right: 10px;
 }
 
-.time{
-  text-align: right!important;
+.time {
+  text-align: right !important;
   font-size: 14px;
   font-weight: 400;
   line-height: 24px;

@@ -44,7 +44,7 @@ const OrderRequest = ({ title, recentOrderRequest }) => {
                       <p className="timeline-date text-muted">Pickup Location</p>
                     </Col>
                     <Col xs={12}>
-                      <p className="timeline-date">
+                      <p className="without-circle">
                         123 Main St, Anytown CA 12345
                       </p>
                     </Col>
