@@ -22,6 +22,8 @@ import ChartHeader from "../../Components/Important/ChartHeader";
 import DonutChart from "../../Components/Important/DonutChart";
 
 export const Index = () => {
+  document.title="Dashboard | ERP";
+
   const column = [
     "Order Id",
     "VENDOR",
