@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   CardHeader,
   DropdownItem,
@@ -17,7 +17,6 @@ const ChartHeader = ({
   placeholder,
   thisWeek,
 }) => {
-  // Function to get the last three months and the total months since January
   const getPreviousMonths = () => {
     const months = [
       "January",
@@ -44,6 +43,12 @@ const ChartHeader = ({
   };
 
   const { lastThreeMonths, totalMonthsSinceJan } = getPreviousMonths();
+
+  const [selectedMonth, setSelectedMonth] = useState(lastThreeMonths[0]);
+
+  const handleMonthSelect = (month) => {
+    setSelectedMonth(month);
+  };
 
   return (
     <CardHeader className="align-items-center border-bottom d-flex">
@@ -98,7 +103,7 @@ const ChartHeader = ({
                   borderRadius: "6px",
                 }}
               >
-                <h6 className="text-muted">{lastThreeMonths[0]}</h6>
+                <h6 className="text-muted">{selectedMonth}</h6>
                 <FeatherIcon
                   icon="chevron-down"
                   size="20"
@@ -107,10 +112,17 @@ const ChartHeader = ({
               </DropdownToggle>
               <DropdownMenu className="dropdown-menu-end w-auto">
                 {lastThreeMonths.slice(1).map((month, index) => (
-                  <DropdownItem key={index}>{month}</DropdownItem>
+                  <DropdownItem
+                    key={index}
+                    onClick={() => handleMonthSelect(month)}
+                  >
+                    {month}
+                  </DropdownItem>
                 ))}
                 <DropdownItem divider />
-                <DropdownItem>{`Last ${totalMonthsSinceJan} months`}</DropdownItem>
+                <DropdownItem onClick={() => handleMonthSelect(`Last ${totalMonthsSinceJan} months`)}>
+                  {`Last ${totalMonthsSinceJan} months`}
+                </DropdownItem>
               </DropdownMenu>
             </UncontrolledDropdown>
           </>
