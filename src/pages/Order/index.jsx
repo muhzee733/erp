@@ -210,8 +210,9 @@ const Index = () => {
       orderID: "ORDERID01",
       date: "16 July 2024",
       time: "18:00",
-      website:"http://www.rajsuperwhite.com",
-      industry:"Manufacturing",
+      status: "newOrder",
+      website: "http://www.rajsuperwhite.com",
+      industry: "Manufacturing",
       phone: "+91 7898164395",
       about:
         "Raj Industries is one of the leading FMCG companies in northern India dealing in Personal and Home Care products. The company’s leading product ‘Raj Super White Laundry Bar’ commands a high market share and is trusted by around 1,50 ,000 retail stores all over the country.Raj Industries is one of the leading FMCG companies in northern India dealing in Personal and Home Care products. The company’s leading product ‘Raj Super White Laundry Bar’ commands a high market share and is trusted by around 1,50 ,000 retail stores all over the country.Raj Industries is one of the leading Raj Industries is one of the leading FMCG companies in northern India dealing in Personal and Home Care products.Raj Industries is one of the leading FMCG companies in northern India dealing in Personal and Home Care products.",
@@ -226,18 +227,20 @@ const Index = () => {
         logo: CompanyLogo,
         img: CompanyName,
       },
-      note:" Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-      location: "Village Pawa, GT Road, Near Civil Airport, Raj Industries, Ludhiana, Punjab 141120, IN",
+      note: " Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      location:
+        "Village Pawa, GT Road, Near Civil Airport, Raj Industries, Ludhiana, Punjab 141120, IN",
     },
     {
       orderID: "ORDERID02",
       date: "17 July 2024",
+      status: "newOrder",
       time: "18:00",
       phone: "+91 7898164395",
-      website:"http://www.rajsuperwhite.com",
-      industry:"Manufacturing",
+      website: "http://www.rajsuperwhite.com",
+      industry: "Manufacturing",
       about:
-      "Raj Industries is one of the leading FMCG companies in northern India dealing in Personal and Home Care products. The company’s leading product ‘Raj Super White Laundry Bar’ commands a high market share and is trusted by around 1,50 ,000 retail stores all over the country.Raj Industries is one of the leading FMCG companies in northern India dealing in Personal and Home Care products. The company’s leading product ‘Raj Super White Laundry Bar’ commands a high market share and is trusted by around 1,50 ,000 retail stores all over the country.Raj Industries is one of the leading Raj Industries is one of the leading FMCG companies in northern India dealing in Personal and Home Care products.Raj Industries is one of the leading FMCG companies in northern India dealing in Personal and Home Care products.",
+        "Raj Industries is one of the leading FMCG companies in northern India dealing in Personal and Home Care products. The company’s leading product ‘Raj Super White Laundry Bar’ commands a high market share and is trusted by around 1,50 ,000 retail stores all over the country.Raj Industries is one of the leading FMCG companies in northern India dealing in Personal and Home Care products. The company’s leading product ‘Raj Super White Laundry Bar’ commands a high market share and is trusted by around 1,50 ,000 retail stores all over the country.Raj Industries is one of the leading Raj Industries is one of the leading FMCG companies in northern India dealing in Personal and Home Care products.Raj Industries is one of the leading FMCG companies in northern India dealing in Personal and Home Care products.",
 
       pickupLocation: {
         address: "789 Oak St, Metropolis, IL 62960",
@@ -250,18 +253,20 @@ const Index = () => {
         logo: CompanyLogo,
         img: CompanyName,
       },
-      note:" Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-      location: "Village Pawa, GT Road, Near Civil Airport, Raj Industries, Ludhiana, Punjab 141120, IN",
+      note: " Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      location:
+        "Village Pawa, GT Road, Near Civil Airport, Raj Industries, Ludhiana, Punjab 141120, IN",
     },
     {
       orderID: "ORDERID03",
       date: "18 July 2024",
-      website:"http://www.rajsuperwhite.com",
-      industry:"Manufacturing",
+      status: "newOrder",
+      website: "http://www.rajsuperwhite.com",
+      industry: "Manufacturing",
       time: "18:00",
       phone: "+91 7898164395",
       about:
-      "Raj Industries is one of the leading FMCG companies in northern India dealing in Personal and Home Care products. The company’s leading product ‘Raj Super White Laundry Bar’ commands a high market share and is trusted by around 1,50 ,000 retail stores all over the country.Raj Industries is one of the leading FMCG companies in northern India dealing in Personal and Home Care products. The company’s leading product ‘Raj Super White Laundry Bar’ commands a high market share and is trusted by around 1,50 ,000 retail stores all over the country.Raj Industries is one of the leading Raj Industries is one of the leading FMCG companies in northern India dealing in Personal and Home Care products.Raj Industries is one of the leading FMCG companies in northern India dealing in Personal and Home Care products.",
+        "Raj Industries is one of the leading FMCG companies in northern India dealing in Personal and Home Care products. The company’s leading product ‘Raj Super White Laundry Bar’ commands a high market share and is trusted by around 1,50 ,000 retail stores all over the country.Raj Industries is one of the leading FMCG companies in northern India dealing in Personal and Home Care products. The company’s leading product ‘Raj Super White Laundry Bar’ commands a high market share and is trusted by around 1,50 ,000 retail stores all over the country.Raj Industries is one of the leading Raj Industries is one of the leading FMCG companies in northern India dealing in Personal and Home Care products.Raj Industries is one of the leading FMCG companies in northern India dealing in Personal and Home Care products.",
       pickupLocation: {
         address: "456 Maple Ave, Gotham, NY 10001",
       },
@@ -273,18 +278,20 @@ const Index = () => {
         logo: CompanyLogo,
         img: CompanyName,
       },
-      note:" Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-      location: "Village Pawa, GT Road, Near Civil Airport, Raj Industries, Ludhiana, Punjab 141120, IN",
+      note: " Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      location:
+        "Village Pawa, GT Road, Near Civil Airport, Raj Industries, Ludhiana, Punjab 141120, IN",
     },
     {
       orderID: "ORDERID04",
       date: "19 July 2024",
-      website:"http://www.rajsuperwhite.com",
-      industry:"Manufacturing",
+      status: "cancel",
+      website: "http://www.rajsuperwhite.com",
+      industry: "Manufacturing",
       time: "16:45",
       phone: "+91 7898164395",
       about:
-      "Raj Industries is one of the leading FMCG companies in northern India dealing in Personal and Home Care products. The company’s leading product ‘Raj Super White Laundry Bar’ commands a high market share and is trusted by around 1,50 ,000 retail stores all over the country.Raj Industries is one of the leading FMCG companies in northern India dealing in Personal and Home Care products. The company’s leading product ‘Raj Super White Laundry Bar’ commands a high market share and is trusted by around 1,50 ,000 retail stores all over the country.Raj Industries is one of the leading Raj Industries is one of the leading FMCG companies in northern India dealing in Personal and Home Care products.Raj Industries is one of the leading FMCG companies in northern India dealing in Personal and Home Care products.",
+        "Raj Industries is one of the leading FMCG companies in northern India dealing in Personal and Home Care products. The company’s leading product ‘Raj Super White Laundry Bar’ commands a high market share and is trusted by around 1,50 ,000 retail stores all over the country.Raj Industries is one of the leading FMCG companies in northern India dealing in Personal and Home Care products. The company’s leading product ‘Raj Super White Laundry Bar’ commands a high market share and is trusted by around 1,50 ,000 retail stores all over the country.Raj Industries is one of the leading Raj Industries is one of the leading FMCG companies in northern India dealing in Personal and Home Care products.Raj Industries is one of the leading FMCG companies in northern India dealing in Personal and Home Care products.",
       pickupLocation: {
         address: "101 Birch St, Central City, KY 42330",
       },
@@ -296,18 +303,20 @@ const Index = () => {
         logo: CompanyLogo,
         img: CompanyName,
       },
-      location: "Village Pawa, GT Road, Near Civil Airport, Raj Industries, Ludhiana, Punjab 141120, IN",
-      note:" Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      location:
+        "Village Pawa, GT Road, Near Civil Airport, Raj Industries, Ludhiana, Punjab 141120, IN",
+      note: " Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
     },
     {
       orderID: "ORDERID05",
       date: "20 July 2024",
       time: "11:00",
-      website:"http://www.rajsuperwhite.com",
-      industry:"Manufacturing",
+      status: "cancel",
+      website: "http://www.rajsuperwhite.com",
+      industry: "Manufacturing",
       phone: "+91 7898164395",
       about:
-      "Raj Industries is one of the leading FMCG companies in northern India dealing in Personal and Home Care products. The company’s leading product ‘Raj Super White Laundry Bar’ commands a high market share and is trusted by around 1,50 ,000 retail stores all over the country.Raj Industries is one of the leading FMCG companies in northern India dealing in Personal and Home Care products. The company’s leading product ‘Raj Super White Laundry Bar’ commands a high market share and is trusted by around 1,50 ,000 retail stores all over the country.Raj Industries is one of the leading Raj Industries is one of the leading FMCG companies in northern India dealing in Personal and Home Care products.Raj Industries is one of the leading FMCG companies in northern India dealing in Personal and Home Care products.",
+        "Raj Industries is one of the leading FMCG companies in northern India dealing in Personal and Home Care products. The company’s leading product ‘Raj Super White Laundry Bar’ commands a high market share and is trusted by around 1,50 ,000 retail stores all over the country.Raj Industries is one of the leading FMCG companies in northern India dealing in Personal and Home Care products. The company’s leading product ‘Raj Super White Laundry Bar’ commands a high market share and is trusted by around 1,50 ,000 retail stores all over the country.Raj Industries is one of the leading Raj Industries is one of the leading FMCG companies in northern India dealing in Personal and Home Care products.Raj Industries is one of the leading FMCG companies in northern India dealing in Personal and Home Care products.",
       pickupLocation: {
         address: "303 Willow Ln, Bludhaven, NJ 08505",
       },
@@ -319,8 +328,9 @@ const Index = () => {
         logo: CompanyLogo,
         img: CompanyName,
       },
-      location: "Village Pawa, GT Road, Near Civil Airport, Raj Industries, Ludhiana, Punjab 141120, IN",
-      note:" Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      location:
+        "Village Pawa, GT Road, Near Civil Airport, Raj Industries, Ludhiana, Punjab 141120, IN",
+      note: " Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
     },
   ];
 
@@ -328,11 +338,11 @@ const Index = () => {
     <div className="page-content">
       <BreadCrumb title="Orders" icon="home" />
       <Container fluid>
-        <Row>
-          <Col xl="8">
-            <Row className="d-flex align-items-stretch">
+        <Row className="d-flex align-items-stretch">
+          <Col xl="8" className="d-flex flex-column">
+            <Row className="d-flex align-items-stretch mb-4">
               <Col xl="6" xxl="6" lg="6" className="d-flex">
-                <Card className="w-100">
+                <Card className="w-100 h-100">
                   <ChartHeader title="Recents Orders" />
                   <CardBody>
                     <BarChart
@@ -343,13 +353,13 @@ const Index = () => {
                 </Card>
               </Col>
               <Col xl="6" xxl="6" lg="6" className="d-flex">
-                <Card className="custom-cards w-100" >
+                <Card className="custom-cards w-100 h-100">
                   <ChartHeader title="Loading Trucks" />
                   <CardBody className="p-2">
                     <DonutChart
                       labels={[
                         "Active",
-                        "loading Delayed",
+                        "Loading Delayed",
                         "Unloading Delayed",
                         "Ready to Load",
                         "Ready to Un-load",
@@ -370,14 +380,14 @@ const Index = () => {
               </Col>
             </Row>
             <Row>
-              <Col xl="12">
-                <Card>
+              <Col xl="12" className="d-flex flex-column">
+                <Card className="h-100">
                   <ChartHeader title="Latest Shipping" layout={true} />
                   <CardBody>
                     <OrderTable column={column} recentOrders={recentOrders} />
                   </CardBody>
                 </Card>
-                <Card>
+                <Card className="h-100">
                   <ChartHeader title="Unloading Cargo" layout={true} />
                   <CardBody>
                     <OrderTable
@@ -387,7 +397,7 @@ const Index = () => {
                     />
                   </CardBody>
                 </Card>
-                <Card>
+                <Card className="h-100">
                   <ChartHeader title="Available Cargo" layout={true} />
                   <CardBody>
                     <OrderTable
@@ -400,8 +410,8 @@ const Index = () => {
               </Col>
             </Row>
           </Col>
-          <Col xl="4">
-            <Card>
+          <Col xl="4" className="d-flex flex-column">
+            <Card className="h-100">
               <ChartHeader
                 title="Order Request"
                 layout={true}
@@ -411,6 +421,7 @@ const Index = () => {
               />
               <OrderRequest
                 recentOrderRequest={orderRequest}
+                search={search}
                 title="Recent Order Requests"
               />
             </Card>

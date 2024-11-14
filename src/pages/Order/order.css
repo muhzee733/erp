@@ -129,3 +129,8 @@
   text-decoration: underline;
 }
 
+.sticky-column {
+  position: sticky;
+  top: 0; /* Adjust as needed */
+  z-index: 1; /* Ensure it stays on top, if necessary */
+}

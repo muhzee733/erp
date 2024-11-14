@@ -70,9 +70,9 @@ const OrderTable = ({ column, recentOrders, inloading, availCargo }) => {
                   </td>
                 )}
                 {availCargo ? (
-                  <td>
-                    <Progress value={75} />
-                    <span>40%</span>
+                  <td className="d-flex align-items-center gap-2 justify-content-between" style={{width: "130%", marginTop: "11px"}}>
+                    <Progress value={75} style={{width: "100%"}}/>
+                    <span className="d-block">40%</span>
                   </td>
                 ) : (
                   ""
@@ -132,11 +132,13 @@ const OrderTable = ({ column, recentOrders, inloading, availCargo }) => {
                   ""
                 )}
                 {availCargo ? (
-                  <FeatherIcon
-                    icon="log-out"
-                    size={30}
-                    style={{ border: "1px solid whitesmoke", padding: "3px" }}
-                  />
+                  <td style={{textAlign: "right", cursor: "pointer"}}>
+                    <FeatherIcon
+                      icon="log-out"
+                      size={30}
+                      style={{ border: "1px solid whitesmoke", padding: "3px" }}
+                    />
+                  </td>
                 ) : (
                   ""
                 )}
