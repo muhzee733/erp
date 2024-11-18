@@ -12,7 +12,6 @@ const OrderRequest = ({ title, recentOrderRequest, search }) => {
   const [filterData, setFilterData] = useState([]);
   const [filterByStatus, setFilterByStatus] = useState(true);
   const [loading, setLoading] = useState(false);
-
   useEffect(() => {
     setLoading(true);
 
@@ -74,7 +73,7 @@ const OrderRequest = ({ title, recentOrderRequest, search }) => {
         <div className="d-flex align-items-center justify-content-center">
           <Spinner color="dander" type="grow">
             Loading...
-          </Spinner>
+          </Spinner>  
         </div>
       )}
       {!loading && filterData.length > 0
@@ -151,7 +150,11 @@ const OrderRequest = ({ title, recentOrderRequest, search }) => {
               </div>
             </Card>
           ))
-        : !loading && <Alert color='danger' ><strong>No Order Found</strong></Alert>}
+        : !loading && (
+            <Alert color="danger">
+              <strong>No Order Found</strong>
+            </Alert>
+          )}
 
       {selectedOrderId && (
         <OffCanvas

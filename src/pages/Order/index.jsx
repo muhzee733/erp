@@ -230,6 +230,10 @@ const Index = () => {
       note: " Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
       location:
         "Village Pawa, GT Road, Near Civil Airport, Raj Industries, Ludhiana, Punjab 141120, IN",
+      description:
+        "Raj Industries is one of the leading FMCG companies in northern India dealing in Personal and Home Care products. The company’s leading product ‘Raj Super White Laundry Bar’ commands a high market share and is trusted by around 1,50 ,000 retail stores all over the country",
+      ordersummary:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
     },
     {
       orderID: "ORDERID02",
@@ -256,7 +260,12 @@ const Index = () => {
       note: " Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
       location:
         "Village Pawa, GT Road, Near Civil Airport, Raj Industries, Ludhiana, Punjab 141120, IN",
-    },
+      description:
+        "Raj Industries is one of the leading FMCG companies in northern India dealing in Personal and Home Care products. The company’s leading product ‘Raj Super White Laundry Bar’ commands a high market share and is trusted by around 1,50 ,000 retail stores all over the country",
+      ordersummary:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+ 
+      },
     {
       orderID: "ORDERID03",
       date: "18 July 2024",
@@ -281,7 +290,11 @@ const Index = () => {
       note: " Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
       location:
         "Village Pawa, GT Road, Near Civil Airport, Raj Industries, Ludhiana, Punjab 141120, IN",
-    },
+      description:
+        "Raj Industries is one of the leading FMCG companies in northern India dealing in Personal and Home Care products. The company’s leading product ‘Raj Super White Laundry Bar’ commands a high market share and is trusted by around 1,50 ,000 retail stores all over the country",
+      ordersummary:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      },
     {
       orderID: "ORDERID04",
       date: "19 July 2024",
@@ -306,6 +319,11 @@ const Index = () => {
       location:
         "Village Pawa, GT Road, Near Civil Airport, Raj Industries, Ludhiana, Punjab 141120, IN",
       note: " Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      description:
+      "Raj Industries is one of the leading FMCG companies in northern India dealing in Personal and Home Care products. The company’s leading product ‘Raj Super White Laundry Bar’ commands a high market share and is trusted by around 1,50 ,000 retail stores all over the country",
+      ordersummary:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+
     },
     {
       orderID: "ORDERID05",
@@ -331,6 +349,10 @@ const Index = () => {
       location:
         "Village Pawa, GT Road, Near Civil Airport, Raj Industries, Ludhiana, Punjab 141120, IN",
       note: " Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      description:
+      "Raj Industries is one of the leading FMCG companies in northern India dealing in Personal and Home Care products. The company’s leading product ‘Raj Super White Laundry Bar’ commands a high market share and is trusted by around 1,50 ,000 retail stores all over the country",
+    ordersummary:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
     },
   ];
 
