@@ -224,6 +224,20 @@
   margin: 20px;
   color: #007bff;
 }
+.shipping {
+  overflow-x: scroll;
+}
+.shipping span{
+  cursor: pointer;
+}
+
+.shipping::-webkit-scrollbar {
+  display: none; /* Hide scrollbar for WebKit browsers */
+}
+
+.timeline-item{
+  width: 100% !important;
+}
 
 @media screen and (max-width: 1450px) {
   .search-box .form-control {

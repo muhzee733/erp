@@ -12,7 +12,7 @@ const OrderRequest = ({ title, recentOrderRequest, search }) => {
   const [filterData, setFilterData] = useState([]);
   const [filterByStatus, setFilterByStatus] = useState(true);
   const [loading, setLoading] = useState(false);
-console.log(filterByStatus)
+
   useEffect(() => {
     setLoading(true);
 

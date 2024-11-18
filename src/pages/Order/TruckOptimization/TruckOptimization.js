@@ -3,9 +3,11 @@ import { Card, CardBody, Col, Container, Row } from "reactstrap";
 import BreadCrumb from "../../../Components/Common/BreadCrumb";
 import ChartHeader from "../../../Components/Important/ChartHeader";
 import Shipping from "../../../Components/Important/Shipping";
+import ShipCard from "../../../Components/Important/ShipCard";
 
 const TruckOptimization = () => {
   const [search, searchList] = useState("");
+  const [activeIndex, setActiveIndex] = useState(null);
   const shipData = [
     {
       id: 1,
@@ -63,7 +65,14 @@ const TruckOptimization = () => {
                 searchList={searchList}
               />
               <CardBody>
-                <Shipping shipData={shipData} />
+                <Shipping
+                  shipData={shipData}
+                  setActiveIndex={setActiveIndex}
+                  activeIndex={activeIndex}
+                />
+                {shipData?.map((item, index) => {
+                  return <ShipCard item={item} index={index}/>;
+                })}
               </CardBody>
             </Card>
           </Col>
