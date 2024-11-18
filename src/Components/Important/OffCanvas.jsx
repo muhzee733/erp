@@ -9,8 +9,6 @@ import CompanyLogo from "../../assets/images/svg/CodeSandboxOutlined.svg";
 
 const OffCanvas = ({ isOpen, toggle, orderDetails, title }) => {
   const [filterByStatus, setFilterByStatus] = useState(true);
-  console.log(filterByStatus, 'filterByStatus')
-
   // useEffect(() => {
   //   if (isOpen) {
   //     console.log("Order Details:", orderDetails);
@@ -82,6 +80,7 @@ const OffCanvas = ({ isOpen, toggle, orderDetails, title }) => {
                   Manufacturing &bull; Ludhiana, Punjab
                 </span>
                 <div>
+                  {/* {filterByStatus ? "Work" : "No Work"} */}
                   <span className="text-muted date">{orderDetails?.date}</span>
                   <span className="text-muted time">{orderDetails?.time}</span>
                 </div>
