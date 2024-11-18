@@ -1,8 +1,11 @@
 import React from "react";
+import { useLocation } from 'react-router-dom'; 
 import FeatherIcon from "feather-icons-react";
 import { Col, Row } from "reactstrap";
 
 const BreadCrumb = ({ title, icon }) => {
+  const location = useLocation();
+  const pathnames = location.pathname.split('/').filter(x => x);
   return (
     <React.Fragment>
       <Row>
@@ -14,7 +17,7 @@ const BreadCrumb = ({ title, icon }) => {
                   <FeatherIcon icon={icon} className="breadcrumb-icon"/>
                 </li>
                 <li className="pe-2">/</li>
-                <li className="breadcrumb-item active">{title}</li>
+                <li className="breadcrumb-item active">{title} / {pathnames}</li>
               </ol>
             </div>
           </div>

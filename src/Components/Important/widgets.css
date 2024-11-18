@@ -224,3 +224,10 @@
   margin: 20px;
   color: #007bff;
 }
+
+@media screen and (max-width: 1450px) {
+  .search-box .form-control {
+    padding-left: 30px;
+    width: 70% !important;
+}
+}

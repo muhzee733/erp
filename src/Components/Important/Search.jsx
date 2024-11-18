@@ -6,7 +6,7 @@ const Search = ({searchList, placeholder}) => {
     <div className="search-box">
       <Input
         type="text"
-        className="form-control"
+        className="form-control w-100 w-md-75 w-lg-50"
         placeholder={placeholder}
         onChange={(e) => searchList(e.target.value)}
       />
