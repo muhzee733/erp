@@ -36,9 +36,9 @@ const OffCanvas = ({ isOpen, toggle, orderDetails, title }) => {
       </OffcanvasHeader>
       <div className="d-flex offCanvas-top border-top">
         {filterByStatus ? (
-          <h6 className="customer-text">Order Details</h6>
-        ) : (
           <h6 className="customer-text">Customer Details</h6>
+        ) : (
+          <h6 className="customer-text">Order Details</h6>
         )}
 
         <div className="icons">
@@ -80,40 +80,104 @@ const OffCanvas = ({ isOpen, toggle, orderDetails, title }) => {
                   Manufacturing &bull; Ludhiana, Punjab
                 </span>
                 <div>
-                  {/* {filterByStatus ? "Work" : "No Work"} */}
                   <span className="text-muted date">{orderDetails?.date}</span>
                   <span className="text-muted time">{orderDetails?.time}</span>
                 </div>
               </div>
             </div>
             <div className="about-section">
-              <h4 className="mb-2">About</h4>
-              <p className="menufacturing-text mb-3">{orderDetails?.about}</p>
-              <h6 className="title-text mb-1">Order ID</h6>
-              <p className="menufacturing-text mb-3">
-                <img src={CompanyLogo} alt="Icon" />
-                {orderDetails?.orderID}
-              </p>
+              {filterByStatus ? (
+                <>
+                  <h4 className="mb-2">About</h4>
+                  <p className="menufacturing-text mb-3">
+                    {orderDetails?.about}
+                  </p>
+                </>
+              ) : (
+                <>
+                  <h6 className="title-text mb-1">Order ID</h6>
+                  <p className="menufacturing-text mb-3">
+                    <img src={CompanyLogo} alt="Icon" />
+                    {orderDetails?.orderID}
+                  </p>
+                </>
+              )}
+              {filterByStatus ? (
+                <div className="d-grid mb-4">
+                  <h6 className="title-text mb-1">Website</h6>
+                  <Link className="value" to={orderDetails?.website || "#"}>
+                    {orderDetails?.website}
+                  </Link>
+                </div>
+              ) : (
+                <div className="d-grid mb-4">
+                  <h6 className="title-text mb-1">Order Placed On</h6>
+                  <div className="d-flex">
+                    <span className="text-muted date">
+                      {orderDetails?.date}
+                    </span>
+                    <span className="text-muted time">
+                      {orderDetails?.time}
+                    </span>
+                  </div>
+                </div>
+              )}
 
-              <div className="d-grid mb-4">
-                <h6 className="title-text mb-1">Website</h6>
-                <Link className="value" to={orderDetails?.website || "#"}>
-                  {orderDetails?.website}
-                </Link>
-              </div>
-              <div className="d-grid mb-4">
-                <h6 className="title-text mb-1 ">Phone</h6>
-                <span className="value">{orderDetails?.phone}</span>
-              </div>
-              <div className="d-grid mb-4">
-                <h6 className="title-text mb-1">Industry</h6>
-                <span className="detail-text">{orderDetails?.industry}</span>
-              </div>
-              <div className="d-grid mb-4">
-                <h6 className="title-text mb-2">Locations (1)</h6>
-                <h6 className="mb-3">Headquarters</h6>
-                <p className="detail-text">{orderDetails?.location}</p>
-              </div>
+              {filterByStatus ? (
+                <div className="d-grid mb-4">
+                  <h6 className="title-text mb-1 ">Phone</h6>
+                  <span className="value">{orderDetails?.phone}</span>
+                </div>
+              ) : (
+                <div className="d-grid mb-4">
+                  <h6 className="title-text mb-1 ">Description</h6>
+                  <span className="text-muted">
+                    {orderDetails?.description}
+                  </span>
+                </div>
+              )}
+              {filterByStatus ? (
+                <div className="d-grid mb-4">
+                  <h6 className="title-text mb-1">Industry</h6>
+                  <span className="detail-text">{orderDetails?.industry}</span>
+                </div>
+              ) : (
+                <div className="d-grid mb-4">
+                  <h6 className="title-text mb-1">Pickup Address</h6>
+                  <span className="detail-text">
+                    {orderDetails?.pickupLocation.address}
+                  </span>
+                </div>
+              )}
+              {
+                filterByStatus ? (
+                  <div className="d-grid mb-4">
+                  <h6 className="title-text mb-2">Locations (1)</h6>
+                  <h6 className="mb-3">Headquarters</h6>
+                  <p className="detail-text">{orderDetails?.location}</p>
+                </div>
+                ): (<><div className="d-grid mb-4">
+                  <h6 className="title-text mb-1">Delivery Address</h6>
+                  <span className="detail-text">
+                    {orderDetails?.destination.address}
+                  </span>
+                </div>
+                <div className="d-grid mb-4">
+                  <h6 className="title-text mb-1">Order Item Summary</h6>
+                  <span className="detail-text">
+                    {orderDetails?.ordersummary}
+                  </span>
+                </div>
+                <div className="d-grid mb-4">
+                  <h6 className="title-text mb-1">Route</h6>
+                  <span className="detail-text">
+                    {orderDetails?.route}
+                  </span>
+                </div>
+                </>
+                )
+              }
+             
             </div>
             <div className="mb-6">
               <h5 className="title-text mt-3 mb-2">Note:</h5>

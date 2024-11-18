@@ -234,7 +234,8 @@ const Index = () => {
         "Raj Industries is one of the leading FMCG companies in northern India dealing in Personal and Home Care products. The company’s leading product ‘Raj Super White Laundry Bar’ commands a high market share and is trusted by around 1,50 ,000 retail stores all over the country",
       ordersummary:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-    },
+      route: "Mumbai ----> Delhi",
+      },
     {
       orderID: "ORDERID02",
       date: "17 July 2024",
@@ -264,7 +265,8 @@ const Index = () => {
         "Raj Industries is one of the leading FMCG companies in northern India dealing in Personal and Home Care products. The company’s leading product ‘Raj Super White Laundry Bar’ commands a high market share and is trusted by around 1,50 ,000 retail stores all over the country",
       ordersummary:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
- 
+        route: "Mumbai ----> Delhi",
+
       },
     {
       orderID: "ORDERID03",
@@ -294,6 +296,8 @@ const Index = () => {
         "Raj Industries is one of the leading FMCG companies in northern India dealing in Personal and Home Care products. The company’s leading product ‘Raj Super White Laundry Bar’ commands a high market share and is trusted by around 1,50 ,000 retail stores all over the country",
       ordersummary:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      route: "Mumbai ----> Delhi",
+
       },
     {
       orderID: "ORDERID04",
@@ -323,6 +327,7 @@ const Index = () => {
       "Raj Industries is one of the leading FMCG companies in northern India dealing in Personal and Home Care products. The company’s leading product ‘Raj Super White Laundry Bar’ commands a high market share and is trusted by around 1,50 ,000 retail stores all over the country",
       ordersummary:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      route: "Mumbai ----> Delhi",
 
     },
     {
@@ -353,6 +358,8 @@ const Index = () => {
       "Raj Industries is one of the leading FMCG companies in northern India dealing in Personal and Home Care products. The company’s leading product ‘Raj Super White Laundry Bar’ commands a high market share and is trusted by around 1,50 ,000 retail stores all over the country",
     ordersummary:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    route: "Mumbai ----> Delhi",
+
     },
   ];
 
