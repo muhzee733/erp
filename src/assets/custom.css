@@ -129,6 +129,26 @@
   font-size: 12px;
   line-height: 20px;
 }
+.status-btn-loading{
+  border: 1px solid #FFD591;
+  border-radius: 4px;
+  padding: 2px 8px 2px 8px;  
+  background-color: #FFF7E6;
+  color: #FA8C16;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 20px;
+}
+.status-btn-unloading{
+  border: 1px solid #87E8DE;
+  border-radius: 4px;
+  padding: 2px 8px 2px 8px;  
+  background-color: #E6FFFB;
+  color: #13C2C2;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 20px;
+}
 .status-btn-active{
   border: 1px solid #B7EB8F;
   border-radius: 4px;

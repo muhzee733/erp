@@ -55,7 +55,7 @@ const ChartHeader = ({
       <div className="flex-grow-1 d-inline-flex align-items-center">
         <h4 className="card-title mb-0 pe-2">{title}</h4>
       </div>
-      <div className="flex-shrink-0">
+      <div className="flex-shrink-1">
         {layout ? (
           <>
             {search ? (

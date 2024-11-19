@@ -1,20 +1,25 @@
-import React, { useState } from "react";
+import React from "react";
 import "./widgets.css";
 
-const Shipping = ({ shipData, setActiveIndex, activeIndex }) => {
+const Shipping = ({ shipData, setActiveStatus, activeStatus }) => {
+  const statusCodes = [
+    ...new Set(shipData.map((item) => item.status.status_code)),
+  ];
 
   return (
     <div className="shipping w-100 d-flex">
-      {shipData?.length > 0 ? (
-        shipData.map((items, index) => (
+      {statusCodes.length > 0 ? (
+        statusCodes.map((status, index) => (
           <span
             key={index}
             className={`badge badge-pill me-2 text-dark border ${
-              activeIndex === index ? "bg-danger text-white" : "badge-light"
+              activeStatus === status ? "bg-danger text-white" : "badge-light"
             }`}
-            onClick={() => setActiveIndex(index)}
+            onClick={() =>
+              setActiveStatus(activeStatus === status ? null : status)
+            }
           >
-            {items.status.statud_code}
+            {status}
           </span>
         ))
       ) : (
