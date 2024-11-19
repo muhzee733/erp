@@ -4,6 +4,7 @@ import BreadCrumb from "../../../Components/Common/BreadCrumb";
 import ChartHeader from "../../../Components/Important/ChartHeader";
 import Shipping from "../../../Components/Important/Shipping";
 import ShipCard from "../../../Components/Important/ShipCard";
+import TrackLoading from "../../../Components/Important/TruchLoading";
 
 const TruckOptimization = () => {
   const [search, searchList] = useState("");
@@ -71,12 +72,18 @@ const TruckOptimization = () => {
                   activeIndex={activeIndex}
                 />
                 {shipData?.map((item, index) => {
-                  return <ShipCard item={item} index={index}/>;
+                  return <ShipCard item={item} index={index} />;
                 })}
               </CardBody>
             </Card>
           </Col>
-          <Col xl="6">col - 6</Col>
+          <Col xl="6">
+            <Card>
+              <CardBody>
+                <TrackLoading />
+              </CardBody>
+            </Card>
+          </Col>
           <Col xl="3">col - 4</Col>
         </Row>
       </Container>
