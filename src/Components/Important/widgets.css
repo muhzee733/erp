@@ -288,3 +288,14 @@
     width: 70% !important;
   }
 }
+
+.search-bar{
+  width: 65%;
+}
+@media screen and (max-width: 1450px) {
+  .search-box .form-control {
+    padding-left: 30px;
+    width: 95% !important;
+}
+
+}

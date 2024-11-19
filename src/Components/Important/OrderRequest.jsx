@@ -73,7 +73,7 @@ const OrderRequest = ({ title, recentOrderRequest, search }) => {
         <div className="d-flex align-items-center justify-content-center">
           <Spinner color="dander" type="grow">
             Loading...
-          </Spinner>  
+          </Spinner>
         </div>
       )}
       {!loading && filterData.length > 0
