@@ -4,7 +4,6 @@ import BreadCrumb from "../../../Components/Common/BreadCrumb";
 import ChartHeader from "../../../Components/Important/ChartHeader";
 import Shipping from "../../../Components/Important/Shipping";
 import ShipCard from "../../../Components/Important/ShipCard";
-import TrackLoading from "../../../Components/Important/TruchLoading";
 
 const TruckOptimization = () => {
   const [search, setSearch] = useState("");
@@ -108,24 +107,21 @@ const TruckOptimization = () => {
       <BreadCrumb title="Orders" icon="home" />
       <Container fluid>
         <Row>
-          <Col xl="3">
+        <Col xl="3" className="d-flex flex-column h-100">
             <Card className="h-100">
-              <ChartHeader
+            <ChartHeader
                 title="Vehicles"
                 layout={true}
                 search={true}
                 placeholder="Search by Shipment ID"
                 searchList={setSearch}
               />
-              <CardBody >
+              <CardBody className="ship-cardbody">
                 <Shipping 
                   shipData={shipData}
                   setActiveStatus={setActiveStatus}
                   activeStatus={activeStatus}
                 />
-                {shipData?.map((item, index) => {
-                  return <ShipCard item={item} index={index} />;
-                })}
                    {loading && (
                   <div className="d-flex align-items-center justify-content-center mt-6 mb-6">
                     <Spinner color="dander" type="grow">
@@ -141,13 +137,7 @@ const TruckOptimization = () => {
               </CardBody>
             </Card>
           </Col>
-          <Col xl="6">
-            <Card>
-              <CardBody>
-                <TrackLoading />
-              </CardBody>
-            </Card>
-          </Col>
+          <Col xl="6">col - 6</Col>
           <Col xl="3">col - 4</Col>
         </Row>
       </Container>
