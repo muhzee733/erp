@@ -3,7 +3,7 @@ import { Col, Progress, Row } from "reactstrap";
 import { ReactComponent as CompanyLogo } from "../../assets/images/svg/CodeSandboxOutlined.svg";
 import truckImage from "../../assets/images/truck.png";
 
-const TruchLoading = () => {
+const TruckLoading = () => {
   const percentage = 100;
   const trucks = [
     { name: "Eicher Pro 2059", plate: "DL04MP7045" },
@@ -56,4 +56,4 @@ const TruchLoading = () => {
   );
 };
 
-export default TruchLoading;
+export default TruckLoading;
