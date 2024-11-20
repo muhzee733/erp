@@ -74,8 +74,8 @@ const RecommendationOrders = ({ title, shipOrders }) => {
                 {orders?.length > 0
                   ? orders.map((item, index) => (
                       <Draggable
-                        key={item.id}
-                        draggableId={item.id.toString()}
+                        key={item.orderID}
+                        draggableId={item.orderID.toString()}
                         index={index}
                       >
                         {(provided) => (
@@ -92,19 +92,26 @@ const RecommendationOrders = ({ title, shipOrders }) => {
                             <Card className="border-2 m-0">
                               <Row className="me-1">
                                 <Col
+                                 
                                   lg="2"
-                                  className="bg-info"
-                                  style={{ borderRadius: "8px 0px 0px 8px" }}
+                                  style={{
+                                    borderRadius: "8px 0px 0px 8px",
+                                    backgroundColor: "#E6F4FF",
+                                  }}
                                 >
-                                  <div className="d-flex align-items-center justify-content-center">
-                                    <span>:</span>
-                                    <span>:</span>
+                                  <div class="drag-handle">
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
                                   </div>
                                 </Col>
                                 <Col lg="10">
                                   <div className="orders-div">
                                     <p className="d-flex recommendationorder-id m-1">
-                                      ID: {item.id}
+                                      ID: {item.orderID}
                                     </p>
                                     <div className="info">
                                       <div className="info-item mb-1">

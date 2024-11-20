@@ -5,6 +5,24 @@
   line-height: 24px;
   color: #000000E0;
 }
+.drag-handle {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  grid-template-rows: repeat(3, auto);
+  gap: 6px;
+  cursor: grab;
+  position: relative;
+  top: 44px;
+  right: 7px;
+}
+
+.drag-handle div {
+  width: 6px;
+  height: 6px;
+  background-color: gray;
+  border-radius: 50%;
+}
+
 .orders-div{
   padding: 10px 08px;
 }
