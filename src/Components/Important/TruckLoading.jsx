@@ -15,7 +15,7 @@ const TruckLoading = () => {
     <div className="trackloading pt-2">
       <Row>
         <Col lg="4">
-          {trucks.map((truck, index) => (
+          {trucks?.map((truck, index) => (
             <div key={index} className="d-flex align-items-center mb-3">
               <figure className="m-0">
                 <CompanyLogo
@@ -39,12 +39,6 @@ const TruckLoading = () => {
             <figure className="truck-image">
               <img src={truckImage} alt="Truck" />
             </figure>
-            <div
-              className="percentage-fill"
-              style={{
-                width: `${percentage}%`,
-              }}
-            ></div>
             <div className="percentage-info">
               <span className="percentage-truck">{percentage}%</span>
               <Progress value={percentage}/>

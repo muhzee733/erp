@@ -1,40 +1,39 @@
 /* Recommendation Orders Card CSS */
-.recommendationorder-id{
+.recommendationorder-id {
   font-size: 14px;
   font-weight: 400;
   line-height: 24px;
-  color: #000000E0;
+  color: #000000e0;
 }
-.orders-div{
+.orders-div {
   padding: 10px 08px;
 }
-.info-item img{
+.info-item img {
   margin-right: 5px;
   width: 20px;
-  background-color: #F0F0F0;
+  background-color: #f0f0f0;
   border-radius: 4px;
-  padding: 3px 3px;   
+  padding: 3px 3px;
 }
-.info-item span{
+.info-item span {
   font-size: 10px;
   font-weight: 400;
   line-height: 24px;
-  color: #000000E0;
+  color: #000000e0;
 }
 /*  */
 
-.rounded-3{
-  border-radius: 8px!important;
-  border: 1.5px solid #F0F0F0!important;
+.rounded-3 {
+  border-radius: 8px !important;
+  border: 1.5px solid #f0f0f0 !important;
 }
-.rounded-3:active{
-  border: 1.5px solid #003EB3!important;
-  border-radius: 8px!important;
+.rounded-3:active {
+  border: 1.5px solid #003eb3 !important;
+  border-radius: 8px !important;
 }
-.rounded-3:hover{
-  border: 1.5px solid #003EB3!important;
-  border-radius: 8px!important;
-
+.rounded-3:hover {
+  border: 1.5px solid #003eb3 !important;
+  border-radius: 8px !important;
 }
 .circle {
   width: 10px;
@@ -122,19 +121,19 @@
   background-color: #ffffff;
 }
 /* SVG */
-.circle-svg{
+.circle-svg {
   width: 15px !important;
-  height: 15px!important;
+  height: 15px !important;
   margin-right: 10px;
 }
-.ellipse-svg{
-  width: 14px!important;
-  height: 11px!important;
+.ellipse-svg {
+  width: 14px !important;
+  height: 11px !important;
   margin-right: 10px;
 }
 /* Vertical Lines */
-.border-lines::before{
-  border-left: 2px dashed #D9D9D9;
+.border-lines::before {
+  border-left: 2px dashed #d9d9d9;
   content: "";
   height: 62%;
   left: 18px;
@@ -291,28 +290,29 @@
   width: 100% !important;
 }
 .truck-loading {
-  width: 322px;
-  height: 59px;
+  position: relative;
 }
 .truck-image img {
   width: 100%;
   height: auto;
   display: block;
   z-index: 1;
+  text-align: right;
 }
 
-.percentage-fill {
-  /* position: absolute;
-  top: 30%;
-  left: 7%; */
-  height: 100%;
+/* .percentage-fill {
+  height: 76px;
   background: linear-gradient(94.86deg, #dc4446 6.42%, #faad14 99.51%);
   z-index: 1;
   opacity: 0.8;
-  /* transform: translate(46%, 0%); */
-  transform-origin: left; 
+  transform-origin: left;
   transition: width 0.5s ease-out;
-}
+  position: absolute;
+  top: 63px;
+  left: 50%;
+  right: 50%;
+  transform: translate(-50%, -50%);
+} */
 .percentage-truck {
   position: absolute;
   top: 0;
@@ -325,12 +325,13 @@
 }
 .percentage-info {
   position: absolute;
-  bottom: 5px;
-  left: 50%;
-  transform: translateX(-50%);
+  top: 33%;
+  right: 50%;
   text-align: center;
   z-index: 3;
   width: 60%;
+  left: 50%;
+  transform: translate(-45%, -50%);
 }
 .truck-loading .progress {
   position: absolute;
@@ -338,12 +339,11 @@
   width: 100%;
   left: 38px;
 }
-.custom-order{
+.custom-order {
   width: 48%;
-  
 }
 
-.droppable-orders > div{
+.droppable-orders > div {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -357,13 +357,12 @@
   }
 }
 
-.search-bar{
+.search-bar {
   width: 65%;
 }
 @media screen and (max-width: 1450px) {
   .search-box .form-control {
     padding-left: 30px;
     width: 95% !important;
-}
-
+  }
 }
