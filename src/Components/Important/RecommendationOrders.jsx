@@ -85,47 +85,31 @@ const RecommendationOrders = ({ title, shipOrders }) => {
                             {...provided.dragHandleProps}
                             style={{
                               ...provided.draggableProps.style,
-                              marginBottom: "15px",
+                              margin: "0px",
                             }}
                             className="custom-order"
                           >
-                            <Card className="border-2 m-0">
-                              <Row className="me-1">
-                                <Col
-                                 
-                                  lg="2"
-                                  style={{
-                                    borderRadius: "8px 0px 0px 8px",
-                                    backgroundColor: "#E6F4FF",
-                                  }}
-                                >
-                                  <div class="drag-handle">
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
+                            <Card className="border-2 m-0 d-flex flex-row align-items-center">
+                              <div className="drag-handle ">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                              </div>
+                              <div className="orders-div">
+                                <p className="d-flex recommendationorder-id ">
+                                  ID: {item.orderID}
+                                </p>
+                                <div className="info">
+                                  <div className="info-item mb-1">
+                                    <img src={Icon} alt="Weight Icon"></img>
+                                    <span>{item.weight}kg</span>
                                   </div>
-                                </Col>
-                                <Col lg="10">
-                                  <div className="orders-div">
-                                    <p className="d-flex recommendationorder-id m-1">
-                                      ID: {item.orderID}
-                                    </p>
-                                    <div className="info">
-                                      <div className="info-item mb-1">
-                                        <img src={Icon} alt="Weight Icon"></img>
-                                        <span>{item.weight}kg</span>
-                                      </div>
-                                      <div className="d-flex info-item">
-                                        <img src={Icon2} alt="Route Icon"></img>
-                                        <span>{item.route}</span>
-                                      </div>
-                                    </div>
+                                  <div className="d-flex info-item">
+                                    <img src={Icon2} alt="Route Icon"></img>
+                                    <span>{item.route}</span>
                                   </div>
-                                </Col>
-                              </Row>
+                                </div>
+                              </div>
                             </Card>
                           </div>
                         )}
