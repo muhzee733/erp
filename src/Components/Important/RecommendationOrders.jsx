@@ -17,13 +17,8 @@ const RecommendationOrders = ({ title, shipOrders }) => {
   const handleDragEnd = (result) => {
     const { destination, source } = result;
 
-    // If dropped outside a valid droppable area, do nothing
-    if (!destination) return;
+    if (!destination || destination.index === source.index) return;
 
-    // If the item was dropped back to the same place, do nothing
-    if (destination.index === source.index) return;
-
-    // Reorder the list
     const updatedOrders = Array.from(orders);
     const [movedItem] = updatedOrders.splice(source.index, 1);
     updatedOrders.splice(destination.index, 0, movedItem);
@@ -73,7 +68,7 @@ const RecommendationOrders = ({ title, shipOrders }) => {
             {(provided) => (
               <div
                 {...provided.droppableProps}
-                ref={provided.innerRef}
+                ref={provided.innerRef} // Correctly assign the ref here
                 style={{ width: "100%" }}
               >
                 {orders?.length > 0 ? (
@@ -84,9 +79,8 @@ const RecommendationOrders = ({ title, shipOrders }) => {
                       index={index}
                     >
                       {(provided) => (
-                        <Col
-                          xl={6}
-                          ref={provided.innerRef}
+                        <div // Ensure this is a single wrapper element for `Draggable`
+                          ref={provided.innerRef} // Correctly assign the ref here
                           {...provided.draggableProps}
                           {...provided.dragHandleProps}
                           style={{
@@ -111,7 +105,7 @@ const RecommendationOrders = ({ title, shipOrders }) => {
                               </div>
                             </div>
                           </Card>
-                        </Col>
+                        </div>
                       )}
                     </Draggable>
                   ))
