@@ -47,7 +47,7 @@ const TruckLoading = () => {
             ></div>
             <div className="percentage-info">
               <span className="percentage-truck">{percentage}%</span>
-              <Progress value={60}/>
+              <Progress value={percentage}/>
             </div>
           </div>
         </Col>
