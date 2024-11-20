@@ -62,56 +62,69 @@ const RecommendationOrders = ({ title, shipOrders }) => {
           </div>
         </div>
       </Row>
-      <Row>
+      <Row className="droppable-orders m-1">
         <DragDropContext onDragEnd={handleDragEnd}>
           <Droppable droppableId="droppable-orders">
             {(provided) => (
               <div
                 {...provided.droppableProps}
-                ref={provided.innerRef} // Correctly assign the ref here
+                ref={provided.innerRef}
                 style={{ width: "100%" }}
               >
-                {orders?.length > 0 ? (
-                  orders.map((item, index) => (
-                    <Draggable
-                      key={item.id}
-                      draggableId={item.id.toString()}
-                      index={index}
-                    >
-                      {(provided) => (
-                        <div // Ensure this is a single wrapper element for `Draggable`
-                          ref={provided.innerRef} // Correctly assign the ref here
-                          {...provided.draggableProps}
-                          {...provided.dragHandleProps}
-                          style={{
-                            ...provided.draggableProps.style,
-                            marginBottom: "15px",
-                          }}
-                        >
-                          <Card>
-                            <div className="orders-div">
-                              <p className="d-flex recommendationorder-id">
-                                ID: {item.id}
-                              </p>
-                              <div className="info">
-                                <div className="info-item mb-1">
-                                  <img src={Icon} alt="Weight Icon"></img>
-                                  <span>{item.weight}kg</span>
-                                </div>
-                                <div className="d-flex info-item">
-                                  <img src={Icon2} alt="Route Icon"></img>
-                                  <span>{item.route}</span>
-                                </div>
-                              </div>
-                            </div>
-                          </Card>
-                        </div>
-                      )}
-                    </Draggable>
-                  ))
-                ) : (
-                  "No Data Found"
-                )}
+                {orders?.length > 0
+                  ? orders.map((item, index) => (
+                      <Draggable
+                        key={item.id}
+                        draggableId={item.id.toString()}
+                        index={index}
+                      >
+                        {(provided) => (
+                          <div
+                            ref={provided.innerRef}
+                            {...provided.draggableProps}
+                            {...provided.dragHandleProps}
+                            style={{
+                              ...provided.draggableProps.style,
+                              marginBottom: "15px",
+                            }}
+                            className="custom-order"
+                          >
+                            <Card className="border-2 m-0">
+                              <Row className="me-1">
+                                <Col
+                                  lg="2"
+                                  className="bg-info"
+                                  style={{ borderRadius: "8px 0px 0px 8px" }}
+                                >
+                                  <div className="d-flex align-items-center justify-content-center">
+                                    <span>:</span>
+                                    <span>:</span>
+                                  </div>
+                                </Col>
+                                <Col lg="10">
+                                  <div className="orders-div">
+                                    <p className="d-flex recommendationorder-id m-1">
+                                      ID: {item.id}
+                                    </p>
+                                    <div className="info">
+                                      <div className="info-item mb-1">
+                                        <img src={Icon} alt="Weight Icon"></img>
+                                        <span>{item.weight}kg</span>
+                                      </div>
+                                      <div className="d-flex info-item">
+                                        <img src={Icon2} alt="Route Icon"></img>
+                                        <span>{item.route}</span>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </Col>
+                              </Row>
+                            </Card>
+                          </div>
+                        )}
+                      </Draggable>
+                    ))
+                  : "No Data Found"}
                 {provided.placeholder}
               </div>
             )}

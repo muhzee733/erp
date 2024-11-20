@@ -338,6 +338,17 @@
   width: 100%;
   left: 38px;
 }
+.custom-order{
+  width: 48%;
+  
+}
+
+.droppable-orders > div{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
 
 @media screen and (max-width: 1450px) {
   .search-box .form-control {
