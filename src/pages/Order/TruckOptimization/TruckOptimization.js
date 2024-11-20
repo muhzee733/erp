@@ -85,29 +85,29 @@ const TruckOptimization = () => {
     {
       id: "ORDERID0123",
       weight: "88.9 kg",
-      route: "ROUTEEAA001"
+      route: "ROUTEEAA001",
     },
     {
       id: "ORDERID0124",
       weight: "120.5 kg",
-      route: "ROUTEEAA002"
+      route: "ROUTEEAA002",
     },
     {
       id: "ORDERID0125",
       weight: "75.3 kg",
-      route: "ROUTEEAA003"
+      route: "ROUTEEAA003",
     },
     {
       id: "ORDERID0126",
       weight: "45.8 kg",
-      route: "ROUTEEAA004"
+      route: "ROUTEEAA004",
     },
     {
       id: "ORDERID0127",
       weight: "99.4 kg",
-      route: "ROUTEEAA005"
-    }
-  ];  
+      route: "ROUTEEAA005",
+    },
+  ];
 
   useEffect(() => {
     setLoading(true);
@@ -136,9 +136,9 @@ const TruckOptimization = () => {
       <BreadCrumb title="Orders" icon="home" />
       <Container fluid>
         <Row>
-        <Col xl="3" className="d-flex flex-column h-100">
+          <Col xl="3" className="d-flex flex-column h-100">
             <Card className="h-100">
-            <ChartHeader
+              <ChartHeader
                 title="Vehicles"
                 layout={true}
                 search={true}
@@ -146,12 +146,12 @@ const TruckOptimization = () => {
                 searchList={setSearch}
               />
               <CardBody className="ship-cardbody">
-                <Shipping 
+                <Shipping
                   shipData={shipData}
                   setActiveStatus={setActiveStatus}
                   activeStatus={activeStatus}
                 />
-                   {loading && (
+                {loading && (
                   <div className="d-flex align-items-center justify-content-center mt-6 mb-6">
                     <Spinner color="dander" type="grow">
                       Loading...
@@ -166,28 +166,33 @@ const TruckOptimization = () => {
               </CardBody>
             </Card>
           </Col>
-          <Col xl="6">
-            <Card>
-              <CardBody>
-                <TruckLoading />
-              </CardBody>
-            </Card>
-          </Col>
-          <Col xl="3">
-          <Card className="h-100">
-            <ChartHeader
-                title="Orders"
-                layout={true}
-                search={true}
-                placeholder="Search by Order ID, No."
-                searchList={setSearch}
-              />
-              <CardBody>
-                <RecommendationOrders title="Recommendation" shipOrders={shipOrders}/>
-                
-                  
-              </CardBody>
-            </Card>
+          <Col xl="9">
+            <Row>
+              <Col xl="8">
+                <Card>
+                  <CardBody>
+                    <TruckLoading />
+                  </CardBody>
+                </Card>
+              </Col>
+              <Col xl="4">
+                <Card className="h-100">
+                  <ChartHeader
+                    title="Orders"
+                    layout={true}
+                    search={true}
+                    placeholder="Search by Order ID, No."
+                    searchList={setSearch}
+                  />
+                  <CardBody>
+                    <RecommendationOrders
+                      title="Recommendation"
+                      shipOrders={shipOrders}
+                    />
+                  </CardBody>
+                </Card>
+              </Col>
+            </Row>
           </Col>
         </Row>
       </Container>

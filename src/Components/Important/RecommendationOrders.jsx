@@ -3,13 +3,32 @@ import Icon from "../../assets/images/svg/weight.svg";
 import Icon2 from "../../assets/images/svg/route.svg";
 import Icon3 from "../../assets/images/svg/calender.svg";
 import "./widgets.css";
-import { Card, CardBody, Col, Row } from "reactstrap";
+import { Card, Col, Row } from "reactstrap";
+import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
 
 const RecommendationOrders = ({ title, shipOrders }) => {
   const [activeIcon, setActiveIcon] = useState("icon1");
+  const [orders, setOrders] = useState(shipOrders || []);
 
   const handleIconClick = (icon) => {
     setActiveIcon(icon);
+  };
+
+  const handleDragEnd = (result) => {
+    const { destination, source } = result;
+
+    // If dropped outside a valid droppable area, do nothing
+    if (!destination) return;
+
+    // If the item was dropped back to the same place, do nothing
+    if (destination.index === source.index) return;
+
+    // Reorder the list
+    const updatedOrders = Array.from(orders);
+    const [movedItem] = updatedOrders.splice(source.index, 1);
+    updatedOrders.splice(destination.index, 0, movedItem);
+
+    setOrders(updatedOrders);
   };
 
   return (
@@ -49,24 +68,61 @@ const RecommendationOrders = ({ title, shipOrders }) => {
         </div>
       </Row>
       <Row>
-        <Col xl={6}>
-          <Card>
-            <div className="orders-div">
-              <p className="d-flex recommendationorder-id">ID: ORDERID0123</p>
-              <div class="info">
-                <div class="info-item mb-1">
-                  <img src={Icon}></img>
-                  <span>88.9 kg</span>
-                </div>
-                <div class="d-flex info-item">
-                  <img src={Icon2}></img>
-                  <span>ROUTEEAA001</span>
-                </div>
+        <DragDropContext onDragEnd={handleDragEnd}>
+          <Droppable droppableId="droppable-orders">
+            {(provided) => (
+              <div
+                {...provided.droppableProps}
+                ref={provided.innerRef}
+                style={{ width: "100%" }}
+              >
+                {orders?.length > 0 ? (
+                  orders.map((item, index) => (
+                    <Draggable
+                      key={item.id}
+                      draggableId={item.id.toString()}
+                      index={index}
+                    >
+                      {(provided) => (
+                        <Col
+                          xl={6}
+                          ref={provided.innerRef}
+                          {...provided.draggableProps}
+                          {...provided.dragHandleProps}
+                          style={{
+                            ...provided.draggableProps.style,
+                            marginBottom: "15px",
+                          }}
+                        >
+                          <Card>
+                            <div className="orders-div">
+                              <p className="d-flex recommendationorder-id">
+                                ID: {item.id}
+                              </p>
+                              <div className="info">
+                                <div className="info-item mb-1">
+                                  <img src={Icon} alt="Weight Icon"></img>
+                                  <span>{item.weight}kg</span>
+                                </div>
+                                <div className="d-flex info-item">
+                                  <img src={Icon2} alt="Route Icon"></img>
+                                  <span>{item.route}</span>
+                                </div>
+                              </div>
+                            </div>
+                          </Card>
+                        </Col>
+                      )}
+                    </Draggable>
+                  ))
+                ) : (
+                  "No Data Found"
+                )}
+                {provided.placeholder}
               </div>
-            </div>
-          </Card>
-        </Col>
-        <Col xl={6}>Col-2</Col>
+            )}
+          </Droppable>
+        </DragDropContext>
       </Row>
     </>
   );
