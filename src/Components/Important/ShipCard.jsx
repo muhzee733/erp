@@ -18,7 +18,7 @@ const ShipCard = ({ item, index }) => {
     }
   };
   return (
-    <div className="mt-3 border rounded" key={index}>
+    <div className="mt-3 border rounded-3" key={index}>
       <div className="ship-wrapper">
         <div className="ship-header p-3 d-flex justify-content-between  border-bottom">
           <div className="d-flex gap-2">

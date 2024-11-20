@@ -5,6 +5,7 @@ import ChartHeader from "../../../Components/Important/ChartHeader";
 import Shipping from "../../../Components/Important/Shipping";
 import ShipCard from "../../../Components/Important/ShipCard";
 import TruckLoading from "../../../Components/Important/TruckLoading";
+import RecommendationOrders from "../../../Components/Important/RecommendationOrders";
 
 const TruckOptimization = () => {
   const [search, setSearch] = useState("");
@@ -80,6 +81,33 @@ const TruckOptimization = () => {
       shipId: "SHIPID09",
     },
   ];
+  const shipOrders = [
+    {
+      id: "ORDERID0123",
+      weight: "88.9 kg",
+      route: "ROUTEEAA001"
+    },
+    {
+      id: "ORDERID0124",
+      weight: "120.5 kg",
+      route: "ROUTEEAA002"
+    },
+    {
+      id: "ORDERID0125",
+      weight: "75.3 kg",
+      route: "ROUTEEAA003"
+    },
+    {
+      id: "ORDERID0126",
+      weight: "45.8 kg",
+      route: "ROUTEEAA004"
+    },
+    {
+      id: "ORDERID0127",
+      weight: "99.4 kg",
+      route: "ROUTEEAA005"
+    }
+  ];  
 
   useEffect(() => {
     setLoading(true);
@@ -145,7 +173,22 @@ const TruckOptimization = () => {
               </CardBody>
             </Card>
           </Col>
-          <Col xl="3">col - 4</Col>
+          <Col xl="3">
+          <Card className="h-100">
+            <ChartHeader
+                title="Orders"
+                layout={true}
+                search={true}
+                placeholder="Search by Order ID, No."
+                searchList={setSearch}
+              />
+              <CardBody>
+                <RecommendationOrders title="Recommendation" shipOrders={shipOrders}/>
+                
+                  
+              </CardBody>
+            </Card>
+          </Col>
         </Row>
       </Container>
     </div>

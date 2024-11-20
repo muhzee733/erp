@@ -1,3 +1,41 @@
+/* Recommendation Orders Card CSS */
+.recommendationorder-id{
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 24px;
+  color: #000000E0;
+}
+.orders-div{
+  padding: 10px 08px;
+}
+.info-item img{
+  margin-right: 5px;
+  width: 20px;
+  background-color: #F0F0F0;
+  border-radius: 4px;
+  padding: 3px 3px;   
+}
+.info-item span{
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 24px;
+  color: #000000E0;
+}
+/*  */
+
+.rounded-3{
+  border-radius: 8px!important;
+  border: 1.5px solid #F0F0F0!important;
+}
+.rounded-3:active{
+  border: 1.5px solid #003EB3!important;
+  border-radius: 8px!important;
+}
+.rounded-3:hover{
+  border: 1.5px solid #003EB3!important;
+  border-radius: 8px!important;
+
+}
 .circle {
   width: 10px;
   height: 10px;
