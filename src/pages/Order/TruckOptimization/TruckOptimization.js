@@ -15,7 +15,7 @@ const TruckOptimization = () => {
 
   const shipData = [
     {
-      id: 1,
+      orderID: 1,
       status: {
         status_code: "Arriving",
         ship_date_time: "17 July 2024, 18:00",
@@ -23,12 +23,12 @@ const TruckOptimization = () => {
       shipId: "SHIPID01",
     },
     {
-      id: 2,
+      orderID: 2,
       status: { status_code: "Loading", ship_date_time: "17 July 2024, 18:00" },
       shipId: "SHIPID02",
     },
     {
-      id: 3,
+      orderID: 3,
       status: {
         status_code: "Available",
         ship_date_time: "17 July 2024, 18:00",
@@ -36,7 +36,7 @@ const TruckOptimization = () => {
       shipId: "SHIPID03",
     },
     {
-      id: 4,
+      orderID: 4,
       status: {
         status_code: "Unloading",
         ship_date_time: "17 July 2024, 18:00",
@@ -44,7 +44,7 @@ const TruckOptimization = () => {
       shipId: "SHIPID04",
     },
     {
-      id: 5,
+      orderID: 5,
       status: {
         status_code: "Departed",
         ship_date_time: "17 July 2024, 18:00",
@@ -52,7 +52,7 @@ const TruckOptimization = () => {
       shipId: "SHIPID05",
     },
     {
-      id: 6,
+      orderID: 6,
       status: {
         status_code: "Departed",
         ship_date_time: "17 July 2024, 18:00",
@@ -60,7 +60,7 @@ const TruckOptimization = () => {
       shipId: "SHIPID06",
     },
     {
-      id: 7,
+      orderID: 7,
       status: {
         status_code: "Arriving",
         ship_date_time: "17 July 2024, 18:00",
@@ -68,12 +68,12 @@ const TruckOptimization = () => {
       shipId: "SHIPID07",
     },
     {
-      id: 8,
+      orderID: 8,
       status: { status_code: "Loading", ship_date_time: "17 July 2024, 18:00" },
       shipId: "SHIPID08",
     },
     {
-      id: 9,
+      orderID: 9,
       status: {
         status_code: "Unloading",
         ship_date_time: "17 July 2024, 18:00",
@@ -83,28 +83,28 @@ const TruckOptimization = () => {
   ];
   const shipOrders = [
     {
-      id: "ORDERID0123",
-      weight: "88.9 kg",
+      orderID: "ORDERID0123",
+      weight: "88.9",
       route: "ROUTEEAA001",
     },
     {
-      id: "ORDERID0124",
-      weight: "120.5 kg",
+      orderID: "ORDERID0124",
+      weight: "120.5",
       route: "ROUTEEAA002",
     },
     {
-      id: "ORDERID0125",
-      weight: "75.3 kg",
+      orderID: "ORDERID0125",
+      weight: "75.3",
       route: "ROUTEEAA003",
     },
     {
-      id: "ORDERID0126",
-      weight: "45.8 kg",
+      orderID: "ORDERID0126",
+      weight: "45.8",
       route: "ROUTEEAA004",
     },
     {
-      id: "ORDERID0127",
-      weight: "99.4 kg",
+      orderID: "ORDERID0127",
+      weight: "99.4",
       route: "ROUTEEAA005",
     },
   ];
@@ -160,7 +160,7 @@ const TruckOptimization = () => {
                 )}
                 {!loading && filteredData.length > 0
                   ? filteredData.map((item) => (
-                      <ShipCard key={item.id} item={item} />
+                      <ShipCard key={item.orderID} item={item} />
                     ))
                   : !loading && <p>No records found.</p>}
               </CardBody>
