@@ -265,6 +265,7 @@
 /* Mobile  */
 @media only screen and (max-device-width: 480px){
 
+  
   .dashboard-cards{
     display: block;
     justify-items : center!important;
@@ -310,9 +311,9 @@
 
 }
 @media only screen and (min-width:600px) and (max-width:1024px){
-  .col-md-6{
+  /* .col-md-6{
     width: 100%!important;
-  }
+  } */
 }
 
   @media only screen and (min-width:1024px) and (max-width:1440px){

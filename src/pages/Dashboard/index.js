@@ -218,7 +218,7 @@ export const Index = () => {
   return (
     <>
       <div className="page-content">
-        <Row>
+        <Row className="justify-content-center">
           <WidgetDashboard />
         </Row>
         <Row>

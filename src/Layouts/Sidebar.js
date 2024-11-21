@@ -80,7 +80,7 @@ const Sidebar = ({ layoutType }) => {
           </React.Fragment>
         ) : (
           <React.Fragment>
-            <SimpleBar id="scrollbar" className="h-100">
+            <SimpleBar id="scrollbar">
               <Container fluid>
                 <div id="two-column-menu"></div>
                 <ul className="navbar-nav custom-nav-menu" id="navbar-nav">
