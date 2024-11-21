@@ -432,7 +432,7 @@ const Index = () => {
         <Row className="d-flex align-items-stretch">
           <Col xl="8" className="d-flex flex-column">
             <Row className="d-flex align-items-stretch mb-4">
-              <Col xl="6" xxl="6" lg="6" className="d-flex">
+              <Col xl="6" xxl="6" lg="6" className="d-flex recent-order-res">
                 <Card className="w-100 h-100">
                   <ChartHeader title="Recents Orders" />
                   <CardBody>
