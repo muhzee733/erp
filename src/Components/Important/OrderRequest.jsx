@@ -13,13 +13,12 @@ const OrderRequest = ({ title, recentOrderRequest, search }) => {
   const [filterByStatus, setFilterByStatus] = useState(true);
   const [loading, setLoading] = useState(false);
   useEffect(() => {
-    setLoading(true);
-
     let filteredOrders = recentOrderRequest;
     if (search.length > 7) {
       filteredOrders = filteredOrders.filter((item) =>
         item.orderID.toLowerCase().includes(search.toLowerCase())
       );
+      setLoading(true);
     }
     if (filterByStatus) {
       filteredOrders = filteredOrders.filter(

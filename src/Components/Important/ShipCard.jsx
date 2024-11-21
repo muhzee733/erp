@@ -26,34 +26,34 @@ const ShipCard = ({ item, index }) => {
             <span>{item.shipId}</span>
           </div>
           <div>
-            <span className={getStatusClasses(item.status.status_code)}>{item.status.status_code}</span>
+            <span className={getStatusClasses(item?.status.status_code)}>{item?.status.status_code}</span>
           </div>
         </div>
         <div className="ship-body p-3">
         <div className="timeline-continue">
           <Row className="timeline-right">
-            <Col xs={12} className="d-flex justify-content-between">
+            <Col xs={12} className="shipdata d-flex justify-content-between">
               <p className="text-muted border-lines">
                 <Circle  className="circle-svg"/>
                 Arriving
               </p>
               <span >{item.status.ship_date_time}</span>
             </Col>
-            <Col xs={12} className="d-flex justify-content-between">
+            <Col xs={12} className="shipdata d-flex justify-content-between">
               <p className="text-muted border-lines">
                 <Ellipse  className="ellipse-svg"/>
                 Unloading
               </p>
               <span>{item.status.ship_date_time}</span>
             </Col>
-            <Col xs={12} className="d-flex justify-content-between">
+            <Col xs={12} className="shipdata d-flex justify-content-between">
               <p className="text-muted border-lines">
                 <Ellipse className="ellipse-svg"/>
                 Loading
               </p>
               <span>{item.status.ship_date_time}</span>
             </Col>
-            <Col xs={12} className="d-flex justify-content-between">
+            <Col xs={12} className="shipdata d-flex justify-content-between">
               <p className="text-muted">
                 <Ellipse  className="ellipse-svg"/>
                   Preparing

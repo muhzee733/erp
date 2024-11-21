@@ -151,12 +151,12 @@
 .circle-svg {
   width: 15px !important;
   height: 15px !important;
-  margin-right: 10px;
+  margin-right: 5px;
 }
 .ellipse-svg {
   width: 14px !important;
   height: 11px !important;
-  margin-right: 10px;
+  margin-right: 5px;
 }
 /* Vertical Lines */
 .border-lines::before {
@@ -402,10 +402,17 @@
 .drag-handle{
   height: 18vh !important;
 }
-.icon-header{
+.recommendation-icons{
   flex-direction: column;
 }
 .title {
   padding: 0px 0px;
 }
+.shipdata span{
+  font-size: 12px!important;
 }
+.shipdata{
+  align-items: baseline!important;
+}
+}
+

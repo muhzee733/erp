@@ -15,7 +15,7 @@ const TruckOptimization = () => {
 
   const shipData = [
     {
-      orderID: 1,
+      id: 1,
       status: {
         status_code: "Arriving",
         ship_date_time: "17 July 2024, 18:00",
@@ -23,12 +23,12 @@ const TruckOptimization = () => {
       shipId: "SHIPID01",
     },
     {
-      orderID: 2,
+      id: 2,
       status: { status_code: "Loading", ship_date_time: "17 July 2024, 18:00" },
       shipId: "SHIPID02",
     },
     {
-      orderID: 3,
+      id: 3,
       status: {
         status_code: "Available",
         ship_date_time: "17 July 2024, 18:00",
@@ -36,7 +36,7 @@ const TruckOptimization = () => {
       shipId: "SHIPID03",
     },
     {
-      orderID: 4,
+      id: 4,
       status: {
         status_code: "Unloading",
         ship_date_time: "17 July 2024, 18:00",
@@ -44,7 +44,7 @@ const TruckOptimization = () => {
       shipId: "SHIPID04",
     },
     {
-      orderID: 5,
+      id: 5,
       status: {
         status_code: "Departed",
         ship_date_time: "17 July 2024, 18:00",
@@ -52,7 +52,7 @@ const TruckOptimization = () => {
       shipId: "SHIPID05",
     },
     {
-      orderID: 6,
+      id: 6,
       status: {
         status_code: "Departed",
         ship_date_time: "17 July 2024, 18:00",
@@ -60,7 +60,7 @@ const TruckOptimization = () => {
       shipId: "SHIPID06",
     },
     {
-      orderID: 7,
+      id: 7,
       status: {
         status_code: "Arriving",
         ship_date_time: "17 July 2024, 18:00",
@@ -68,12 +68,12 @@ const TruckOptimization = () => {
       shipId: "SHIPID07",
     },
     {
-      orderID: 8,
+      id: 8,
       status: { status_code: "Loading", ship_date_time: "17 July 2024, 18:00" },
       shipId: "SHIPID08",
     },
     {
-      orderID: 9,
+      id: 9,
       status: {
         status_code: "Unloading",
         ship_date_time: "17 July 2024, 18:00",
@@ -109,16 +109,16 @@ const TruckOptimization = () => {
     },
   ];
 
+
   useEffect(() => {
-    setLoading(true);
-
     let filteredOrders = shipData;
-
-    if (search.length > 7) {
+    if (search.length >= 7) {
       filteredOrders = filteredOrders.filter((item) =>
         item.shipId.toLowerCase().includes(search.toLowerCase())
       );
+      setLoading(true);
     }
+
     if (activeStatus) {
       filteredOrders = filteredOrders.filter(
         (item) => item.status.status_code === activeStatus
@@ -130,6 +130,8 @@ const TruckOptimization = () => {
       setLoading(false);
     }, 500);
   }, [search, activeStatus]);
+
+
 
   return (
     <div className="page-content">
@@ -160,7 +162,7 @@ const TruckOptimization = () => {
                 )}
                 {!loading && filteredData.length > 0
                   ? filteredData.map((item) => (
-                      <ShipCard key={item.orderID} item={item} />
+                      <ShipCard key={item.id} item={item} />
                     ))
                   : !loading && <p>No records found.</p>}
               </CardBody>

@@ -29,9 +29,9 @@ const RecommendationOrders = ({ title, shipOrders }) => {
   return (
     <>
       <Row>
-        <div className="icon-header">
+        <div className="recommendation-icons text-align-center">
           <span className="title">{title}</span>
-          <div className="icons">
+          <div className="icons text-align-center">
             <img
               style={{ cursor: "pointer" }}
               className={`icon-inactive me-2 ${
