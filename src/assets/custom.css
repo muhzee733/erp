@@ -287,7 +287,7 @@
 
 
 /* Tab Screen */
-@media only screen and (min-width:480px) and (max-width:768px){
+@media only screen  and (max-width:768px){
   
   .custom-order{
     width: 48%!important;
@@ -324,9 +324,11 @@
 
 }
 @media only screen and (min-width:600px) and (max-width:1024px){
-  /* .col-md-6{
+  
+   .recent-order-tabs{
     width: 100%!important;
-  } */
+
+   }
 }
 
   @media only screen and (min-width:1024px) and (max-width:1440px){
