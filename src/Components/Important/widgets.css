@@ -167,6 +167,9 @@
   top: 18px;
   position: absolute;
 }
+.recommendation-icons{
+  text-align: center;
+}
 /* OffCanvas CSS */
 .offcanvas {
   width: 700px !important;
@@ -382,7 +385,6 @@
 @media screen and (min-width: 1450px) {
   .search-box .form-control {
     padding-left: 30px;
-    width: 70% !important;
   }
   .drag-handle{
     height: 11vh !important;
@@ -394,7 +396,6 @@
 @media screen and (max-width: 1450px) {
   .search-box .form-control {
     padding-left: 30px;
-    width: 95% !important;
   }
   .custom-order {
     width: 100%;

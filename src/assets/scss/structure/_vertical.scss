@@ -658,7 +658,7 @@
                             }
 
                             span {
-                                display: none;
+                                display: inline-block;
                                 padding-left: 25px;
                             }
 
@@ -676,7 +676,7 @@
                         }
 
                         >.menu-dropdown {
-                            display: none;
+                            display: block;
                             left: var(--#{$prefix}vertical-menu-width-sm);
                             position: absolute;
                             width: 200px;
