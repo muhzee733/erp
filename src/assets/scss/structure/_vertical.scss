@@ -43,7 +43,7 @@
           display: flex;
           align-items: center;
           border-radius: 12px;
-          padding: 0.625rem 1.5rem!important;
+          padding: 0.625rem 1rem!important;
           margin-bottom: 4px;
           // padding: $vertical-menu-item-padding-y $vertical-menu-item-padding-x;
           color: var(--#{$prefix}vertical-menu-item-color);
@@ -55,7 +55,7 @@
               background-color: red;
               border-radius: 12px;
               margin-bottom: 4px;
-              padding: 0.625rem 1.5rem;
+              padding: 0.625rem 1rem;
             }
 
             // &:hover {
@@ -90,7 +90,7 @@
                 background-color: red;
                 border-radius: 12px;
                 margin-bottom: 4px;
-                padding: 0.625rem 1.5rem!important;
+                padding: 0.625rem 1rem!important;
 
                 .icon-dual {
                     color: var(--#{$prefix}vertical-menu-item-hover-color);
@@ -558,7 +558,7 @@
 
         .navbar-brand-box {
             position: static;
-            padding-left: 10px;
+            padding-left: 8px;
             text-align: left;
             // width: var(--#{$prefix}vertical-menu-width-sm);
             z-index: 1;
@@ -650,7 +650,8 @@
                             position: relative;
                             // width: calc(200px + var(--#{$prefix}vertical-menu-width-sm));
                             transition: none;
-                            background-color: var(--#{$prefix}vertical-menu-bg);
+                            background-color: #F23514;
+                            color: $white;
 
                             .icon-dual {
                                 fill: rgba($white, 0.16);
