@@ -109,7 +109,6 @@ const TruckOptimization = () => {
     },
   ];
 
-
   useEffect(() => {
     let filteredOrders = shipData ;
     if (search.length >= 7) {
@@ -130,8 +129,6 @@ const TruckOptimization = () => {
       setLoading(false);
     }, 500);
   }, [search, activeStatus]);
-
-
 
   return (
     <div className="page-content">

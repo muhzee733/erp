@@ -330,19 +330,6 @@
   text-align: right;
 }
 
-/* .percentage-fill {
-  height: 76px;
-  background: linear-gradient(94.86deg, #dc4446 6.42%, #faad14 99.51%);
-  z-index: 1;
-  opacity: 0.8;
-  transform-origin: left;
-  transition: width 0.5s ease-out;
-  position: absolute;
-  top: 63px;
-  left: 50%;
-  right: 50%;
-  transform: translate(-50%, -50%);
-} */
 .percentage-truck {
   position: absolute;
   top: 0;
@@ -353,21 +340,38 @@
   font-weight: 400;
   font-size: 1.3rem;
 }
-.percentage-info {
-  position: absolute;
-  top: 33%;
-  right: 50%;
-  text-align: center;
-  z-index: 3;
-  width: 60%;
-  left: 50%;
-  transform: translate(-45%, -50%);
-}
 .truck-loading .progress {
   position: absolute;
-  top: 5px;
-  width: 100%;
-  left: 38px;
+  top: 42%;
+  width: 63%;
+  left: 50%;
+  right: 50%;
+  transform: translate(-31%, -50%);
+  z-index: 1;
+}
+.bar-custom .progress-bar{
+  background: linear-gradient(90deg, rgba(0, 62, 179, 1) 0%, rgba(105, 177, 255, 1) 100%) !important;
+}
+.scale {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+.scale-item {
+  font-size: 12px;
+  text-align: center;
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.scale-item::after {
+  content: '';
+  position: absolute;
+  top: 419%;
+  left: 43%;
+  transform: translateX(-50%) rotate(90deg);
+  width: 106px;
+  border-bottom: 1px dotted black;
 }
 .custom-order {
   width: 48%;
