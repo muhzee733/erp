@@ -18,9 +18,10 @@ const OrderRequest = ({ title, recentOrderRequest, search }) => {
       filteredOrders = filteredOrders.filter((item) =>
         item.orderID.toLowerCase().includes(search.toLowerCase())
       );
-      setLoading(true);
+   
     }
     if (filterByStatus) {
+      setLoading(true);
       filteredOrders = filteredOrders.filter(
         (item) => item.status === "newOrder"
       );

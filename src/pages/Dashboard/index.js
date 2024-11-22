@@ -218,7 +218,7 @@ export const Index = () => {
   return (
     <>
       <div className="page-content">
-        <Row>
+        <Row className="justify-content-center">
           <WidgetDashboard />
         </Row>
         <Row>
@@ -251,7 +251,7 @@ export const Index = () => {
               </Col>
             </Row>
           </Col>
-          <Col md={6} style={{ marginLeft: "5px" }}>
+          <Col md={6} className="recent-order-tabs" style={{ marginLeft: "5px" }}>
             <Card>
               <CardBody>
                 <Nav tabs className=" recent-tabs mb-3 nav-tabs">

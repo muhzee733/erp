@@ -110,12 +110,11 @@ const TruckOptimization = () => {
   ];
 
   useEffect(() => {
-    let filteredOrders = shipData;
+    let filteredOrders = shipData ;
     if (search.length >= 7) {
       filteredOrders = filteredOrders.filter((item) =>
         item.shipId.toLowerCase().includes(search.toLowerCase())
       );
-      setLoading(true);
     }
 
     if (activeStatus) {
@@ -175,7 +174,7 @@ const TruckOptimization = () => {
                   </CardBody>
                 </Card>
               </Col>
-              <Col xl="4">
+              <Col xl="4" className="d-flex flex-column">
                 <Card className="h-100">
                   <ChartHeader
                     title="Orders"

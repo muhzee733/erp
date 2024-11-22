@@ -407,6 +407,7 @@
   height: 18vh !important;
 }
 .recommendation-icons{
+  text-align: center;
   flex-direction: column;
 }
 .title {

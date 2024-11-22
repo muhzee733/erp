@@ -70,9 +70,9 @@ const OrderTable = ({ column, recentOrders, inloading, availCargo }) => {
                   </td>
                 )}
                 {availCargo ? (
-                  <td className="d-flex align-items-center gap-2 justify-content-between" style={{width: "130%", marginTop: "11px"}}>
+                  <td className="d-flex gap-2 justify-content-between" style={{width: "130%", marginTop: "15.5px"}}>
                     <Progress value={75} style={{width: "100%"}}/>
-                    <span className="d-block">40%</span>
+                    <span className="progress-value d-block">40%</span>
                   </td>
                 ) : (
                   ""
