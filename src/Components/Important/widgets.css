@@ -48,7 +48,27 @@
   line-height: 24px;
   color: #000000e0;
 }
-/*  */
+/* Text */
+.route-id{
+  font-size: 14px;
+  line-height: 24px;
+  font-weight: 400;
+  color: #000000E0;
+  margin-right: 10px;
+}
+.view-more{
+  color: #1677FF;
+  font-size: 10px;
+  line-height: 24px;
+  font-weight: 400;
+}
+
+.route-destination{
+  color:#00000073;
+  font-size: 12px;
+  line-height: 24px;
+  font-weight: 400;
+}
 
 .rounded-3 {
   border-radius: 8px !important;
@@ -159,6 +179,9 @@
   margin-right: 5px;
 }
 /* Vertical Lines */
+.hr-line{
+  margin-top: 12px!important;
+}
 .border-lines::before {
   border-left: 2px dashed #d9d9d9;
   content: "";

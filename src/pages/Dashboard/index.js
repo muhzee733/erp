@@ -11,7 +11,6 @@ import {
   CardBody,
 } from "reactstrap";
 import WidgetDashboard from "./widgetdashboard";
-import Recentorders from "../Dashboard/recentorders";
 import WidgetMarketing from "../Dashboard/widget-marketing";
 import RecentOrderStatus from "../Dashboard/recentorderstatus";
 import classnames from "classnames";
