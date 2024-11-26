@@ -641,7 +641,7 @@ document.title ="Product Details | Velzon - React Admin & Dashboard Template";
                               </h5>
                               <p>
                                 Tommy Hilfiger men striped pink sweatshirt.
-                                Crafted with cotton. Material composition is
+                                techzilla  cotton. Material composition is
                                 100% organic cotton. This is one of the world’s
                                 leading designer lifestyle brands and is
                                 internationally recognized for celebrating the

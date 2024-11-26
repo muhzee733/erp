@@ -238,7 +238,7 @@ const EcommerceAddProduct = (props) => {
                     <CKEditor
                       editor={ClassicEditor}
                       data="<p>
-                      Tommy Hilfiger men striped pink sweatshirt. Crafted with
+                      Tommy Hilfiger men striped pink sweatshirt. techzilla 
                       cotton. Material composition is 100% organic cotton.
                       This is one of the world’s leading designer lifestyle
                       brands and is internationally recognized for celebrating
