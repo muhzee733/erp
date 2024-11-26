@@ -1,8 +1,19 @@
 import React, { useState, useEffect } from "react";
-import { Card, Col, Row, CardBody } from "reactstrap";
+import {
+  Card,
+  CardBody,
+  Col,
+  Container,
+  Row,
+  Spinner,
+  CardHeader,
+} from "reactstrap";
 import ChartHeader from "../../../Components/Important/ChartHeader";
 import Route from "../../../Components/Important/Route";
 import MapRouting from "../../../Components/Important/MapRouting";
+import BreadCrumb from "../../../Components/Common/BreadCrumb";
+import { ReactComponent as BtnIcon } from "../../../assets/images/svg/AddCircle.svg";
+import TrackCard from "../../../Components/Important/TrackCard";
 
 const RoutePlanning = () => {
   const routes = [
@@ -167,58 +178,192 @@ const RoutePlanning = () => {
           vehicleNumber: "WB04EF6789",
           estimateTime: "10 Hrs",
           status: "delivered",
-              shipmentId: "SHIPID10004",
-              pickupDate: "2024-12-08T15:00:00",
+          shipmentId: "SHIPID10004",
+          pickupDate: "2024-12-08T15:00:00",
         },
       ],
     },
   ];
+  const trackData = [
+    {
+      id: 1,
+      status: {
+        status_code: "Arriving",
+        ship_date_time: "17 July 2024, 18:00",
+      },
+      shipId: "SHIPID01",
+    },
+    {
+      id: 2,
+      status: { status_code: "Departed", ship_date_time: "17 July 2024, 18:00" },
+      shipId: "SHIPID02",
+    },
+    {
+      id: 3,
+      status: {
+        status_code: "Active",
+        ship_date_time: "17 July 2024, 18:00",
+      },
+      shipId: "SHIPID03",
+    },
+    {
+      id: 4,
+      status: {
+        status_code: "Departed",
+        ship_date_time: "17 July 2024, 18:00",
+      },
+      shipId: "SHIPID04",
+    },
+    {
+      id: 5,
+      status: {
+        status_code: "Departed",
+        ship_date_time: "17 July 2024, 18:00",
+      },
+      shipId: "SHIPID05",
+    },
+    {
+      id: 6,
+      status: {
+        status_code: "Departed",
+        ship_date_time: "17 July 2024, 18:00",
+      },
+      shipId: "SHIPID06",
+    },
+    {
+      id: 7,
+      status: {
+        status_code: "Arriving",
+        ship_date_time: "17 July 2024, 18:00",
+      },
+      shipId: "SHIPID07",
+    },
+    {
+      id: 8,
+      status: { status_code: "Active", ship_date_time: "17 July 2024, 18:00" },
+      shipId: "SHIPID08",
+    },
+    {
+      id: 9,
+      status: {
+        status_code: "Departed",
+        ship_date_time: "17 July 2024, 18:00",
+      },
+      shipId: "SHIPID09",
+    },
+  ];
 
-  const [search, setSearch] = useState("");
+
+  const [searchRoutes, setSearchRoutes] = useState("");
+  const [searchTrackData, setSearchTrackData] = useState("");
   const [activeStatus, setActiveStatus] = useState(null);
-  const [filteredData, setFilteredData] = useState([]);
+  const [filteredRoutes, setFilteredRoutes] = useState([]);
+  const [filteredTrackData, setFilteredTrackData] = useState([]);
+  const [loadingRoutes, setLoadingRoutes] = useState(false);
+  const [loadingTrackData, setLoadingTrackData] = useState(false);
 
   useEffect(() => {
     let filteredOrders = routes;
-    if (search.trim() !== "") {
+    if (searchRoutes.trim() !== "") {
       filteredOrders = filteredOrders.filter((item) =>
-        item.routeId.toLowerCase().includes(search.toLowerCase())
+        item.routeId.toLowerCase().includes(searchRoutes.toLowerCase())
       );
     }
-      if (activeStatus) {
-      filteredOrders = filteredOrders.filter(
-        (item) => item.status === activeStatus
-      );
+    if (activeStatus) {
+      setLoadingRoutes(true);
+      filteredOrders = filteredOrders.filter((item) => item.status === activeStatus);
     }
-  
+
     setTimeout(() => {
-      setFilteredData(filteredOrders);
+      setFilteredRoutes(filteredOrders);
+      setLoadingRoutes(false); 
     }, 500);
-  }, [search, activeStatus]);
-  
+  }, [searchRoutes, activeStatus]);
+
+  useEffect(() => {
+    let filteredOrders = trackData;
+    if (searchTrackData.length >= 7) {
+      filteredOrders = filteredOrders.filter((item) =>
+        item.shipId.toLowerCase().includes(searchTrackData.toLowerCase())
+      );
+    }
+    if (activeStatus) {
+      setLoadingTrackData(true);
+      filteredOrders = filteredOrders.filter((item) => item.status.status_code === activeStatus);
+    }
+
+    setTimeout(() => {
+      setFilteredTrackData(filteredOrders);
+      setLoadingTrackData(false); 
+    }, 500);
+  }, [searchTrackData, activeStatus]);
+
   return (
     <div className="page-content">
-      <Row>
-        <Col xl={8}> 
-        <MapRouting />
-        </Col>
-        <Col xl={4}>
-          <Card className="h-100">
-            <ChartHeader
-              title="Routes"
-              layout={true}
-              search={true}
-              placeholder="Search by Route No"
-              searchList={setSearch}
-            />
-            <CardBody>
-              
-                <Route routeData={filteredData} title="Routes" />
-            
-            </CardBody>
-          </Card>
-        </Col>
-      </Row>
+      <BreadCrumb title="Orders" icon="home" />
+      <Container fluid>
+        <Row>
+          <Col xl={8}>
+            <Card>
+              <CardHeader>
+                <div className="d-flex justify-content-between ">
+                  <p className="route-planning">Route Planning</p>
+                  <button className="new-route-btn">
+                    <BtnIcon style={{ marginRight: "5px" }} />
+                    New Route
+                  </button>
+                </div>
+              </CardHeader>
+              <Col xl={7}>
+                <Card className="h-100">
+                  <ChartHeader
+                    title="Vehicles"
+                    layout={true}
+                    search={true}
+                    placeholder="Search by Shipment ID"
+                    searchList={setSearchTrackData}
+                  />
+                  <CardBody className="ship-cardbody">
+                    <MapRouting
+                      trackData={trackData}
+                      setActiveStatus={setActiveStatus}
+                      activeStatus={activeStatus}
+                    />
+                    {loadingTrackData && (
+                      <div className="d-flex align-items-center justify-content-center mt-6 mb-6">
+                        <Spinner color="dander" type="grow">Loading...</Spinner>
+                      </div>
+                    )}
+                    {!loadingTrackData && filteredTrackData.length > 0
+                      ? filteredTrackData.map((item) => <TrackCard key={item.id} item={item} />)
+                      : !loadingTrackData && <p>No records found.</p>}
+                  </CardBody>
+                </Card>
+              </Col>
+            </Card>
+          </Col>
+
+          <Col xl={4}>
+            <Card className="h-100">
+              <ChartHeader
+                title="Routes"
+                layout={true}
+                search={true}
+                placeholder="Search by Route No"
+                searchList={setSearchRoutes} 
+              />
+              <CardBody>
+                <Route routeData={filteredRoutes} title="Routes" />
+                {loadingRoutes && (
+                  <div className="d-flex align-items-center justify-content-center mt-6 mb-6">
+                    <Spinner color="dander" type="grow">Loading...</Spinner>
+                  </div>
+                )}
+              </CardBody>
+            </Card>
+          </Col>
+        </Row>
+      </Container>
     </div>
   );
 };

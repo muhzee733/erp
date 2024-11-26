@@ -1,23 +1,33 @@
 import React from "react";
 import { Card, CardHeader } from "reactstrap";
-import { ReactComponent as BtnIcon } from "../../assets/images/svg/AddCircle.svg";
 
-const MapRouting = () => {
-  return (
-    <div className="page-content">
-      <Card>
-        <CardHeader>
-          <div className="d-flex justify-content-between ">
-            <p className="route-planning">Route Planning</p>
-            <button className="new-route-btn">
-              <BtnIcon style={{marginRight:"5px"}} />
-              New Route
-            </button>
-          </div>
-        </CardHeader>
-      </Card>
-    </div>
-  );
-};
+  const MapRouting = ({ trackData , setActiveStatus, activeStatus }) => {
+    const statusCodes = [
+      ...new Set(trackData.map((item) => item.status.status_code)),
+    ];
+  
+    return (
+      <div className="shipping w-100 d-flex">
+        {statusCodes.length > 0 ? (
+          statusCodes.map((status, index) => (
+            <span
+              key={index}
+              className={`badge badge-pill me-2 text-dark border ${
+                activeStatus === status ? "bg-danger text-white" : "badge-light"
+              }`}
+              onClick={() =>
+                setActiveStatus(activeStatus === status ? null : status)
+              }
+            >
+              {status}
+            </span>
+          ))
+        ) : (
+          <div className="text-danger">No data found</div>
+        )}
+      </div>
+    );
+  };
+  
 
 export default MapRouting;
