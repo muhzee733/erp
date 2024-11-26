@@ -56,6 +56,12 @@
   color: #000000E0;
   margin-right: 10px;
 }
+.title-routes{
+  font-size: 14px;
+  line-height: 24px;
+  font-weight: 400;
+  color: #000000A6;
+}
 .view-more{
   color: #1677FF;
   font-size: 10px;

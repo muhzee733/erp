@@ -59,9 +59,13 @@
   z-index: 1;
 }
 .timeline-2::after {
-  top: 26px !important;
+  top: 49px !important;
   left: 31px !important;
-  height: 60% !important;
+  height: 32% !important;
+  color: #D9D9D9!important;
+  border-width: 1px !important;
+  border-style: dashed!important;
+  background-color: transparent!important;
 }
 .title {
   padding: 20px 0px;
