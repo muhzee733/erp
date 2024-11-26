@@ -2,17 +2,25 @@ import React, { useState, useEffect } from "react";
 import { ReactComponent as Vehicle } from "../../assets/images/svg/Ellipse-vehicle.svg";
 import Icon from "../../assets/images/order.svg";
 import Icon2 from "../../assets/images/svg/Vector.svg";
+import { Spinner } from "reactstrap";
 
 const Route = ({ routeData, title }) => {
   const [filterByStatus, setFilterByStatus] = useState(true);
   const [filteredRoutes, setFilteredRoutes] = useState([]);
   const [expandedRoutes, setExpandedRoutes] = useState({});
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    const updatedRoutes = routeData.filter((route) =>
-      filterByStatus ? route.status === "inprogress" : route.status !== "deliverd"
-    );
-    setFilteredRoutes(updatedRoutes);
+    setLoading(true);
+    setTimeout(() => {
+      const updatedRoutes = routeData.filter((route) =>
+        filterByStatus
+          ? route.status === "inprogress"
+          : route.status !== "deliverd"
+      );
+      setFilteredRoutes(updatedRoutes);
+      setLoading(false);
+    }, 500);
   }, [filterByStatus, routeData]);
 
   const toggleVehicles = (routeId) => {
@@ -29,7 +37,9 @@ const Route = ({ routeData, title }) => {
         <div>
           <img
             style={{ cursor: "pointer" }}
-            className={`icon-inactive me-2 ${filterByStatus ? "icon-active" : ""}`}
+            className={`icon-inactive me-2 ${
+              filterByStatus ? "icon-active" : ""
+            }`}
             src={Icon}
             alt="Icon"
             onClick={handleIcon1Click}
@@ -44,7 +54,13 @@ const Route = ({ routeData, title }) => {
         </div>
       </div>
 
-      {!filteredRoutes.length ? (
+      {loading ? (
+        <div className="d-flex align-items-center justify-content-center">
+          <Spinner color="dander" type="grow">
+            Loading...
+          </Spinner>
+        </div>
+      ) : !filteredRoutes.length ? (
         <p>No routes available.</p>
       ) : (
         filteredRoutes.map((route, index) => (
@@ -123,14 +139,18 @@ const Route = ({ routeData, title }) => {
                       <span className="text-muted">
                         {expandedRoutes[route.routeId]
                           ? "Show Less Vehicles"
-                          : `${route.vehicles.length - 3}+ more vehicles available`}
+                          : `${
+                              route.vehicles.length - 3
+                            }+ more vehicles available`}
                       </span>
                     </div>
                   </div>
                 )}
               </div>
             ) : (
-              <p className="text-muted">No vehicles available for this route.</p>
+              <p className="text-muted">
+                No vehicles available for this route.
+              </p>
             )}
           </div>
         ))
