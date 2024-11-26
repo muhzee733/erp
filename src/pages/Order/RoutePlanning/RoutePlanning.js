@@ -192,11 +192,14 @@ const RoutePlanning = () => {
         ship_date_time: "17 July 2024, 18:00",
       },
       shipId: "SHIPID01",
+      shipNo: "DL04MP0123",
+
     },
     {
       id: 2,
       status: { status_code: "Departed", ship_date_time: "17 July 2024, 18:00" },
       shipId: "SHIPID02",
+      shipNo: "DL04MP0123",
     },
     {
       id: 3,
@@ -205,6 +208,7 @@ const RoutePlanning = () => {
         ship_date_time: "17 July 2024, 18:00",
       },
       shipId: "SHIPID03",
+      shipNo: "DL04MP0123",
     },
     {
       id: 4,
@@ -213,6 +217,7 @@ const RoutePlanning = () => {
         ship_date_time: "17 July 2024, 18:00",
       },
       shipId: "SHIPID04",
+      shipNo: "DL04MP0123",
     },
     {
       id: 5,
@@ -221,6 +226,7 @@ const RoutePlanning = () => {
         ship_date_time: "17 July 2024, 18:00",
       },
       shipId: "SHIPID05",
+      shipNo: "DL04MP0123",
     },
     {
       id: 6,
@@ -229,6 +235,7 @@ const RoutePlanning = () => {
         ship_date_time: "17 July 2024, 18:00",
       },
       shipId: "SHIPID06",
+      shipNo: "DL04MP0123",
     },
     {
       id: 7,
@@ -237,11 +244,13 @@ const RoutePlanning = () => {
         ship_date_time: "17 July 2024, 18:00",
       },
       shipId: "SHIPID07",
+      shipNo: "DL04MP0123",
     },
     {
       id: 8,
       status: { status_code: "Active", ship_date_time: "17 July 2024, 18:00" },
       shipId: "SHIPID08",
+      shipNo: "DL04MP0123",
     },
     {
       id: 9,
@@ -250,6 +259,7 @@ const RoutePlanning = () => {
         ship_date_time: "17 July 2024, 18:00",
       },
       shipId: "SHIPID09",
+      shipNo: "DL04MP0123",
     },
   ];
 
