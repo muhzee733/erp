@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Card, Col, Row, CardBody } from "reactstrap";
 import ChartHeader from "../../../Components/Important/ChartHeader";
 import Route from "../../../Components/Important/Route";
+import MapRouting from "../../../Components/Important/MapRouting";
 
 const RoutePlanning = () => {
   const routes = [
@@ -175,7 +176,6 @@ const RoutePlanning = () => {
 
   const [search, setSearch] = useState("");
   const [activeStatus, setActiveStatus] = useState(null);
-  const [loading, setLoading] = useState(false);
   const [filteredData, setFilteredData] = useState([]);
 
   useEffect(() => {
@@ -186,7 +186,6 @@ const RoutePlanning = () => {
       );
     }
       if (activeStatus) {
-      setLoading(true); 
       filteredOrders = filteredOrders.filter(
         (item) => item.status === activeStatus
       );
@@ -194,14 +193,15 @@ const RoutePlanning = () => {
   
     setTimeout(() => {
       setFilteredData(filteredOrders);
-      setLoading(false);
     }, 500);
   }, [search, activeStatus]);
   
   return (
     <div className="page-content">
       <Row>
-        <Col xl={8}> col-1</Col>
+        <Col xl={8}> 
+        <MapRouting />
+        </Col>
         <Col xl={4}>
           <Card className="h-100">
             <ChartHeader
@@ -212,11 +212,9 @@ const RoutePlanning = () => {
               searchList={setSearch}
             />
             <CardBody>
-              {loading ? (
-                <div>Loading...</div>
-              ) : (
+              
                 <Route routeData={filteredData} title="Routes" />
-              )}
+            
             </CardBody>
           </Card>
         </Col>
