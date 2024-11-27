@@ -427,7 +427,18 @@
   gap: 10px;
   padding: 0px;
 }
-
+.shipperdata{
+  width: 95%;
+  align-items: center !important;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.06);
+  border-radius: 5px;
+  margin: 0px 0px 0px 08px !important;
+  padding: 5px 10px;
+}
+.shipperdata p{
+  display:grid!important;
+}
 @media screen and (min-width: 1450px) {
   .search-box .form-control {
     padding-left: 30px;

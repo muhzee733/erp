@@ -14,6 +14,7 @@ import MapRouting from "../../../Components/Important/MapRouting";
 import BreadCrumb from "../../../Components/Common/BreadCrumb";
 import { ReactComponent as BtnIcon } from "../../../assets/images/svg/AddCircle.svg";
 import TrackCard from "../../../Components/Important/TrackCard";
+import Shipper from "../../../assets/images/InboxOutlined.png";
 
 const RoutePlanning = () => {
   const routes = [
@@ -181,86 +182,110 @@ const RoutePlanning = () => {
           shipmentId: "SHIPID10004",
           pickupDate: "2024-12-08T15:00:00",
         },
+        
       ],
     },
+    
   ];
   const trackData = [
     {
       id: 1,
+      shipId: "ShipID0123",
       status: {
         status_code: "Arriving",
-        ship_date_time: "17 July 2024, 18:00",
+        ship_date_time: "27 November 2024, 14:00",
       },
-      shipId: "SHIPID01",
+      shipNo: "DL04MP7045",
+      maxLoad: "6.5 Ton",
+      route: {
+        departure: "Delhi",
+        stops: ["Chandigarh", "Lonavala"],
+        arrival: "Mumbai",
+        route_code: "A002",
+      },
+      shipper: {
+        id: "Driv012345",
+        name: "John Doe",
+        phone: "+911234567890",
+        pic: Shipper,
+      },
+      tracking_url: "https://example.com/tracking/ShipID0123",
     },
     {
       id: 2,
-      status: { status_code: "Departed", ship_date_time: "17 July 2024, 18:00" },
-      shipId: "SHIPID02",
+      shipId: "ShipID0124",
+      status: {
+        status_code: "Departed",
+        ship_date_time: "26 November 2024, 10:00",
+      },
+      shipNo: "DL04MP8080",
+      maxLoad: "5 Ton",
+      route: {
+        departure: "Bangalore",
+        stops: ["Mysore", "Pune"],
+        arrival: "Hyderabad",
+        route_code: "B105",
+      },
+      shipper: {
+        id: "Driv056789",
+        name: "Jane Smith",
+        phone: "+918765432109",
+        pic: Shipper,
+      },
+      tracking_url: "https://example.com/tracking/ShipID0124",
     },
     {
       id: 3,
+      shipId: "ShipID0124",
       status: {
         status_code: "Active",
-        ship_date_time: "17 July 2024, 18:00",
+        ship_date_time: "26 November 2024, 10:00",
       },
-      shipId: "SHIPID03",
+      shipNo: "DL04MP8080",
+      maxLoad: "5 Ton",
+      route: {
+        departure: "Bangalore",
+        stops: ["Mysore", "Pune"],
+        arrival: "Hyderabad",
+        route_code: "B105",
+      },
+      shipper: {
+        id: "Driv056789",
+        name: "Jane Smith",
+        phone: "+918765432109",
+        pic: Shipper,
+      },
+      tracking_url: "https://example.com/tracking/ShipID0124",
     },
     {
       id: 4,
-      status: {
-        status_code: "Departed",
-        ship_date_time: "17 July 2024, 18:00",
-      },
-      shipId: "SHIPID04",
-    },
-    {
-      id: 5,
-      status: {
-        status_code: "Departed",
-        ship_date_time: "17 July 2024, 18:00",
-      },
-      shipId: "SHIPID05",
-    },
-    {
-      id: 6,
-      status: {
-        status_code: "Departed",
-        ship_date_time: "17 July 2024, 18:00",
-      },
-      shipId: "SHIPID06",
-    },
-    {
-      id: 7,
+      shipId: "ShipID0124",
       status: {
         status_code: "Arriving",
-        ship_date_time: "17 July 2024, 18:00",
+        ship_date_time: "26 November 2024, 10:00",
       },
-      shipId: "SHIPID07",
-    },
-    {
-      id: 8,
-      status: { status_code: "Active", ship_date_time: "17 July 2024, 18:00" },
-      shipId: "SHIPID08",
-    },
-    {
-      id: 9,
-      status: {
-        status_code: "Departed",
-        ship_date_time: "17 July 2024, 18:00",
+      shipNo: "DL04MP8080",
+      maxLoad: "5 Ton",
+      route: {
+        departure: "Bangalore",
+        stops: ["Mysore", "Pune"],
+        arrival: "Hyderabad",
+        route_code: "B105",
       },
-      shipId: "SHIPID09",
+      shipper: {
+        id: "Driv056789",
+        name: "Jane Smith",
+        phone: "+918765432109",
+        pic: Shipper,
+      },
+      tracking_url: "https://example.com/tracking/ShipID0124",
     },
   ];
 
-
   const [searchRoutes, setSearchRoutes] = useState("");
-  const [searchTrackData, setSearchTrackData] = useState("");
   const [activeStatus, setActiveStatus] = useState(null);
   const [filteredRoutes, setFilteredRoutes] = useState([]);
-  const [filteredTrackData, setFilteredTrackData] = useState([]);
   const [loadingRoutes, setLoadingRoutes] = useState(false);
-  const [loadingTrackData, setLoadingTrackData] = useState(false);
 
   useEffect(() => {
     let filteredOrders = routes;
@@ -271,32 +296,16 @@ const RoutePlanning = () => {
     }
     if (activeStatus) {
       setLoadingRoutes(true);
-      filteredOrders = filteredOrders.filter((item) => item.status === activeStatus);
+      filteredOrders = filteredOrders.filter(
+        (item) => item.status === activeStatus
+      );
     }
 
     setTimeout(() => {
       setFilteredRoutes(filteredOrders);
-      setLoadingRoutes(false); 
+      setLoadingRoutes(false);
     }, 500);
   }, [searchRoutes, activeStatus]);
-
-  useEffect(() => {
-    let filteredOrders = trackData;
-    if (searchTrackData.length >= 7) {
-      filteredOrders = filteredOrders.filter((item) =>
-        item.shipId.toLowerCase().includes(searchTrackData.toLowerCase())
-      );
-    }
-    if (activeStatus) {
-      setLoadingTrackData(true);
-      filteredOrders = filteredOrders.filter((item) => item.status.status_code === activeStatus);
-    }
-
-    setTimeout(() => {
-      setFilteredTrackData(filteredOrders);
-      setLoadingTrackData(false); 
-    }, 500);
-  }, [searchTrackData, activeStatus]);
 
   return (
     <div className="page-content">
@@ -321,22 +330,16 @@ const RoutePlanning = () => {
                     layout={true}
                     search={true}
                     placeholder="Search by Shipment ID"
-                    searchList={setSearchTrackData}
                   />
                   <CardBody className="ship-cardbody">
                     <MapRouting
                       trackData={trackData}
-                      setActiveStatus={setActiveStatus}
-                      activeStatus={activeStatus}
+                      // setActiveStatus={setActiveStatus}
+                      // activeStatus={activeStatus}
                     />
-                    {loadingTrackData && (
-                      <div className="d-flex align-items-center justify-content-center mt-6 mb-6">
-                        <Spinner color="dander" type="grow">Loading...</Spinner>
-                      </div>
-                    )}
-                    {!loadingTrackData && filteredTrackData.length > 0
-                      ? filteredTrackData.map((item) => <TrackCard key={item.id} item={item} />)
-                      : !loadingTrackData && <p>No records found.</p>}
+                    {trackData.map((item) => (
+                      <TrackCard key={item.id} item={item} />
+                    ))}
                   </CardBody>
                 </Card>
               </Col>
@@ -350,13 +353,15 @@ const RoutePlanning = () => {
                 layout={true}
                 search={true}
                 placeholder="Search by Route No"
-                searchList={setSearchRoutes} 
+                searchList={setSearchRoutes}
               />
               <CardBody>
                 <Route routeData={filteredRoutes} title="Routes" />
                 {loadingRoutes && (
                   <div className="d-flex align-items-center justify-content-center mt-6 mb-6">
-                    <Spinner color="dander" type="grow">Loading...</Spinner>
+                    <Spinner color="dander" type="grow">
+                      Loading...
+                    </Spinner>
                   </div>
                 )}
               </CardBody>

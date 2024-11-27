@@ -10,11 +10,11 @@ import {
 } from "reactstrap";
 import FeatherIcon from "feather-icons-react";
 
-const WidgetDashboard = (props) => {
+const WidgetDashboard = () => {
   return (
     <Row >
       {/* Sales and Volume Card */}
-      <Col md={3} sm={12}>
+      <Col md={3} sm={12} style={{paddingLeft: "0px", paddingRight: "25px"}}>
          <Card className="card-animate ">
           <CardBody>
             <div>
@@ -51,7 +51,7 @@ const WidgetDashboard = (props) => {
       </Col>
 
       {/* Vendors Card */}
-      <Col md={3} sm={12}>
+      <Col md={3} sm={12} style={{paddingLeft: "0px", paddingRight: "25px"}}>
       <Card className="card-animate ">
       <CardBody>
             <div>
@@ -89,7 +89,7 @@ const WidgetDashboard = (props) => {
       </Col>
 
       {/* Orders Card */}
-      <Col md={6} sm={12}>
+      <Col md={6} sm={12} style={{paddingLeft: "0px"}}>
         <Card className="card-animate">
           <CardBody>
             <div>
