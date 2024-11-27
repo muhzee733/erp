@@ -5,7 +5,6 @@ import { ReactComponent as Circle } from "../../assets/images/svg/circle.svg";
 import { ReactComponent as Ellipse } from "../../assets/images/svg/ellipse.svg";
 import { ReactComponent as PhoneIcon } from "../../assets/images/svg/PhoneOutlined.svg";
 
-
 const TrackCard = ({ item, index }) => {
   const [isExpanded, setIsExpanded] = useState(false); // Track the expanded state of the card
 
@@ -106,7 +105,10 @@ const TrackCard = ({ item, index }) => {
                   style={{ backgroundColor: "#0000000F" }}
                 >
                   <div className="d-flex">
-                 <img src={item.shipper.pic} style={{marginRight:"8px"}}/>
+                    <img
+                      src={item.shipper.pic}
+                      style={{ marginRight: "8px" }}
+                    />
                     <p className="text-muted m-0 ">
                       Shipperr’s ID
                       <span style={{ color: "#000000E0" }}>
@@ -114,7 +116,6 @@ const TrackCard = ({ item, index }) => {
                       </span>
                     </p>
                   </div>
-
                   <PhoneIcon />
                 </Col>
               </Row>
