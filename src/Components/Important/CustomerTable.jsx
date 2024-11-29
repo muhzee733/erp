@@ -204,7 +204,6 @@ const CustomerTable = () => {
     <Card>
       <CardHeader>
         <h4 className="card-title">Customers</h4>
-        
       </CardHeader>
       <TableContainer columns={columns} data={customers} />
     </Card>
