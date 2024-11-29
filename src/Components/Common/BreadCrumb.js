@@ -2,6 +2,7 @@ import React from "react";
 import { useLocation } from 'react-router-dom'; 
 import FeatherIcon from "feather-icons-react";
 import { Col, Row } from "reactstrap";
+import { capitalize } from "lodash";
 
 const BreadCrumb = ({ title, icon }) => {
   const location = useLocation();
@@ -17,7 +18,7 @@ const BreadCrumb = ({ title, icon }) => {
                   <FeatherIcon icon={icon} className="breadcrumb-icon"/>
                 </li>
                 <li className="pe-2">/</li>
-                <li className="breadcrumb-item active">{title} / {pathnames}</li>
+                <li className="breadcrumb-item active">{title? title : ""} {title ? "/" : ""} {capitalize(pathnames)}</li>
               </ol>
             </div>
           </div>
