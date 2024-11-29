@@ -8,3 +8,7 @@
     font-size: 14px;
     line-height: 16.94px;
 }
+
+.col-lg-6{
+    width:49%!important;
+}

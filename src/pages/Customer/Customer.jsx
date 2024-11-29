@@ -7,46 +7,69 @@ import CustomerTable from "../../Components/Important/CustomerTable";
 import {ReactComponent as PlusIcon} from "../../assets/images/svg/fi_plus.svg";
 
 const Customer = () => {
+  const vendorData = {
+    allVendors: {
+      count: 1250,
+      changePercentage: 15.80,
+      changeDirection: "positive",
+    },
+    activeVendors: {
+      count: 1180,
+      changePercentage: 85,
+      changeDirection: "positive",
+    },
+    inactiveVendors: {
+      count: 70,
+      changePercentage: -10,
+      changeDirection: "negative",
+    },
+    returns: {
+      count: 0,
+      changePercentage: 0.00,
+      changeDirection: "neutral",
+    },
+  };
+  const shoppingVendor = {
+    newVendors: {
+      count: 30,
+      changePercentage: -20,
+      changeDirection: "negative",
+    },
+    purchasing: {
+      count: 657,
+      changePercentage: 0, 
+      changeDirection: "neutral",
+    },
+    abandonedCarts: {
+      count: 5,
+      changePercentage: 0, 
+      changeDirection: "neutral",
+    },
+    returns: {
+      count: 0,
+      changePercentage: 0.00,
+      changeDirection: "neutral",
+    },
+  };
+  
+  
   return (
     <div className="page-content">
       <BreadCrumb icon="home" />
       <Container fluid>
-        <Row>
+        <Row style={{columnGap:'19px'}}>
           <div className="d-flex justify-content-between align-items-center mb-4">
             <h4 className="card-title" style={{paddingLeft:'05px'}}>Vendor Summary</h4>
             <div className="card-header-action">
               <button className="vendor-btn"><PlusIcon/>Add New Vendor</button>
             </div>
           </div>
-          <Col xl={6} className="p-0">
-            <VendorCard
-              title1="All Vendors"
-              title2="Active"
-              title3="In-Active"
-              title4="Returns"
-              allOrders="1250"
-              allOrdersPercentage="+15.80%"
-              pendingOrders="1180"
-              pendingOrdersPercentage="+85%"
-              completedOrders="70"
-              completedOrdersPercentage="-10%"
-              returns="0"
-              returnsPercentage="+0.00%"
-              iconClass="ri-group-line"
-            />
+          <Col lg={6} className="p-0">
+            <VendorCard vendorData={vendorData}  iconClass="ri-user-line" />
           </Col>
-          <Col xl={6} className="p-0">
+        <Col lg={6} className="p-0">
             <VendorCard
-              title1="New Vendors"
-              title2="Purchasing"
-              title3="Abandoned Carts"
-              title4="Returns"
-              allOrders="30"
-              allOrdersPercentage="-20%"
-              pendingOrders="657"
-              completedOrders="5"
-              returns="0"
-              returnsPercentage="+0.00%"
+             shoppingVendor={shoppingVendor}
               iconClass="ri-shopping-bag-line"
             />
           </Col>
