@@ -9,7 +9,7 @@ import {ReactComponent as PlusIcon} from "../../assets/images/svg/fi_plus.svg";
 const Customer = () => {
   return (
     <div className="page-content">
-      <BreadCrumb title="Customers" icon="home" />
+      <BreadCrumb icon="home" />
       <Container fluid>
         <Row>
           <div className="d-flex justify-content-between align-items-center mb-4">
@@ -18,7 +18,7 @@ const Customer = () => {
               <button className="vendor-btn"><PlusIcon/>Add New Vendor</button>
             </div>
           </div>
-          <Col xl={6}>
+          <Col xl={6} className="p-0">
             <VendorCard
               title1="All Vendors"
               title2="Active"
@@ -35,7 +35,7 @@ const Customer = () => {
               iconClass="ri-group-line"
             />
           </Col>
-          <Col xl={6}>
+          <Col xl={6} className="p-0">
             <VendorCard
               title1="New Vendors"
               title2="Purchasing"

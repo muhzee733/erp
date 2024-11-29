@@ -1,4 +1,4 @@
-import React, { useMemo , useCallback} from "react";
+import React, { useMemo, useCallback } from "react";
 import { Card, CardHeader } from "reactstrap";
 import TableContainer from "../../Components/Common/TableContainer";
 import { Link } from "react-router-dom";
@@ -71,57 +71,56 @@ const CustomerTable = () => {
       status: "Active",
     },
     {
-        id: 6,
-        vendorName: "Janet Adebayo",
-        email: "janet.a@mail.com",
-        phone: "+2348065650633",
-        orders: 10,
-        orderTotal: "₦250,000.00",
-        vendorSince: "12 Aug 2022 - 12:25 am",
-        status: "Active",
-      },
-      {
-        id: 7,
-        vendorName: "Janet Adebayo",
-        email: "janet.a@mail.com",
-        phone: "+2348065650633",
-        orders: 10,
-        orderTotal: "₦250,000.00",
-        vendorSince: "12 Aug 2022 - 12:25 am",
-        status: "Active",
-      },
-      {
-        id: 8,
-        vendorName: "Janet Adebayo",
-        email: "janet.a@mail.com",
-        phone: "+2348065650633",
-        orders: 10,
-        orderTotal: "₦250,000.00",
-        vendorSince: "12 Aug 2022 - 12:25 am",
-        status: "Active",
-      },
-      {
-        id: 9,
-        vendorName: "Janet Adebayo",
-        email: "janet.a@mail.com",
-        phone: "+2348065650633",
-        orders: 10,
-        orderTotal: "₦250,000.00",
-        vendorSince: "12 Aug 2022 - 12:25 am",
-        status: "Active",
-      },
-      {
-        id: 10,
-        vendorName: "Janet Adebayo",
-        email: "janet.a@mail.com",
-        phone: "+2348065650633",
-        orders: 10,
-        orderTotal: "₦250,000.00",
-        vendorSince: "12 Aug 2022 - 12:25 am",
-        status: "Active",
-      }
+      id: 6,
+      vendorName: "Janet Adebayo",
+      email: "janet.a@mail.com",
+      phone: "+2348065650633",
+      orders: 10,
+      orderTotal: "₦250,000.00",
+      vendorSince: "12 Aug 2022 - 12:25 am",
+      status: "Active",
+    },
+    {
+      id: 7,
+      vendorName: "Janet Adebayo",
+      email: "janet.a@mail.com",
+      phone: "+2348065650633",
+      orders: 10,
+      orderTotal: "₦250,000.00",
+      vendorSince: "12 Aug 2022 - 12:25 am",
+      status: "Active",
+    },
+    {
+      id: 8,
+      vendorName: "Janet Adebayo",
+      email: "janet.a@mail.com",
+      phone: "+2348065650633",
+      orders: 10,
+      orderTotal: "₦250,000.00",
+      vendorSince: "12 Aug 2022 - 12:25 am",
+      status: "Active",
+    },
+    {
+      id: 9,
+      vendorName: "Janet Adebayo",
+      email: "janet.a@mail.com",
+      phone: "+2348065650633",
+      orders: 10,
+      orderTotal: "₦250,000.00",
+      vendorSince: "12 Aug 2022 - 12:25 am",
+      status: "Active",
+    },
+    {
+      id: 10,
+      vendorName: "Janet Adebayo",
+      email: "janet.a@mail.com",
+      phone: "+2348065650633",
+      orders: 10,
+      orderTotal: "₦250,000.00",
+      vendorSince: "12 Aug 2022 - 12:25 am",
+      status: "Active",
+    },
   ];
-  
 
   const columns = useMemo(
     () => [
@@ -140,7 +139,7 @@ const CustomerTable = () => {
               type="checkbox"
               className="customerCheckBox form-check-input"
               value={cell.getValue()}
-            //   onChange={() => deleteCheckbox()}
+              //   onChange={() => deleteCheckbox()}
             />
           );
         },
@@ -195,7 +194,6 @@ const CustomerTable = () => {
         //   }
         // },
       },
-    
     ],
     [customers]
   );
@@ -204,7 +202,6 @@ const CustomerTable = () => {
     <Card>
       <CardHeader>
         <h4 className="card-title">Customers</h4>
-        
       </CardHeader>
       <TableContainer columns={columns} data={customers} />
     </Card>
