@@ -1,7 +1,10 @@
 import React from "react";
+import "./customer.css";
 import { Col, Container, Row } from "reactstrap";
 import BreadCrumb from "../../Components/Common/BreadCrumb";
 import VendorCard from "../../Components/Important/VendorCard";
+import CustomerTable from "../../Components/Important/CustomerTable";
+import {ReactComponent as PlusIcon} from "../../assets/images/svg/fi_plus.svg";
 
 const Customer = () => {
   return (
@@ -9,6 +12,12 @@ const Customer = () => {
       <BreadCrumb title="Customers" icon="home" />
       <Container fluid>
         <Row>
+          <div className="d-flex justify-content-between align-items-center mb-4">
+            <h4 className="card-title" style={{paddingLeft:'05px'}}>Vendor Summary</h4>
+            <div className="card-header-action">
+              <button className="vendor-btn"><PlusIcon/>Add New Vendor</button>
+            </div>
+          </div>
           <Col xl={6}>
             <VendorCard
               title1="All Vendors"
@@ -42,7 +51,9 @@ const Customer = () => {
             />
           </Col>
         </Row>
-        <Row>Row-2</Row>
+        <Row>
+          <CustomerTable />
+        </Row>
       </Container>
     </div>
   );
