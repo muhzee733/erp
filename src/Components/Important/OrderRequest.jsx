@@ -10,7 +10,6 @@ import { Spinner, Alert } from "reactstrap";
 const OrderRequest = ({ title, recentOrderRequest, search }) => {
   const [selectedOrderId, setSelectedOrderId] = useState(null);
   const [filterData, setFilterData] = useState([]);
-  const [filterByStatus, setFilterByStatus] = useState(true);
   const [loading, setLoading] = useState(false);
   useEffect(() => {
     let filteredOrders = recentOrderRequest;
@@ -18,7 +17,6 @@ const OrderRequest = ({ title, recentOrderRequest, search }) => {
       filteredOrders = filteredOrders.filter((item) =>
         item.orderID.toLowerCase().includes(search.toLowerCase())
       );
-   
     }
     if (filterByStatus) {
       setLoading(true);

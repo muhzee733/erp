@@ -1,0 +1,10 @@
+/* Buttons */
+.vendor-btn{
+    background-color: #F23514;
+    border-radius: 16px;
+    border: #F23514 1px solid;
+    padding: 08px 18px;
+    color: white;
+    font-size: 14px;
+    line-height: 16.94px;
+}
