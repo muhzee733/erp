@@ -323,8 +323,8 @@ const RoutePlanning = () => {
                   </button>
                 </div>
               </CardHeader>
-              <Col xl={7}>
-                <Card className="h-100">
+              <Col xl={7} style={{marginLeft:"10px"}}>
+                <Card className="h-100 border">
                   <ChartHeader
                     title="Vehicles"
                     layout={true}
@@ -334,8 +334,8 @@ const RoutePlanning = () => {
                   <CardBody className="ship-cardbody">
                     <MapRouting
                       trackData={trackData}
-                      // setActiveStatus={setActiveStatus}
-                      // activeStatus={activeStatus}
+                      setActiveStatus={setActiveStatus}
+                      activeStatus={activeStatus}
                     />
                     {trackData.map((item) => (
                       <TrackCard key={item.id} item={item} />
