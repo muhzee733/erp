@@ -1,8 +1,32 @@
-import { size } from "lodash";
-import React from "react";
-import { Button, Col, Input, Modal, ModalBody, ModalHeader } from "reactstrap";
+import React, { useState } from "react";
+import usflag from "../../assets/images/flags/us.svg";
+
+import {
+  Button,
+  Col,
+  Modal,
+  ModalBody,
+  ModalHeader,
+  Dropdown,
+  DropdownItem,
+  DropdownMenu,
+  DropdownToggle,
+  Input,
+  Label,
+} from "reactstrap";
+import SimpleBar from "simplebar-react";
+import { country } from "../../common/data";
 
 const CustomModal = ({ isOpen, toggleModal }) => {
+  const toggle4 = () => setDropdownOpen4((prevState) => !prevState);
+  const [dropdownOpen4, setDropdownOpen4] = useState(false);
+  const [seletedCountry3, setseletedCountry3] = useState({
+    id: 240,
+    flagImg: usflag,
+    countryName: "United States of America",
+    countryCode: "+1",
+  });
+
   const toggleFields = () => {
     const fields = document.getElementById("address-fields");
     fields.style.display = fields.style.display === "none" ? "block" : "none";
@@ -38,20 +62,80 @@ const CustomModal = ({ isOpen, toggleModal }) => {
                 </div>
               </Col>
               <div class="d-flex mb-2">
-                <select className="input-form" style={{ marginRight: "10px" }}>
-                  <option value="+234">🇳🇬 +234</option>
-                  <option value="+1">🇺🇸 +1</option>
-                </select>
+                <div style={{width:"100%"}}>
+                  <Dropdown
+                    className="input-group"
+                    isOpen={dropdownOpen4}
+                    toggle={toggle4}
+                  >
+                    <DropdownToggle
+                      as="button"
+                      className="btn btn-light border arrow-none"
+                    >
+                      <img
+                        src={seletedCountry3.flagImg}
+                        alt="country flag"
+                        className="options-flagimg"
+                        height="20"
+                      />
+                      <span className="countrylist-codeno text-muted">
+                        {seletedCountry3.countryCode}
+                      </span>
+                    </DropdownToggle>
+                    <Input
+                      style={{marginLeft:"10px"}}
+                      type="number"
+                      className="input-form rounded-end flag-input"
+                      placeholder="Enter number"
+                    />
+                    <DropdownMenu
+                      as="ul"
+                      className="list-unstyled w-100 dropdown-menu-list mb-0"
+                    >
+                      <SimpleBar
+                        style={{ maxHeight: "220px" }}
+                        className="px-3"
+                      >
+                        {(country || []).map((item, key) => (
+                          <DropdownItem
+                            as="li"
+                            onClick={() => setseletedCountry3(item)}
+                            key={key}
+                            className="dropdown-item d-flex"
+                          >
+                            <div className="flex-shrink-0 me-2">
+                              <img
+                                src={item.flagImg}
+                                alt="country flag"
+                                className="options-flagimg"
+                                height="20"
+                              />
+                            </div>
+                            <div className="flex-grow-1">
+                              <div className="d-flex">
+                                <div className="country-name me-1">
+                                  {item.countryName}
+                                </div>
+                                <span className="countrylist-codeno text-muted">
+                                  {item.countryCode}
+                                </span>
+                              </div>
+                            </div>
+                          </DropdownItem>
+                        ))}
+                      </SimpleBar>
+                    </DropdownMenu>
+                  </Dropdown>
 
-                <Input
-                  type="text"
-                  placeholder="8023456789"
-                  className="input-form"
-                />
+                 
+                </div>
               </div>
 
               <div class="address-toggle">
-                <label className="add-address" style={{ marginRight: "10px" , color:'#2B2F32' }}>
+                <label
+                  className="add-address"
+                  style={{ marginRight: "10px", color: "#2B2F32" }}
+                >
                   Add Address
                 </label>
                 <label class="switch">
@@ -93,7 +177,7 @@ const CustomModal = ({ isOpen, toggleModal }) => {
                     style={{ marginRight: "10px" }}
                   >
                     Billing Address
-                    <p style={{ marginLeft: "10px" , fontSize:"13px" }}>
+                    <p style={{ marginLeft: "10px", fontSize: "13px" }}>
                       Same as Customer Address
                     </p>
                   </label>

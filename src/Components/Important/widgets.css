@@ -502,6 +502,17 @@
   border: none;
   padding: 15px;
 }
+.input-form:active {
+  background-color: #eff1f999;
+  color: #abafb1;
+  border-radius: 8px;
+  border: none;
+  padding: 15px;
+}
+.input-form:hover {
+  background-color: #eff1f999;
+  color: #abafb1;
+}
 .add-address {
   color: #83898c;
   font-size: 14px;
@@ -509,17 +520,17 @@
   line-height: 16.94px;
   text-align: right;
 }
-.cancel-btn{
+.cancel-btn {
   padding: 10px 30px 10px 30px !important;
   border-radius: 12px;
   background-color: transparent;
-  border: 1px solid #F23514;
-  color: #F23514;
+  border: 1px solid #f23514;
+  color: #f23514;
 }
-.cancel-btn:hover{
-  background-color: #F23514;
+.cancel-btn:hover {
+  background-color: #f23514;
   color: white;
-  border: 1px solid #F23514;
+  border: 1px solid #f23514;
 }
 /* The switch - the box around the slider */
 .switch {
@@ -544,9 +555,9 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #5570F11F;
-  -webkit-transition: .4s;
-  transition: .4s;
+  background-color: #5570f11f;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
 }
 
 .slider:before {
@@ -556,14 +567,13 @@
   width: 15px;
   left: 4px;
   bottom: 3px;
-  background-color: #BBC5CB;
-  -webkit-transition: .4s;
-  transition: .4s;
+  background-color: #bbc5cb;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
 }
 
 input:checked + .slider {
-  background-color: #F23514;
-
+  background-color: #f23514;
 }
 
 input:checked + .slider:before {
