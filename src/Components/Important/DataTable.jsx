@@ -42,7 +42,6 @@ const DataTable = ({ title, customerData, column }) => {
     }
   }, []);
 
-  
   return (
     <>
       <CardBody>
@@ -80,9 +79,18 @@ const DataTable = ({ title, customerData, column }) => {
                     </td>
                     <td>
                       <div className="d-flex align-items-center">
-                        <div className="data-table">{item.vendorName}</div>
+                        {item.orders && item.orders.length > 0 ? (
+                          item.orders.map((order, index) => (
+                            <div key={index} className="data-table">
+                              {order.orderDate}
+                            </div>
+                          ))
+                        ) : (
+                          <div className="data-table">{item.vendorName}</div>
+                        )}
                       </div>
                     </td>
+
                     <td>
                       <span className="data-table">{item.email}</span>
                       <i
@@ -101,10 +109,13 @@ const DataTable = ({ title, customerData, column }) => {
                       ></i>
                     </td>
                     <td>
-                      <span className="data-table">{item.orders}</span>
+                      <span className="data-table">{item.orders.length}</span>
                     </td>
                     <td>
                       <span className="data-table">{item.orderTotal}</span>
+                    </td>
+                    <td>
+                      <span>Action</span>
                     </td>
                     <td>
                       <span className="data-table">{item.vendorSince}</span>

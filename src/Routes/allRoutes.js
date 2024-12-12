@@ -17,12 +17,15 @@ import UserProfile from "../pages/Authentication/user-profile";
 import TruckOptimization from "../pages/Order/TruckOptimization/TruckOptimization";
 import RoutePlanning from "../pages/Order/RoutePlanning/RoutePlanning";
 import Customer from "../pages/Customer/Customer";
+import CustomerDetails from "../pages/Customer/CustomerDetails";
 
 const authProtectedRoutes = [
   { path: "/delivery-tracking", component: <Order /> },
   { path: "/dashboard", component: <Dashboard /> },
   { path: "/index", component: <Dashboard /> },
   { path: "/customer", component: <Customer /> },
+  { path: "/view-customer", component: <CustomerDetails /> },
+
 
   
   //Submenu Pages
