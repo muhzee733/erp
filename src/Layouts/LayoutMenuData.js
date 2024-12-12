@@ -98,40 +98,40 @@ const Navdata = () => {
       id: "inventory",
       label: "Inventory",
       icon: "ri-folder-reduce-line",
-      link: "/inventory",
+      // link: "/inventory",
       stateVariables: isInventory,
-      click: (e) => {
-        e.preventDefault();
-        setIsInventory(!isInventory);
-        setIscurrentState("Inventory");
-        updateIconSidebar(e);
-      },
+      // click: (e) => {
+      //   e.preventDefault();
+      //   setIsInventory(!isInventory);
+      //   setIscurrentState("Inventory");
+      //   updateIconSidebar(e);
+      // },
     },
     {
       id: "conversations",
       label: "Conversations",
       icon: "ri-message-2-line",
-      link: "/conversations",
+      // link: "/conversations",
       stateVariables: isConversations,
-      click: (e) => {
-        e.preventDefault();
-        setIsConversations(!isConversations);
-        setIscurrentState("Conversations");
-        updateIconSidebar(e);
-      },
+      // click: (e) => {
+      //   e.preventDefault();
+      //   setIsConversations(!isConversations);
+      //   setIscurrentState("Conversations");
+      //   updateIconSidebar(e);
+      // },
     },
     {
       id: "settings",
       label: "Settings",
       icon: "ri-settings-4-line",
-      link: "/settings",
+      // link: "/settings",
       stateVariables: isSettings,
-      click: (e) => {
-        e.preventDefault();
-        setIsSettings(!isSettings);
-        setIscurrentState("Settings");
-        updateIconSidebar(e);
-      },
+      // click: (e) => {
+      //   e.preventDefault();
+      //   setIsSettings(!isSettings);
+      //   setIscurrentState("Settings");
+      //   updateIconSidebar(e);
+      // },
     },
   ];
   return <React.Fragment>{menuItems}</React.Fragment>;
