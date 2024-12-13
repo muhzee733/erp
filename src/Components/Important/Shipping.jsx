@@ -1,5 +1,7 @@
 import React from "react";
 import "./widgets.css";
+import { Alert } from "reactstrap";
+
 
 const Shipping = ({ shipData, setActiveStatus, activeStatus }) => {
   const statusCodes = [
@@ -22,8 +24,10 @@ const Shipping = ({ shipData, setActiveStatus, activeStatus }) => {
             {status}
           </span>
         ))
-      ) : (
-        <div className="text-danger">No data found</div>
+      ) : !loading && (
+        <Alert style={{marginTop:"15px"}} color="danger">
+          <strong>No Order Found</strong>
+        </Alert>
       )}
     </div>
   );

@@ -112,7 +112,11 @@ const RecommendationOrders = ({ title, shipOrders }) => {
                         )}
                       </Draggable>
                     ))
-                  : "No Data Found"}
+                  : !loading && (
+                    <Alert style={{marginTop:"15px"}} color="danger">
+                      <strong>No Order Found</strong>
+                    </Alert>
+                  )}
                 {provided.placeholder}
               </div>
             )}

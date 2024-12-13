@@ -40,7 +40,7 @@ const WidgetDashboard = () => {
 
       {/* Vendors Card */}
       <Col xl={12}>
-        <Card className="card-animate" style={{ minHeight: "175px" }}>
+        <Card  style={{ minHeight: "175px" }}>
           <CardBody>
             <div>
               <div className="shopping-card">

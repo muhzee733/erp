@@ -15,7 +15,7 @@ const WidgetDashboard = () => {
     <Row >
       {/* Sales and Volume Card */}
       <Col md={3} sm={12} style={{paddingLeft: "0px", paddingRight: "25px"}}>
-         <Card className="card-animate ">
+         <Card>
           <CardBody>
             <div>
               <div className="icon-header">
@@ -52,7 +52,7 @@ const WidgetDashboard = () => {
 
       {/* Vendors Card */}
       <Col md={3} sm={12} style={{paddingLeft: "0px", paddingRight: "25px"}}>
-      <Card className="card-animate ">
+      <Card >
       <CardBody>
             <div>
               <div className="icon-header">
@@ -90,7 +90,7 @@ const WidgetDashboard = () => {
 
       {/* Orders Card */}
       <Col md={6} sm={12} style={{paddingLeft: "0px"}}>
-        <Card className="card-animate">
+        <Card >
           <CardBody>
             <div>
               <div className="icon-header">

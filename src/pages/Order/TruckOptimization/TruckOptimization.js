@@ -1,5 +1,13 @@
 import React, { useState, useEffect } from "react";
-import { Card, CardBody, Col, Container, Row, Spinner } from "reactstrap";
+import {
+  Card,
+  CardBody,
+  Col,
+  Container,
+  Row,
+  Spinner,
+  Alert,
+} from "reactstrap";
 import BreadCrumb from "../../../Components/Common/BreadCrumb";
 import ChartHeader from "../../../Components/Important/ChartHeader";
 import Shipping from "../../../Components/Important/Shipping";
@@ -137,7 +145,6 @@ const TruckOptimization = () => {
     if (searchInput2.length >= 10) {
       filteredOrders = filteredOrders.filter((item) =>
         item.orderID.toLowerCase().includes(searchInput2.toLowerCase())
-      
       );
     }
     setTimeout(() => {
@@ -147,80 +154,86 @@ const TruckOptimization = () => {
   }, [searchInput2]);
   return (
     <div className="page-content">
-    <BreadCrumb title="Orders" icon="home" />
-    <Container fluid>
-      <Row>
-        <Col xl="3" className="d-flex flex-column h-100">
-          <Card className="h-100">
-            <ChartHeader
-              title="Vehicles"
-              layout={true}
-              search={true}
-              placeholder="Search by Shipment ID"
-              searchList={setSearchInput1}
-            />
-            <CardBody className="ship-cardbody">
-              <Shipping
-                shipData={shipData}
-                setActiveStatus={setActiveStatus}
-                activeStatus={activeStatus}
+      <BreadCrumb title="Orders" icon="home" />
+      <Container fluid>
+        <Row>
+          <Col xl="3" className="d-flex flex-column h-100">
+            <Card className="h-100">
+              <ChartHeader
+                title="Vehicles"
+                layout={true}
+                search={true}
+                placeholder="Search by Shipment ID"
+                searchList={setSearchInput1}
               />
-              {loading && (
-                <div className="d-flex align-items-center justify-content-center mt-6 mb-6">
-                  <Spinner color="danger" type="grow">
-                    Loading...
-                  </Spinner>
-                </div>
-              )}
-              {!loading && shipmentData.length > 0
-                ? shipmentData.map((item) => (
-                    <ShipCard key={item.id} item={item} />
-                  ))
-                : !loading && <p>No records found.</p>}
-            </CardBody>
-          </Card>
-        </Col>
-        <Col xl="9">
-          <Row>
-            <Col xl="8">
-              <Card>
-                <CardBody>
-                  <TruckLoading />
-                </CardBody>
-              </Card>
-            </Col>
-            <Col xl="4" className="d-flex flex-column">
-              <Card className="h-100">
-                <ChartHeader
-                  title="Orders"
-                  layout={true}
-                  search={true}
-                  placeholder="Search by Order ID, No."
-                  searchList={setSearchInput2}
+              <CardBody className="ship-cardbody">
+                <Shipping
+                  shipData={shipData}
+                  setActiveStatus={setActiveStatus}
+                  activeStatus={activeStatus}
                 />
-                <CardBody>
-                  {loading ? (
-                    <div className="d-flex align-items-center justify-content-center mt-6 mb-6">
-                      <Spinner color="danger" type="grow">
-                        Loading...
-                      </Spinner>
-                    </div>
-                  ) : ordersData.length > 0 ? (
-                    <RecommendationOrders
-                      title="Recommendation"
-                      shipOrders={ordersData}
-                    />
-                  ) : (
-                    <p>No records found.</p>
-                  )}
-                </CardBody>
-              </Card>
-            </Col>
-          </Row>
-        </Col>
-      </Row>
-    </Container>
-  </div>
+                {loading && (
+                  <div className="d-flex align-items-center justify-content-center mt-6 mb-6">
+                    <Spinner color="danger" type="grow">
+                      Loading...
+                    </Spinner>
+                  </div>
+                )}
+                {!loading && shipmentData.length > 0
+                  ? shipmentData.map((item) => (
+                      <ShipCard key={item.id} item={item} />
+                    ))
+                  : !loading && (
+                      <Alert style={{ marginTop: "15px" }} color="danger">
+                        <strong>No Order Found</strong>
+                      </Alert>
+                    )}
+              </CardBody>
+            </Card>
+          </Col>
+          <Col xl="9">
+            <Row>
+              <Col xl="8">
+                <Card>
+                  <CardBody>
+                    <TruckLoading />
+                  </CardBody>
+                </Card>
+              </Col>
+              <Col xl="4" className="d-flex flex-column">
+                <Card className="h-100">
+                  <ChartHeader
+                    title="Orders"
+                    layout={true}
+                    search={true}
+                    placeholder="Search by Order ID, No."
+                    searchList={setSearchInput2}
+                  />
+                  <CardBody>
+                    {loading ? (
+                      <div className="d-flex align-items-center justify-content-center mt-6 mb-6">
+                        <Spinner color="danger" type="grow">
+                          Loading...
+                        </Spinner>
+                      </div>
+                    ) : ordersData.length > 0 ? (
+                      <RecommendationOrders
+                        title="Recommendation"
+                        shipOrders={ordersData}
+                      />
+                    ) : !loading && (
+                      <Alert style={{ marginTop: "15px" }} color="danger">
+                        <strong>No Order Found</strong>
+                      </Alert>
+                    )}
+                  </CardBody>
+                </Card>
+              </Col>
+            </Row>
+          </Col>
+        </Row>
+      </Container>
+    </div>
   );
 };
 
