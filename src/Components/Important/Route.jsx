@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { ReactComponent as Vehicle } from "../../assets/images/svg/Ellipse-vehicle.svg";
 import Icon from "../../assets/images/order.svg";
 import Icon2 from "../../assets/images/svg/Vector.svg";
-import { Spinner } from "reactstrap";
+import { Spinner , Alert} from "reactstrap";
 
 const Route = ({ routeData, title }) => {
   const [filterByStatus, setFilterByStatus] = useState(true);
@@ -61,7 +61,9 @@ const Route = ({ routeData, title }) => {
           </Spinner>
         </div>
       ) : !filteredRoutes.length ? (
-        <p>No routes available.</p>
+          <Alert style={{ marginTop: "15px" }} color="danger">
+          <strong>No Route Found</strong>
+        </Alert>
       ) : (
         filteredRoutes.map((route, index) => (
           <div key={index} className="route-card">

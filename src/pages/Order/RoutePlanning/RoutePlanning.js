@@ -290,12 +290,13 @@ const RoutePlanning = () => {
   useEffect(() => {
     let filteredOrders = routes;
     if (searchRoutes.trim() !== "") {
+       setLoadingRoutes(true);
       filteredOrders = filteredOrders.filter((item) =>
         item.routeId.toLowerCase().includes(searchRoutes.toLowerCase())
       );
     }
     if (activeStatus) {
-      setLoadingRoutes(true);
+    
       filteredOrders = filteredOrders.filter(
         (item) => item.status === activeStatus
       );

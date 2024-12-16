@@ -19,7 +19,8 @@ const TruckOptimization = () => {
   const [searchInput1, setSearchInput1] = useState("");
   const [searchInput2, setSearchInput2] = useState("");
   const [activeStatus, setActiveStatus] = useState(null);
-  const [loading, setLoading] = useState(false);
+  const [isLoadingSearch1, setIsLoadingSearch1] = useState(false);
+  const [isLoadingSearch2, setIsLoadingSearch2] = useState(false);
   const [shipmentData, setShipmentData] = useState([]);
   const [ordersData, setOrdersData] = useState([]);
 
@@ -122,13 +123,14 @@ const TruckOptimization = () => {
   useEffect(() => {
     let filteredShipments = shipData;
     if (searchInput1.length >= 7) {
+      setIsLoadingSearch1(true);
       filteredShipments = filteredShipments.filter((item) =>
         item.shipId.toLowerCase().includes(searchInput1.toLowerCase())
       );
     }
 
     if (activeStatus) {
-      setLoading(true);
+      setIsLoadingSearch1(true);
       filteredShipments = filteredShipments.filter(
         (item) => item.status.status_code === activeStatus
       );
@@ -136,7 +138,7 @@ const TruckOptimization = () => {
 
     setTimeout(() => {
       setShipmentData(filteredShipments);
-      setLoading(false);
+      setIsLoadingSearch1(false);
     }, 500);
   }, [searchInput1, activeStatus]);
 
@@ -149,7 +151,7 @@ const TruckOptimization = () => {
     }
     setTimeout(() => {
       setOrdersData(filteredOrders);
-      setLoading(false);
+      setIsLoadingSearch2(false);
     }, 500);
   }, [searchInput2]);
   return (
@@ -172,18 +174,18 @@ const TruckOptimization = () => {
                   setActiveStatus={setActiveStatus}
                   activeStatus={activeStatus}
                 />
-                {loading && (
+                {isLoadingSearch1 && (
                   <div className="d-flex align-items-center justify-content-center mt-6 mb-6">
                     <Spinner color="danger" type="grow">
                       Loading...
                     </Spinner>
                   </div>
                 )}
-                {!loading && shipmentData.length > 0
+                {!isLoadingSearch1 && shipmentData.length > 0
                   ? shipmentData.map((item) => (
                       <ShipCard key={item.id} item={item} />
                     ))
-                  : !loading && (
+                  : !isLoadingSearch1 && (
                       <Alert style={{ marginTop: "15px" }} color="danger">
                         <strong>No Order Found</strong>
                       </Alert>
@@ -210,7 +212,7 @@ const TruckOptimization = () => {
                     searchList={setSearchInput2}
                   />
                   <CardBody>
-                    {loading ? (
+                    {isLoadingSearch2 ? (
                       <div className="d-flex align-items-center justify-content-center mt-6 mb-6">
                         <Spinner color="danger" type="grow">
                           Loading...
@@ -221,7 +223,7 @@ const TruckOptimization = () => {
                         title="Recommendation"
                         shipOrders={ordersData}
                       />
-                    ) : !loading && (
+                    ) : !isLoadingSearch2 && (
                       <Alert style={{ marginTop: "15px" }} color="danger">
                         <strong>No Order Found</strong>
                       </Alert>
